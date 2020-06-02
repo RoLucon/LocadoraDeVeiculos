@@ -7,6 +7,7 @@ package rogeriolucon.locadora.views;
 
 import java.awt.event.KeyEvent;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import rogeriolucon.locadora.model.Vehicle;
 import rogeriolucon.locadora.service.VehicleService;
 
@@ -463,15 +464,38 @@ public class MainView extends javax.swing.JFrame {
     }//GEN-LAST:event_registerComboBoxCategoryActionPerformed
 
     private void registerButtonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonSaveActionPerformed
+        String error = "";
+        
+        if(String.valueOf(registerComboBoxModel.getSelectedItem()).contains("<")){
+            error = "- Modelo deve ser selecionado\n";
+        }
+        if(String.valueOf(registerComboBoxCategory.getSelectedItem()).contains("<")){
+            error += "- Categoria deve ser selecionada\n";
+        }
+        if(String.valueOf(registerComboBoxBrand.getSelectedItem()).contains("<")){
+            error += "- Marca deve ser selecionada\n";
+        }
+        if(registerTextFieldKm.getText().trim().isEmpty() ){
+            error += "- Valor de Kilometragem invalido\n";
+        }
+//                && registerTextFieldKm.getText().trim().isEmpty()
+        if(!error.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, error);
+            return;
+        }
         Vehicle vehicle = new Vehicle();
-       
         vehicle.setModel(String.valueOf(registerComboBoxModel.getSelectedItem()));
         vehicle.setCategory((Vehicle.Category)registerComboBoxCategory.getSelectedItem());
         vehicle.setBrand((Vehicle.Brand)(registerComboBoxBrand.getSelectedItem()));
         vehicle.setKm(Integer.parseInt(registerTextFieldKm.getText()));
 //        vehicle.setPrice(Integer.parseInt(registerTextField.getText()));
-        vehicleService.addVehicle(vehicle);
-        registerClear();   
+        if(vehicleService.addVehicle(vehicle)){
+            JOptionPane.showMessageDialog(this, "Adicionado com sucesso");
+            registerClear();
+        } else {
+            JOptionPane.showMessageDialog(this, "Falha ao adicionar");
+        }
+        
     }//GEN-LAST:event_registerButtonSaveActionPerformed
 
     private void registerButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonCancelActionPerformed
