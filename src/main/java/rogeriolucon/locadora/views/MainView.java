@@ -5,6 +5,7 @@
  */
 package rogeriolucon.locadora.views;
 
+import java.awt.event.KeyEvent;
 import javax.swing.DefaultComboBoxModel;
 import rogeriolucon.locadora.model.Vehicle;
 import rogeriolucon.locadora.service.VehicleService;
@@ -14,7 +15,7 @@ import rogeriolucon.locadora.service.VehicleService;
  * @author rolucon
  */
 public class MainView extends javax.swing.JFrame {
-
+    private VehicleService vehicleService = new VehicleService();
     /**
      * Creates new form MainView
      */
@@ -53,18 +54,18 @@ public class MainView extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        comboBoxCategory = new javax.swing.JComboBox<>();
-        comboBoxBrand = new javax.swing.JComboBox<>();
+        registerComboBoxCategory = new javax.swing.JComboBox<>();
+        registerComboBoxBrand = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
-        ComboBoxModel = new javax.swing.JComboBox<>();
+        registerComboBoxModel = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
-        textFieldPlates = new javax.swing.JTextField();
+        registerTextFieldPlates = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        textFieldKm = new javax.swing.JTextField();
-        comboBoxTank = new javax.swing.JComboBox<>();
+        registerTextFieldKm = new javax.swing.JTextField();
+        registerComboBoxTank = new javax.swing.JComboBox<>();
         jLabel15 = new javax.swing.JLabel();
-        buttonSave = new javax.swing.JButton();
-        buttonCancel = new javax.swing.JButton();
+        registerButtonSave = new javax.swing.JButton();
+        registerButtonCancel = new javax.swing.JButton();
         buttonConsultar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -258,53 +259,73 @@ public class MainView extends javax.swing.JFrame {
 
         jLabel10.setText("Marca:");
 
-        comboBoxCategory.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
-        comboBoxCategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        comboBoxCategory.setMinimumSize(new java.awt.Dimension(100, 23));
-        comboBoxCategory.addActionListener(new java.awt.event.ActionListener() {
+        registerComboBoxCategory.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
+        registerComboBoxCategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        registerComboBoxCategory.setMinimumSize(new java.awt.Dimension(100, 23));
+        registerComboBoxCategory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboBoxCategoryActionPerformed(evt);
+                registerComboBoxCategoryActionPerformed(evt);
             }
         });
 
-        comboBoxBrand.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
-        comboBoxBrand.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        registerComboBoxBrand.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
+        registerComboBoxBrand.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel11.setText("Modelo:");
 
-        ComboBoxModel.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
-        ComboBoxModel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        registerComboBoxModel.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
+        registerComboBoxModel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel12.setText("Placa:");
 
-        textFieldPlates.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
-        textFieldPlates.setText("xxx-####");
-
-        jLabel13.setText("Kilometrgem:");
-
-        textFieldKm.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
-        textFieldKm.setText("0KM");
-
-        comboBoxTank.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
-        comboBoxTank.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel15.setText("Tanque:");
-
-        buttonSave.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
-        buttonSave.setText("Salvar");
-        buttonSave.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        buttonSave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonSaveActionPerformed(evt);
+        registerTextFieldPlates.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
+        registerTextFieldPlates.setText("xxx-####");
+        registerTextFieldPlates.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                registerTextFieldPlatesFocusGained(evt);
             }
         });
 
-        buttonCancel.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
-        buttonCancel.setText("Cancelar");
-        buttonCancel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        buttonCancel.addActionListener(new java.awt.event.ActionListener() {
+        jLabel13.setText("Kilometrgem:");
+
+        registerTextFieldKm.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
+        registerTextFieldKm.setText("0KM");
+        registerTextFieldKm.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                registerTextFieldKmFocusGained(evt);
+            }
+        });
+        registerTextFieldKm.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                registerTextFieldKmKeyTyped(evt);
+            }
+        });
+
+        registerComboBoxTank.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
+        registerComboBoxTank.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel15.setText("Tanque:");
+
+        registerButtonSave.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
+        registerButtonSave.setText("Salvar");
+        registerButtonSave.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        registerButtonSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonCancelActionPerformed(evt);
+                registerButtonSaveActionPerformed(evt);
+            }
+        });
+
+        registerButtonCancel.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
+        registerButtonCancel.setText("Cancelar");
+        registerButtonCancel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        registerButtonCancel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                registerButtonCancelMouseClicked(evt);
+            }
+        });
+        registerButtonCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registerButtonCancelActionPerformed(evt);
             }
         });
 
@@ -336,36 +357,36 @@ public class MainView extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRegisterLayout.createSequentialGroup()
                         .addGroup(jPanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(ComboBoxModel, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(registerComboBoxModel, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelRegisterLayout.createSequentialGroup()
                                 .addGroup(jPanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel9)
-                                    .addComponent(comboBoxCategory, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(registerComboBoxCategory, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(35, 35, 35)
                                 .addGroup(jPanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(comboBoxBrand, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(registerComboBoxBrand, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel10)))
                             .addGroup(jPanelRegisterLayout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jLabel6)
                                 .addGap(126, 126, 126))
                             .addGroup(jPanelRegisterLayout.createSequentialGroup()
-                                .addComponent(buttonSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(registerButtonSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(68, 68, 68)
-                                .addComponent(buttonCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(registerButtonCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanelRegisterLayout.createSequentialGroup()
                                 .addGroup(jPanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel12)
-                                    .addComponent(textFieldPlates))
+                                    .addComponent(registerTextFieldPlates))
                                 .addGap(25, 25, 25)
                                 .addGroup(jPanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(textFieldKm)
+                                    .addComponent(registerTextFieldKm)
                                     .addComponent(jLabel13))
                                 .addGap(25, 25, 25)
                                 .addGroup(jPanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel15)
-                                    .addComponent(comboBoxTank, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addComponent(registerComboBoxTank, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addGap(32, 32, 32))))
         );
         jPanelRegisterLayout.setVerticalGroup(
@@ -383,12 +404,12 @@ public class MainView extends javax.swing.JFrame {
                     .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(comboBoxCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(comboBoxBrand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(registerComboBoxCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(registerComboBoxBrand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ComboBoxModel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(registerComboBoxModel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
@@ -396,13 +417,13 @@ public class MainView extends javax.swing.JFrame {
                     .addComponent(jLabel15))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textFieldPlates, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textFieldKm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(comboBoxTank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(registerTextFieldPlates, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(registerTextFieldKm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(registerComboBoxTank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(44, 44, 44)
                 .addGroup(jPanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonSave)
-                    .addComponent(buttonCancel))
+                    .addComponent(registerButtonSave)
+                    .addComponent(registerButtonCancel))
                 .addGap(32, 32, 32)
                 .addComponent(buttonConsultar)
                 .addGap(43, 43, 43))
@@ -437,25 +458,55 @@ public class MainView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void comboBoxCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxCategoryActionPerformed
+    private void registerComboBoxCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerComboBoxCategoryActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_comboBoxCategoryActionPerformed
+    }//GEN-LAST:event_registerComboBoxCategoryActionPerformed
 
-    private void buttonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSaveActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonSaveActionPerformed
+    private void registerButtonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonSaveActionPerformed
+        Vehicle vehicle = new Vehicle();
+       
+        vehicle.setModel(String.valueOf(registerComboBoxModel.getSelectedItem()));
+        vehicle.setCategory((Vehicle.Category)registerComboBoxCategory.getSelectedItem());
+        vehicle.setBrand((Vehicle.Brand)(registerComboBoxBrand.getSelectedItem()));
+        vehicle.setKm(Integer.parseInt(registerTextFieldKm.getText()));
+//        vehicle.setPrice(Integer.parseInt(registerTextField.getText()));
+        vehicleService.addVehicle(vehicle);
+        registerClear();   
+    }//GEN-LAST:event_registerButtonSaveActionPerformed
 
-    private void buttonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonCancelActionPerformed
+    private void registerButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonCancelActionPerformed
+        registerClear();
+    }//GEN-LAST:event_registerButtonCancelActionPerformed
 
     private void buttonConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonConsultarActionPerformed
         //Abre a view com a tabela de veiculos
-        VehicleService service = new VehicleService();
         BuscaVeiculoView view = new BuscaVeiculoView();
         view.setVisible(true);
-        view.setList(service.list);
+        view.setList(vehicleService.list);
     }//GEN-LAST:event_buttonConsultarActionPerformed
+
+    private void registerTextFieldKmKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_registerTextFieldKmKeyTyped
+        char c = evt.getKeyChar();
+        if (((c < '0') || (c > '9')) && (c != KeyEvent.VK_BACK_SPACE)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_registerTextFieldKmKeyTyped
+
+    private void registerTextFieldKmFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_registerTextFieldKmFocusGained
+        if(registerTextFieldKm.getText().equalsIgnoreCase("0Km")){
+            registerTextFieldKm.setText("");
+        }
+    }//GEN-LAST:event_registerTextFieldKmFocusGained
+
+    private void registerButtonCancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonCancelMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_registerButtonCancelMouseClicked
+
+    private void registerTextFieldPlatesFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_registerTextFieldPlatesFocusGained
+        if(registerTextFieldPlates.getText().equalsIgnoreCase("xxx-####")){
+            registerTextFieldPlates.setText("");
+        }
+    }//GEN-LAST:event_registerTextFieldPlatesFocusGained
     
     /**
      * @param args the command line arguments
@@ -493,16 +544,10 @@ public class MainView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> ComboBoxModel;
     private javax.swing.JPanel bttPDVPanel;
     private javax.swing.JPanel bttReportPanel;
     private javax.swing.JPanel bttVehicleRegistrationPanel;
-    private javax.swing.JButton buttonCancel;
     private javax.swing.JButton buttonConsultar;
-    private javax.swing.JButton buttonSave;
-    private javax.swing.JComboBox<String> comboBoxBrand;
-    private javax.swing.JComboBox<String> comboBoxCategory;
-    private javax.swing.JComboBox<String> comboBoxTank;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -521,25 +566,43 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JPanel parent;
+    private javax.swing.JButton registerButtonCancel;
+    private javax.swing.JButton registerButtonSave;
+    private javax.swing.JComboBox<String> registerComboBoxBrand;
+    private javax.swing.JComboBox<String> registerComboBoxCategory;
+    private javax.swing.JComboBox<String> registerComboBoxModel;
+    private javax.swing.JComboBox<String> registerComboBoxTank;
+    private javax.swing.JTextField registerTextFieldKm;
+    private javax.swing.JTextField registerTextFieldPlates;
     private javax.swing.JPanel selected01;
     private javax.swing.JPanel selected2;
     private javax.swing.JPanel selected3;
     private javax.swing.JPanel sidePanel;
-    private javax.swing.JTextField textFieldKm;
-    private javax.swing.JTextField textFieldPlates;
     // End of variables declaration//GEN-END:variables
 
     private void setupComponents() {
-        comboBoxBrand.setModel(new DefaultComboBoxModel(Vehicle.Brand.values()));
-        comboBoxBrand.addItem("<Marca>");
-        comboBoxBrand.setSelectedItem("<Marca>");
+        setupComponentsRegister();
+    }
+    
+    private void setupComponentsRegister(){
+        registerComboBoxBrand.setModel(new DefaultComboBoxModel(Vehicle.Brand.values()));
+        registerComboBoxBrand.addItem("<Marca>");
+        registerComboBoxBrand.setSelectedItem("<Marca>");
         
-        comboBoxCategory.setModel(new DefaultComboBoxModel(Vehicle.Type.values()));
-        comboBoxCategory.addItem("<Categoria>");
-        comboBoxCategory.setSelectedItem("<Categoria>");
+        registerComboBoxCategory.setModel(new DefaultComboBoxModel(Vehicle.Category.values()));
+        registerComboBoxCategory.addItem("<Categoria>");
+        registerComboBoxCategory.setSelectedItem("<Categoria>");
         
-        comboBoxTank.setModel(new DefaultComboBoxModel(Vehicle.Tank.values()));
-        comboBoxTank.addItem("<Tank>");
-        comboBoxTank.setSelectedItem("<Tank>");
+        registerComboBoxTank.setModel(new DefaultComboBoxModel(Vehicle.Tank.values()));
+        registerComboBoxTank.addItem("<Tank>");
+        registerComboBoxTank.setSelectedItem("<Tank>");
+    }
+    
+    private void registerClear() {
+        registerComboBoxBrand.setSelectedItem("<Marca>");
+        registerComboBoxCategory.setSelectedItem("<Categoria>");
+        registerComboBoxTank.setSelectedItem("<Tank>");
+        registerTextFieldKm.setText("0Km");
+        registerTextFieldPlates.setText("xxx-####");
     }
 }

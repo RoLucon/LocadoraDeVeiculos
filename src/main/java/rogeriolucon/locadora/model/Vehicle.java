@@ -15,8 +15,8 @@ public class Vehicle {
         FORD, CHEVROLET, FIAT, AUDI, BMW, JEEP;
     }
     
-    public enum Type {
-        ECO, SEDAN, SUV, PRIMIUN
+    public enum Category {
+        ECO, SEDAN, SUV, PREMIUM;
     }
     
     public enum Tank {
@@ -25,7 +25,7 @@ public class Vehicle {
     
     private int id;
     private Brand brand;
-    private Type type;
+    private Category type;
     private Tank tank;
     private String model;
     private String year;
@@ -50,11 +50,11 @@ public class Vehicle {
         this.brand = brand;
     }
 
-    public Type getType() {
+    public Category getCategory() {
         return type;
     }
 
-    public void setType(Type type) {
+    public void setCategory(Category type) {
         this.type = type;
     }
 

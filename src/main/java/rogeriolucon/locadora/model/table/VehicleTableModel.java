@@ -14,52 +14,57 @@ import rogeriolucon.locadora.model.Vehicle;
  * @author rolucon
  */
 public class VehicleTableModel extends AbstractTableModel {
-    ArrayList<Vehicle> lista = new ArrayList<Vehicle>();
+    ArrayList<Vehicle> list = new ArrayList<Vehicle>();
     
-    String[] colunas = {"ID", "Categoria", "Marca", "Modelo", "Km", "Preço"};
+    String[] column = {"ID", "Categoria", "Marca", "Modelo", "Km", "Preço"};
     
     @Override
     public String getColumnName(int column) {
-        return colunas[column];
+        return this.column[column];
     }
     
     @Override
     public int getRowCount() {
-        return lista.size();
+        return list.size();
     }
 
     @Override
     public int getColumnCount() {
-        return colunas.length;
+        return column.length;
     }
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         switch(columnIndex){
             case 0:
-                return lista.get(rowIndex).getId();
+                return list.get(rowIndex).getId();
             case 1:
-                return lista.get(rowIndex).getType();
+                return list.get(rowIndex).getCategory();
             case 2:
-                return lista.get(rowIndex).getBrand();
+                return list.get(rowIndex).getBrand();
             case 3:
-                return lista.get(rowIndex).getModel();
+                return list.get(rowIndex).getModel();
             case 4:
-                return lista.get(rowIndex).getKm();
+                return list.get(rowIndex).getKm();
             case 5:
-                return lista.get(rowIndex).getPrice();
+                return list.get(rowIndex).getPrice();
         }
         return null;
     }
     
-    public void atualiza(){
+    public void update(){
         fireTableDataChanged();
     }
     
     public void setList(ArrayList<Vehicle> list) {
-        this.lista = list;
-        atualiza();
+        this.list = list;
+        update();
         System.out.println("Atualiza");
         System.out.println(list.size());
+    }
+    
+    public void addVehicle(Vehicle vehicle) {
+        list.add(vehicle);
+        update();
     }
 }

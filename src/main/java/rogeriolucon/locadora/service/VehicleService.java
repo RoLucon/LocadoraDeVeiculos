@@ -19,13 +19,21 @@ public class VehicleService {
         generateList();
     }
     
+    
+    // Testes
+    public boolean addVehicle(Vehicle vehicle){
+        list.add(vehicle);
+        System.out.println("Veiculo add");
+        return true;
+    }
+    
     private void generateList(){
         int id = 0;
         
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < 2; i++) {
             Vehicle aux = new Vehicle();
             aux.setId(id);
-            aux.setType(Vehicle.Type.ECO);
+            aux.setCategory(Vehicle.Category.ECO);
             aux.setBrand(Vehicle.Brand.FORD);
             aux.setModel("Modelo: " + i);
             aux.setKm(i * 5);
