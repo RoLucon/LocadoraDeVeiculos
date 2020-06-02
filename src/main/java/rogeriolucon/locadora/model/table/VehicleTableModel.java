@@ -52,4 +52,14 @@ public class VehicleTableModel extends AbstractTableModel {
         return null;
     }
     
+    public void atualiza(){
+        fireTableDataChanged();
+    }
+    
+    public void setList(ArrayList<Vehicle> list) {
+        this.lista = list;
+        atualiza();
+        System.out.println("Atualiza");
+        System.out.println(list.size());
+    }
 }

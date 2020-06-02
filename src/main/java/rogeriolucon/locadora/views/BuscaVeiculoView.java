@@ -5,6 +5,8 @@
  */
 package rogeriolucon.locadora.views;
 
+import java.util.ArrayList;
+import rogeriolucon.locadora.model.Vehicle;
 import rogeriolucon.locadora.model.table.VehicleTableModel;
 
 /**
@@ -81,7 +83,12 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    public void setList(ArrayList<Vehicle> list){
+        VehicleTableModel aux = (VehicleTableModel) jTable1.getModel();
+        aux.setList(list);
+    }
+    
     /**
      * @param args the command line arguments
      */
