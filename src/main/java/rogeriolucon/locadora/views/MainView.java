@@ -904,7 +904,7 @@ public class MainView extends javax.swing.JFrame {
 
         jLabel38.setText("Tipo de operação");
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aluguel", "Venda" }));
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Retirada", "Devolução", "Venda" }));
 
         javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
         jLayeredPane2.setLayout(jLayeredPane2Layout);
@@ -1061,9 +1061,8 @@ public class MainView extends javax.swing.JFrame {
 
     private void buttonConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonConsultarActionPerformed
         //Abre a view com a tabela de veiculos
-        BuscaVeiculoView view = new BuscaVeiculoView();
+        BuscaVeiculoView view = new BuscaVeiculoView(vehicleService.list);
         view.setVisible(true);
-        view.setList(vehicleService.list);
     }//GEN-LAST:event_buttonConsultarActionPerformed
 
     private void registerTextFieldKmKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_registerTextFieldKmKeyTyped

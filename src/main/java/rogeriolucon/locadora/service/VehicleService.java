@@ -28,11 +28,10 @@ public class VehicleService {
     }
     
     private void generateList(){
-        int id = 0;
         
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 5; i++) {
             Vehicle aux = new Vehicle();
-            aux.setId(id);
+            aux.setId(i - 1);
             aux.setCategory(Vehicle.Category.ECO);
             aux.setBrand(Vehicle.Brand.FORD);
             aux.setModel("Modelo: " + i);
