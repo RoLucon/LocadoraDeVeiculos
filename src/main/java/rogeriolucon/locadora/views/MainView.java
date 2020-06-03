@@ -23,9 +23,10 @@ public class MainView extends javax.swing.JFrame {
     public MainView() {
         initComponents();
         setupComponents(); 
-        jPanelRegister.setVisible(false);
+        jPanelPDV.setVisible(true);
+        jPanelRegister.setVisible(false); //redimensiona Correto
         jPanelSalesReport.setVisible(false); //redimensiona Correto
-        jPanelRentReport.setVisible(true); //redimensiona Correto
+        jPanelRentReport.setVisible(false); //redimensiona Correto
         jPanelFinancialReport.setVisible(false); //nao redmensiona
     }
 
@@ -50,13 +51,13 @@ public class MainView extends javax.swing.JFrame {
         bttVehicleRegistrationPanel = new javax.swing.JPanel();
         selected2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        bttReportPanel = new javax.swing.JPanel();
+        bttRentReportPanel = new javax.swing.JPanel();
         selected3 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        bttReportPanel1 = new javax.swing.JPanel();
+        bttSalesReportPanel = new javax.swing.JPanel();
         selected4 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
-        bttReportPanel2 = new javax.swing.JPanel();
+        bttFinancialReportPanel = new javax.swing.JPanel();
         selected5 = new javax.swing.JPanel();
         jLabel27 = new javax.swing.JLabel();
         jLayeredPane1 = new javax.swing.JLayeredPane();
@@ -117,6 +118,13 @@ public class MainView extends javax.swing.JFrame {
         jFormattedTextField6 = new javax.swing.JFormattedTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
+        jPanelPDV = new javax.swing.JPanel();
+        jLabel33 = new javax.swing.JLabel();
+        jSeparator6 = new javax.swing.JSeparator();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jComboBox5 = new javax.swing.JComboBox<>();
+        jLayeredPane2 = new javax.swing.JLayeredPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1200, 800));
@@ -141,6 +149,11 @@ public class MainView extends javax.swing.JFrame {
         jLabel7.setText("By Rogerio Lucon");
 
         bttPDVPanel.setMaximumSize(new java.awt.Dimension(32767, 64));
+        bttPDVPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bttPDVPanelMouseClicked(evt);
+            }
+        });
 
         selected01.setBackground(new java.awt.Color(0, 0, 0));
         selected01.setMaximumSize(new java.awt.Dimension(8, 64));
@@ -181,6 +194,11 @@ public class MainView extends javax.swing.JFrame {
         );
 
         bttVehicleRegistrationPanel.setMaximumSize(new java.awt.Dimension(32767, 64));
+        bttVehicleRegistrationPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bttVehicleRegistrationPanelMouseClicked(evt);
+            }
+        });
 
         selected2.setBackground(new java.awt.Color(0, 0, 0));
         selected2.setMaximumSize(new java.awt.Dimension(8, 64));
@@ -219,7 +237,12 @@ public class MainView extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        bttReportPanel.setMaximumSize(new java.awt.Dimension(32767, 64));
+        bttRentReportPanel.setMaximumSize(new java.awt.Dimension(32767, 64));
+        bttRentReportPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bttRentReportPanelMouseClicked(evt);
+            }
+        });
 
         selected3.setBackground(new java.awt.Color(0, 0, 0));
         selected3.setMaximumSize(new java.awt.Dimension(8, 64));
@@ -239,28 +262,33 @@ public class MainView extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
         jLabel5.setText("Relatorio de Locação");
 
-        javax.swing.GroupLayout bttReportPanelLayout = new javax.swing.GroupLayout(bttReportPanel);
-        bttReportPanel.setLayout(bttReportPanelLayout);
-        bttReportPanelLayout.setHorizontalGroup(
-            bttReportPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bttReportPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout bttRentReportPanelLayout = new javax.swing.GroupLayout(bttRentReportPanel);
+        bttRentReportPanel.setLayout(bttRentReportPanelLayout);
+        bttRentReportPanelLayout.setHorizontalGroup(
+            bttRentReportPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bttRentReportPanelLayout.createSequentialGroup()
                 .addComponent(selected3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel5)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        bttReportPanelLayout.setVerticalGroup(
-            bttReportPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bttReportPanelLayout.createSequentialGroup()
+        bttRentReportPanelLayout.setVerticalGroup(
+            bttRentReportPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bttRentReportPanelLayout.createSequentialGroup()
                 .addComponent(selected3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bttReportPanelLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bttRentReportPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        bttReportPanel1.setMaximumSize(new java.awt.Dimension(32767, 64));
+        bttSalesReportPanel.setMaximumSize(new java.awt.Dimension(32767, 64));
+        bttSalesReportPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bttSalesReportPanelMouseClicked(evt);
+            }
+        });
 
         selected4.setBackground(new java.awt.Color(0, 0, 0));
         selected4.setMaximumSize(new java.awt.Dimension(8, 64));
@@ -280,28 +308,33 @@ public class MainView extends javax.swing.JFrame {
         jLabel26.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
         jLabel26.setText("Relatorio de Vendas");
 
-        javax.swing.GroupLayout bttReportPanel1Layout = new javax.swing.GroupLayout(bttReportPanel1);
-        bttReportPanel1.setLayout(bttReportPanel1Layout);
-        bttReportPanel1Layout.setHorizontalGroup(
-            bttReportPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bttReportPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout bttSalesReportPanelLayout = new javax.swing.GroupLayout(bttSalesReportPanel);
+        bttSalesReportPanel.setLayout(bttSalesReportPanelLayout);
+        bttSalesReportPanelLayout.setHorizontalGroup(
+            bttSalesReportPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bttSalesReportPanelLayout.createSequentialGroup()
                 .addComponent(selected4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel26)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        bttReportPanel1Layout.setVerticalGroup(
-            bttReportPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bttReportPanel1Layout.createSequentialGroup()
+        bttSalesReportPanelLayout.setVerticalGroup(
+            bttSalesReportPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bttSalesReportPanelLayout.createSequentialGroup()
                 .addComponent(selected4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bttReportPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bttSalesReportPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        bttReportPanel2.setMaximumSize(new java.awt.Dimension(32767, 64));
+        bttFinancialReportPanel.setMaximumSize(new java.awt.Dimension(32767, 64));
+        bttFinancialReportPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bttFinancialReportPanelMouseClicked(evt);
+            }
+        });
 
         selected5.setBackground(new java.awt.Color(0, 0, 0));
         selected5.setMaximumSize(new java.awt.Dimension(8, 64));
@@ -321,22 +354,22 @@ public class MainView extends javax.swing.JFrame {
         jLabel27.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
         jLabel27.setText("Relatorio Financeiro");
 
-        javax.swing.GroupLayout bttReportPanel2Layout = new javax.swing.GroupLayout(bttReportPanel2);
-        bttReportPanel2.setLayout(bttReportPanel2Layout);
-        bttReportPanel2Layout.setHorizontalGroup(
-            bttReportPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bttReportPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout bttFinancialReportPanelLayout = new javax.swing.GroupLayout(bttFinancialReportPanel);
+        bttFinancialReportPanel.setLayout(bttFinancialReportPanelLayout);
+        bttFinancialReportPanelLayout.setHorizontalGroup(
+            bttFinancialReportPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bttFinancialReportPanelLayout.createSequentialGroup()
                 .addComponent(selected5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel27)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        bttReportPanel2Layout.setVerticalGroup(
-            bttReportPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bttReportPanel2Layout.createSequentialGroup()
+        bttFinancialReportPanelLayout.setVerticalGroup(
+            bttFinancialReportPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bttFinancialReportPanelLayout.createSequentialGroup()
                 .addComponent(selected5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bttReportPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bttFinancialReportPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -355,13 +388,13 @@ public class MainView extends javax.swing.JFrame {
                 .addContainerGap())
             .addComponent(bttPDVPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(bttVehicleRegistrationPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(bttReportPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bttRentReportPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(sidePanelLayout.createSequentialGroup()
                 .addGap(99, 99, 99)
                 .addComponent(jLabel7)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(bttReportPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(bttReportPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bttSalesReportPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bttFinancialReportPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         sidePanelLayout.setVerticalGroup(
             sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -379,11 +412,11 @@ public class MainView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bttVehicleRegistrationPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bttReportPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bttRentReportPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bttReportPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bttSalesReportPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bttReportPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bttFinancialReportPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -860,10 +893,75 @@ public class MainView extends javax.swing.JFrame {
                 .addContainerGap(54, Short.MAX_VALUE))
         );
 
+        jPanelPDV.setBackground(new java.awt.Color(218, 230, 242));
+        jPanelPDV.setMinimumSize(new java.awt.Dimension(420, 500));
+
+        jLabel33.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
+        jLabel33.setText("TADS | Ponto de Venda");
+
+        jLabel34.setFont(new java.awt.Font(".SF NS Text", 0, 22)); // NOI18N
+        jLabel34.setText("Relatorio");
+
+        jLabel38.setText("Tipo de operação");
+
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aluguel", "Venda" }));
+
+        javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
+        jLayeredPane2.setLayout(jLayeredPane2Layout);
+        jLayeredPane2Layout.setHorizontalGroup(
+            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jLayeredPane2Layout.setVerticalGroup(
+            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 313, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanelPDVLayout = new javax.swing.GroupLayout(jPanelPDV);
+        jPanelPDV.setLayout(jPanelPDVLayout);
+        jPanelPDVLayout.setHorizontalGroup(
+            jPanelPDVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLayeredPane2)
+            .addGroup(jPanelPDVLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(jPanelPDVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelPDVLayout.createSequentialGroup()
+                        .addGroup(jPanelPDVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jSeparator6)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelPDVLayout.createSequentialGroup()
+                                .addGroup(jPanelPDVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel33, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel34, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 177, Short.MAX_VALUE)))
+                        .addGap(41, 41, 41))
+                    .addGroup(jPanelPDVLayout.createSequentialGroup()
+                        .addGroup(jPanelPDVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel38)
+                            .addComponent(jComboBox5, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(231, 231, 231))))
+        );
+        jPanelPDVLayout.setVerticalGroup(
+            jPanelPDVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelPDVLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel33)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jLabel34)
+                .addGap(26, 26, 26)
+                .addComponent(jLabel38)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
+                .addComponent(jLayeredPane2))
+        );
+
         jLayeredPane1.setLayer(jPanelRegister, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jPanelFinancialReport, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jPanelSalesReport, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jPanelRentReport, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jPanelPDV, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
@@ -873,6 +971,7 @@ public class MainView extends javax.swing.JFrame {
             .addComponent(jPanelFinancialReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanelSalesReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanelRentReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelPDV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jLayeredPane1Layout.setVerticalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -880,6 +979,8 @@ public class MainView extends javax.swing.JFrame {
                 .addComponent(jPanelRegister, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelFinancialReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanelPDV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelSalesReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -987,6 +1088,46 @@ public class MainView extends javax.swing.JFrame {
             registerTextFieldPlates.setText("");
         }
     }//GEN-LAST:event_registerTextFieldPlatesFocusGained
+
+    private void bttFinancialReportPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttFinancialReportPanelMouseClicked
+        jPanelPDV.setVisible(false);
+        jPanelRegister.setVisible(false);
+        jPanelSalesReport.setVisible(false);
+        jPanelRentReport.setVisible(false);
+        jPanelFinancialReport.setVisible(true);
+    }//GEN-LAST:event_bttFinancialReportPanelMouseClicked
+
+    private void bttSalesReportPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttSalesReportPanelMouseClicked
+        jPanelPDV.setVisible(false);
+        jPanelRegister.setVisible(false);
+        jPanelSalesReport.setVisible(true);
+        jPanelRentReport.setVisible(false);
+        jPanelFinancialReport.setVisible(false);
+    }//GEN-LAST:event_bttSalesReportPanelMouseClicked
+
+    private void bttRentReportPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttRentReportPanelMouseClicked
+        jPanelPDV.setVisible(false);
+        jPanelRegister.setVisible(false);
+        jPanelSalesReport.setVisible(false);
+        jPanelRentReport.setVisible(true);
+        jPanelFinancialReport.setVisible(false);
+    }//GEN-LAST:event_bttRentReportPanelMouseClicked
+
+    private void bttVehicleRegistrationPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVehicleRegistrationPanelMouseClicked
+        jPanelPDV.setVisible(false);
+        jPanelRegister.setVisible(true);
+        jPanelSalesReport.setVisible(false);
+        jPanelRentReport.setVisible(false);
+        jPanelFinancialReport.setVisible(false);
+    }//GEN-LAST:event_bttVehicleRegistrationPanelMouseClicked
+
+    private void bttPDVPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttPDVPanelMouseClicked
+        jPanelPDV.setVisible(true);
+        jPanelRegister.setVisible(false);
+        jPanelSalesReport.setVisible(false);
+        jPanelRentReport.setVisible(false);
+        jPanelFinancialReport.setVisible(false);
+    }//GEN-LAST:event_bttPDVPanelMouseClicked
     
     /**
      * @param args the command line arguments
@@ -1024,15 +1165,16 @@ public class MainView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel bttFinancialReportPanel;
     private javax.swing.JPanel bttPDVPanel;
-    private javax.swing.JPanel bttReportPanel;
-    private javax.swing.JPanel bttReportPanel1;
-    private javax.swing.JPanel bttReportPanel2;
+    private javax.swing.JPanel bttRentReportPanel;
+    private javax.swing.JPanel bttSalesReportPanel;
     private javax.swing.JPanel bttVehicleRegistrationPanel;
     private javax.swing.JButton buttonConsultar;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JFormattedTextField jFormattedTextField2;
     private javax.swing.JFormattedTextField jFormattedTextField3;
@@ -1065,6 +1207,9 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1072,7 +1217,9 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JPanel jPanelFinancialReport;
+    private javax.swing.JPanel jPanelPDV;
     private javax.swing.JPanel jPanelRegister;
     private javax.swing.JPanel jPanelRentReport;
     private javax.swing.JPanel jPanelSalesReport;
@@ -1084,6 +1231,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
