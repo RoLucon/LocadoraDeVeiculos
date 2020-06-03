@@ -469,16 +469,16 @@ public class MainView extends javax.swing.JFrame {
         jPanelReport.setMinimumSize(new java.awt.Dimension(420, 500));
 
         jLabel14.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
-        jLabel14.setText("TADS | Relatorio");
+        jLabel14.setText("TADS | Locações");
 
         jLabel16.setFont(new java.awt.Font(".SF NS Text", 0, 22)); // NOI18N
-        jLabel16.setText("Operações");
+        jLabel16.setText("Relatorio");
 
         jLabel17.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
         jLabel17.setText("Tipo:");
 
         jComboBox1.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ambos", "Aluguel", "Venda", " " }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ambos", "Aberto", "Encerrado", " " }));
 
         jLabel18.setText("Periodo:");
 
@@ -514,14 +514,9 @@ public class MainView extends javax.swing.JFrame {
                     .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelReportLayout.createSequentialGroup()
                         .addGroup(jPanelReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanelReportLayout.createSequentialGroup()
-                                .addGroup(jPanelReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel17)
-                                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(3, 3, 3)))
-                        .addGap(32, 32, 32)
+                            .addComponent(jLabel17)
+                            .addComponent(jComboBox1, 0, 109, Short.MAX_VALUE))
+                        .addGap(35, 35, 35)
                         .addGroup(jPanelReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelReportLayout.createSequentialGroup()
                                 .addComponent(jFormattedTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
@@ -529,7 +524,12 @@ public class MainView extends javax.swing.JFrame {
                                 .addComponent(jLabel19)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jFormattedTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE))
-                            .addComponent(jLabel18))))
+                            .addComponent(jLabel18)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelReportLayout.createSequentialGroup()
+                        .addGroup(jPanelReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(32, 32, 32))
         );
         jPanelReportLayout.setVerticalGroup(

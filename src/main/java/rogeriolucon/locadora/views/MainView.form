@@ -736,17 +736,10 @@
                               <Component id="jSeparator3" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel16" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="jLabel14" alignment="1" max="32767" attributes="0"/>
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jComboBox1" alignment="0" max="32767" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jComboBox1" alignment="0" pref="109" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
                                           <Component id="jFormattedTextField1" pref="91" max="32767" attributes="0"/>
@@ -757,6 +750,13 @@
                                       </Group>
                                       <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="jLabel14" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
+                                      <Component id="jLabel16" alignment="0" min="-2" pref="157" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
@@ -797,7 +797,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name=".SF NS Text" size="14" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="TADS | Relatorio"/>
+                    <Property name="text" type="java.lang.String" value="TADS | Loca&#xe7;&#xf5;es"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JSeparator" name="jSeparator3">
@@ -807,7 +807,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name=".SF NS Text" size="22" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Opera&#xe7;&#xf5;es"/>
+                    <Property name="text" type="java.lang.String" value="Relatorio"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel17">
@@ -826,8 +826,8 @@
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
                         <StringItem index="0" value="Ambos"/>
-                        <StringItem index="1" value="Aluguel"/>
-                        <StringItem index="2" value="Venda"/>
+                        <StringItem index="1" value="Aberto"/>
+                        <StringItem index="2" value="Encerrado"/>
                         <StringItem index="3" value=" "/>
                       </StringArray>
                     </Property>
