@@ -91,7 +91,7 @@ public class Vehicle {
     }
 
     public double getPrice() {
-        return km;
+        return price;
     }
 
     public void setPrice(double price) {

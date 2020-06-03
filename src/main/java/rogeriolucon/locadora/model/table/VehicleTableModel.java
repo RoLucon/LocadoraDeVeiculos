@@ -59,8 +59,6 @@ public class VehicleTableModel extends AbstractTableModel {
     public void setList(ArrayList<Vehicle> list) {
         this.list = list;
         update();
-        System.out.println("Atualiza");
-        System.out.println(list.size());
     }
     
     public void addVehicle(Vehicle vehicle) {

@@ -23,7 +23,6 @@ public class VehicleService {
     // Testes
     public boolean addVehicle(Vehicle vehicle){
         list.add(vehicle);
-        System.out.println("Veiculo add");
         return true;
     }
     
@@ -31,12 +30,12 @@ public class VehicleService {
         
         for (int i = 0; i < 5; i++) {
             Vehicle aux = new Vehicle();
-            aux.setId(i - 1);
+            aux.setId(i);
             aux.setCategory(Vehicle.Category.ECO);
             aux.setBrand(Vehicle.Brand.FORD);
             aux.setModel("Modelo: " + i);
             aux.setKm(i * 5);
-            aux.setPrice(i * 100);
+            aux.setPrice(1000.0 * i);
             list.add(aux);
         }
     }

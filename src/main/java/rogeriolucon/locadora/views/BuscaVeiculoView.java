@@ -5,7 +5,11 @@
  */
 package rogeriolucon.locadora.views;
 
+import java.awt.event.MouseAdapter;
 import java.util.ArrayList;
+import java.util.List;
+import javax.swing.DefaultComboBoxModel;
+import rogeriolucon.locadora.SliderPopupListener;
 import rogeriolucon.locadora.model.Vehicle;
 import rogeriolucon.locadora.model.table.VehicleTableModel;
 
@@ -16,6 +20,7 @@ import rogeriolucon.locadora.model.table.VehicleTableModel;
 public class BuscaVeiculoView extends javax.swing.JFrame {
     private ArrayList<Vehicle> mainList;
     private VehicleTableModel tableModel;
+    private static final String allBrands = "TODAS";
     /**
      * Creates new form BuscaVeiculoView
      */
@@ -24,6 +29,23 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
         initComponents();
         this.tableModel = (VehicleTableModel) jTable1.getModel();
         this.tableModel.setList(mainList);
+        
+        comboBoxBrand.setModel(new DefaultComboBoxModel(Vehicle.Brand.values()));
+        comboBoxBrand.addItem(allBrands);
+        comboBoxBrand.setSelectedItem(allBrands);
+        
+        comboBoxCategoty.setModel(new DefaultComboBoxModel(Vehicle.Category.values()));
+        comboBoxCategoty.addItem(allBrands);
+        comboBoxCategoty.setSelectedItem(allBrands);
+        
+        MouseAdapter ma = new SliderPopupListener();
+        sliderPrice.addMouseMotionListener(ma);
+        sliderPrice.addMouseListener(ma);
+        sliderPrice.setMajorTickSpacing(10);
+        sliderPrice.setMinorTickSpacing(5);
+        sliderPrice.setPaintTicks(true);
+        sliderPrice.setValue(sliderPrice.getMaximum());
+//        sliderPrice.setMaximum(100); set max value
     }
 
     /**
@@ -39,12 +61,15 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jSlider1 = new javax.swing.JSlider();
+        comboBoxBrand = new javax.swing.JComboBox<>();
+        comboBoxCategoty = new javax.swing.JComboBox<>();
+        sliderPrice = new javax.swing.JSlider();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        comboBoxModel = new javax.swing.JComboBox<>();
+        buttonClear = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(550, 250));
@@ -57,61 +82,91 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Consulta de Veiculos ");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.setMinimumSize(new java.awt.Dimension(120, 22));
-        jComboBox1.setPreferredSize(new java.awt.Dimension(120, 22));
-        jComboBox1.addItemListener(new java.awt.event.ItemListener() {
+        comboBoxBrand.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboBoxBrand.setMinimumSize(new java.awt.Dimension(120, 22));
+        comboBoxBrand.setPreferredSize(new java.awt.Dimension(120, 22));
+        comboBoxBrand.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                jComboBox1ItemStateChanged(evt);
+                comboBoxBrandItemStateChanged(evt);
             }
         });
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox3.setMinimumSize(new java.awt.Dimension(160, 22));
-        jComboBox3.setPreferredSize(new java.awt.Dimension(160, 22));
+        comboBoxCategoty.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboBoxCategoty.setMinimumSize(new java.awt.Dimension(160, 22));
+        comboBoxCategoty.setPreferredSize(new java.awt.Dimension(160, 22));
+        comboBoxCategoty.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboBoxCategotyItemStateChanged(evt);
+            }
+        });
 
-        jSlider1.setPreferredSize(new java.awt.Dimension(160, 11));
+        sliderPrice.setPreferredSize(new java.awt.Dimension(160, 11));
+        sliderPrice.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                sliderPriceStateChanged(evt);
+            }
+        });
+        sliderPrice.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                sliderPriceMouseReleased(evt);
+            }
+        });
 
         jLabel2.setText("Marca:");
 
-        jLabel3.setText("Modelo");
+        jLabel3.setText("Categoria:");
 
         jLabel4.setText("Preço");
+
+        jLabel5.setText("Modelo:");
+
+        comboBoxModel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        buttonClear.setText("Limpar");
+        buttonClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonClearActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane1)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(comboBoxBrand, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGap(23, 23, 23))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel2)
                                         .addGap(132, 132, 132)))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(comboBoxCategoty, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGap(23, 23, 23))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel3)
-                                        .addGap(165, 165, 165)))
+                                        .addGap(165, 165, 165))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel4)
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(jSlider1, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE))))
-                        .addGap(15, 15, 15))))
+                                    .addComponent(jLabel5)
+                                    .addComponent(comboBoxModel, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(23, 23, 23)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(sliderPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(buttonClear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(15, 15, 15))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,9 +181,15 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(comboBoxBrand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(comboBoxCategoty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sliderPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboBoxModel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonClear))
                 .addGap(16, 16, 16)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
                 .addContainerGap())
@@ -150,14 +211,48 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox1ItemStateChanged
-        System.out.println("Value Change");
-    }//GEN-LAST:event_jComboBox1ItemStateChanged
+    private void comboBoxBrandItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBoxBrandItemStateChanged
+        filter();
+    }//GEN-LAST:event_comboBoxBrandItemStateChanged
+
+    private void sliderPriceStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sliderPriceStateChanged
+        
+    }//GEN-LAST:event_sliderPriceStateChanged
+
+    private void sliderPriceMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sliderPriceMouseReleased
+        filter();
+    }//GEN-LAST:event_sliderPriceMouseReleased
+
+    private void comboBoxCategotyItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBoxCategotyItemStateChanged
+        filter();
+    }//GEN-LAST:event_comboBoxCategotyItemStateChanged
+
+    private void buttonClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonClearActionPerformed
+        comboBoxBrand.setSelectedItem(allBrands);
+        comboBoxCategoty.setSelectedItem(allBrands);
+        sliderPrice.setValue(sliderPrice.getMaximum());
+        filter();
+    }//GEN-LAST:event_buttonClearActionPerformed
     
     private void setList(ArrayList<Vehicle> list){
         tableModel.setList(list);
     }
     
+    private void filter(){
+        ArrayList<Vehicle> list = new ArrayList<>();
+        for (Vehicle vehicle : mainList) {
+            if (vehicle.getBrand() == comboBoxBrand.getSelectedItem() 
+                    || allBrands == comboBoxBrand.getSelectedItem()) {
+                if(vehicle.getCategory() == comboBoxCategoty.getSelectedItem()
+                        || allBrands == comboBoxCategoty.getSelectedItem()){
+                    if(vehicle.getPrice() <= sliderPrice.getValue() * 100) {
+                        list.add(vehicle);
+                    }
+                }
+            }
+        }
+        setList(list);
+    }
     /**
      * @param args the command line arguments
      */
@@ -194,15 +289,18 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JButton buttonClear;
+    private javax.swing.JComboBox<String> comboBoxBrand;
+    private javax.swing.JComboBox<String> comboBoxCategoty;
+    private javax.swing.JComboBox<String> comboBoxModel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSlider jSlider1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JSlider sliderPrice;
     // End of variables declaration//GEN-END:variables
 }
