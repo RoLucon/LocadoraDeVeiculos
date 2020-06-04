@@ -7,16 +7,17 @@ package rogeriolucon.locadora.model.table;
 
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
+import rogeriolucon.locadora.model.RentOperation;
 import rogeriolucon.locadora.model.Vehicle;
 
 /**
  *
  * @author rolucon
  */
-public class VehicleTableModel extends AbstractTableModel {
-    ArrayList<Vehicle> list = new ArrayList<Vehicle>();
+public class RentTableModel extends AbstractTableModel {
+    ArrayList<RentOperation> list = new ArrayList<>();
     
-    String[] column = {"ID", "Categoria", "Marca", "Modelo", "Km", "Preço"};
+    String[] column = {"ID", "Categoria", "Marca", "Modelo", "Km", "Preço", "Inicio","Termino"};
     
     @Override
     public String getColumnName(int column) {
@@ -39,15 +40,19 @@ public class VehicleTableModel extends AbstractTableModel {
             case 0:
                 return list.get(rowIndex).getId();
             case 1:
-                return list.get(rowIndex).getCategory();
+                return list.get(rowIndex).getVehicle().getCategory();
             case 2:
-                return list.get(rowIndex).getBrand();
+                return list.get(rowIndex).getVehicle().getBrand();
             case 3:
-                return list.get(rowIndex).getModel();
+                return list.get(rowIndex).getVehicle().getModel();
             case 4:
                 return list.get(rowIndex).getKm();
             case 5:
-                return list.get(rowIndex).getPrice();
+                return list.get(rowIndex).getValue();
+            case 6:
+                return list.get(rowIndex).getDate();
+            case 7:
+                return list.get(rowIndex).getWaxedDate();
         }
         return null;
     }
@@ -56,16 +61,16 @@ public class VehicleTableModel extends AbstractTableModel {
         fireTableDataChanged();
     }
     
-    public void setList(ArrayList<Vehicle> list) {
+    public void setList(ArrayList<RentOperation> list) {
         this.list = list;
         update();
     }
     
-    public Vehicle getAtIndex(int index){
+    public RentOperation getAtIndex(int index){
         return list.get(index);
     }
     
-    public void addVehicle(Vehicle vehicle) {
+    public void addVehicle(RentOperation vehicle) {
         list.add(vehicle);
         update();
     }

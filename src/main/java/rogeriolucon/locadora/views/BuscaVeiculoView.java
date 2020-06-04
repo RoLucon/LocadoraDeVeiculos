@@ -9,6 +9,7 @@ import java.awt.event.MouseAdapter;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.table.AbstractTableModel;
 import rogeriolucon.locadora.SliderPopupListener;
 import rogeriolucon.locadora.model.Vehicle;
 import rogeriolucon.locadora.model.table.VehicleTableModel;
@@ -21,33 +22,26 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
     private ArrayList<Vehicle> mainList;
     private VehicleTableModel tableModel;
     private static final String allBrands = "TODAS";
+    private MainView parent;
     /**
      * Creates new form BuscaVeiculoView
      */
-    public BuscaVeiculoView(ArrayList<Vehicle> vehicleList) {
+    public BuscaVeiculoView(ArrayList<Vehicle> vehicleList, MainView parent) {
+        this.parent = parent;
         this.mainList = vehicleList;
         initComponents();
-        this.tableModel = (VehicleTableModel) jTable1.getModel();
-        this.tableModel.setList(mainList);
-        
-        comboBoxBrand.setModel(new DefaultComboBoxModel(Vehicle.Brand.values()));
-        comboBoxBrand.addItem(allBrands);
-        comboBoxBrand.setSelectedItem(allBrands);
-        
-        comboBoxCategoty.setModel(new DefaultComboBoxModel(Vehicle.Category.values()));
-        comboBoxCategoty.addItem(allBrands);
-        comboBoxCategoty.setSelectedItem(allBrands);
-        
-        MouseAdapter ma = new SliderPopupListener();
-        sliderPrice.addMouseMotionListener(ma);
-        sliderPrice.addMouseListener(ma);
-        sliderPrice.setMajorTickSpacing(10);
-        sliderPrice.setMinorTickSpacing(5);
-        sliderPrice.setPaintTicks(true);
-        sliderPrice.setValue(sliderPrice.getMaximum());
+        init();
 //        sliderPrice.setMaximum(100); set max value
     }
 
+    public BuscaVeiculoView(ArrayList<Vehicle> vehicleList) {
+        this.mainList = vehicleList;
+        initComponents();
+        init();
+    }
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -76,6 +70,11 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(550, 600));
 
         jTable1.setModel(new VehicleTableModel());
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jLabel1.setFont(new java.awt.Font(".SF NS Text", 0, 20)); // NOI18N
@@ -233,6 +232,17 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
         sliderPrice.setValue(sliderPrice.getMaximum());
         filter();
     }//GEN-LAST:event_buttonClearActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+
+        if(parent != null){
+            AbstractTableModel model = (AbstractTableModel) jTable1.getModel();
+            int index = jTable1.getSelectedRow();
+            Vehicle vehicle = tableModel.getAtIndex(index);
+            parent.setSelectedVehicle(vehicle);
+        }
+
+    }//GEN-LAST:event_jTable1MouseClicked
     
     private void setList(ArrayList<Vehicle> list){
         tableModel.setList(list);
@@ -283,7 +293,7 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BuscaVeiculoView(null).setVisible(true);
+                new BuscaVeiculoView(null, null).setVisible(true);
             }
         });
     }
@@ -303,4 +313,24 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JSlider sliderPrice;
     // End of variables declaration//GEN-END:variables
+    private void init(){
+        this.tableModel = (VehicleTableModel) jTable1.getModel();
+        this.tableModel.setList(mainList);
+        
+        comboBoxBrand.setModel(new DefaultComboBoxModel(Vehicle.Brand.values()));
+        comboBoxBrand.addItem(allBrands);
+        comboBoxBrand.setSelectedItem(allBrands);
+        
+        comboBoxCategoty.setModel(new DefaultComboBoxModel(Vehicle.Category.values()));
+        comboBoxCategoty.addItem(allBrands);
+        comboBoxCategoty.setSelectedItem(allBrands);
+        
+        MouseAdapter ma = new SliderPopupListener();
+        sliderPrice.addMouseMotionListener(ma);
+        sliderPrice.addMouseListener(ma);
+        sliderPrice.setMajorTickSpacing(10);
+        sliderPrice.setMinorTickSpacing(5);
+        sliderPrice.setPaintTicks(true);
+        sliderPrice.setValue(sliderPrice.getMaximum());
+    }
 }

@@ -13,10 +13,66 @@ import rogeriolucon.locadora.model.Vehicle.Tank;
  * @author rolucon
  */
 public class Operation {
-    public enum Type {COMPRA, VENDA, RETIRADA, DEVOLUÇÃO;}
+    private int id;
     private Vehicle vehicle;
     private Date date;
     private double value;
     private double km;
     private Tank tank;
+
+    protected Operation() {
+        
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    
+    
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public double getValue() {
+        return value;
+    }
+
+    public void setValue(double value) {
+        this.value = value;
+    }
+
+    public double getKm() {
+        return km;
+    }
+
+    public void setKm(double km) {
+        this.km = km;
+    }
+
+    public Tank getTank() {
+        return tank;
+    }
+
+    public void setTank(Tank tank) {
+        this.tank = tank;
+    }
+    
+    
 }
