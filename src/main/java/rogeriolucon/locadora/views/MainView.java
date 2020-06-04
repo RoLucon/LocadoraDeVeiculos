@@ -6,6 +6,14 @@
 package rogeriolucon.locadora.views;
 
 import java.awt.event.KeyEvent;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import rogeriolucon.locadora.model.RentOperation;
@@ -18,6 +26,7 @@ import rogeriolucon.locadora.service.VehicleService;
  * @author rolucon
  */
 public class MainView extends javax.swing.JFrame {
+    public static final String MY_DATA_F = "dd/MM/uuu";
     private VehicleService vehicleService = new VehicleService();
     private Vehicle selectedVehicle = null;
     /**
@@ -1365,15 +1374,19 @@ public class MainView extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonRentShowVehiclesActionPerformed
 
     private void buttonRentConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRentConfirmActionPerformed
-        RentOperation rent = new RentOperation();
-        rent.setVehicle(selectedVehicle);
-        rent.setKm(Double.parseDouble(textFieldRentKm.getText()));
-        rent.setTank((Vehicle.Tank)comboBoxRentTank.getSelectedItem());
-        //Passar as datas e os valores
-        if(vehicleService.rentVehicle(rent)){
-            RentTableModel model = (RentTableModel) jTableRentReport.getModel();
-            model.setList(vehicleService.getRenteds());
-        }
+            RentOperation rent = new RentOperation();
+            rent.setVehicle(selectedVehicle);
+            rent.setKm(Double.parseDouble(textFieldRentKm.getText()));
+            rent.setTank((Vehicle.Tank)comboBoxRentTank.getSelectedItem());
+            rent.setDate(LocalDate.parse(formattedTextFieldRentInitDate.getText(),
+                    DateTimeFormatter.ofPattern(MY_DATA_F)));
+            rent.setExpirationDate(LocalDate.parse(formattedTextFieldRentEndDate.getText(),
+                    DateTimeFormatter.ofPattern(MY_DATA_F)));
+            //Passar as datas e os valores
+            if(vehicleService.rentVehicle(rent)){
+                RentTableModel model = (RentTableModel) jTableRentReport.getModel();
+                model.setList(vehicleService.getRenteds());
+            }
     }//GEN-LAST:event_buttonRentConfirmActionPerformed
 
     private void textFieldRentValueTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldRentValueTotalActionPerformed

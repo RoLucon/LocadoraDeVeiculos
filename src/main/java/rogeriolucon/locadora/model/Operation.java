@@ -5,6 +5,7 @@
  */
 package rogeriolucon.locadora.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 import rogeriolucon.locadora.model.Vehicle.Tank;
 
@@ -15,7 +16,7 @@ import rogeriolucon.locadora.model.Vehicle.Tank;
 public class Operation {
     private int id;
     private Vehicle vehicle;
-    private Date date;
+    private LocalDate date;
     private double value;
     private double km;
     private Tank tank;
@@ -42,11 +43,11 @@ public class Operation {
         this.vehicle = vehicle;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

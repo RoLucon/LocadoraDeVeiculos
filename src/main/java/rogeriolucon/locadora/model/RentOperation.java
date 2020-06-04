@@ -5,7 +5,7 @@
  */
 package rogeriolucon.locadora.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  *
@@ -14,8 +14,8 @@ import java.util.Date;
 public class RentOperation extends Operation {
         public enum Type {RETIRADA, DEVOLUÇÃO;}
         private Type type;
-        private Date expirationDate;
-        private Date waxedDate;
+        private LocalDate expirationDate;
+        private LocalDate waxedDate;
         private boolean contractOpen; 
 
     public Type getType() {
@@ -26,19 +26,19 @@ public class RentOperation extends Operation {
         this.type = type;
     }
 
-    public Date getExpirationDate() {
+    public LocalDate getExpirationDate() {
         return expirationDate;
     }
 
-    public void setExpirationDate(Date expirationDate) {
+    public void setExpirationDate(LocalDate expirationDate) {
         this.expirationDate = expirationDate;
     }
 
-    public Date getWaxedDate() {
+    public LocalDate getWaxedDate() {
         return waxedDate;
     }
 
-    public void setWaxedDate(Date waxedDate) {
+    public void setWaxedDate(LocalDate waxedDate) {
         this.waxedDate = waxedDate;
     }
 

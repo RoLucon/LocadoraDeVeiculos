@@ -17,7 +17,8 @@ import rogeriolucon.locadora.model.Vehicle;
 public class RentTableModel extends AbstractTableModel {
     ArrayList<RentOperation> list = new ArrayList<>();
     
-    String[] column = {"ID", "Categoria", "Marca", "Modelo", "Km", "Preço", "Inicio","Termino"};
+    String[] column = {"ID", "Categoria", "Marca", "Modelo", "Km", "Preço",
+        "Inicio","Validade","Devolvido"};
     
     @Override
     public String getColumnName(int column) {
@@ -52,6 +53,8 @@ public class RentTableModel extends AbstractTableModel {
             case 6:
                 return list.get(rowIndex).getDate();
             case 7:
+                return list.get(rowIndex).getExpirationDate();
+            case 8:
                 return list.get(rowIndex).getWaxedDate();
         }
         return null;
