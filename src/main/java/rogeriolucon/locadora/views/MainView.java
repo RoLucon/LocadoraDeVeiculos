@@ -926,11 +926,22 @@ public class MainView extends javax.swing.JFrame {
 
         jLabel35.setText("CPF do Cliente:");
 
-        textFieldRentClient.setText("jTextField2");
+        textFieldRentClient.setText("cpf");
+        textFieldRentClient.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                textFieldRentClientFocusGained(evt);
+            }
+        });
+        textFieldRentClient.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textFieldRentClientKeyTyped(evt);
+            }
+        });
 
         jLabel36.setText("Modelo:");
 
-        textFieldRentModel.setText("jTextField3");
+        textFieldRentModel.setEditable(false);
+        textFieldRentModel.setText("Selecione um veiculo");
 
         buttonRentShowVehicles.setText("Veiculo");
         buttonRentShowVehicles.addActionListener(new java.awt.event.ActionListener() {
@@ -941,15 +952,20 @@ public class MainView extends javax.swing.JFrame {
 
         jLabel37.setText("Marca:");
 
-        textFieldRentBrand.setText("jTextField4");
+        textFieldRentBrand.setEditable(false);
 
-        textFieldRentCategory.setText("jTextField5");
+        textFieldRentCategory.setEditable(false);
 
         jLabel39.setText("Categoria:");
 
         jLabel40.setText("Kilometragem:");
 
         textFieldRentKm.setText("jTextField6");
+        textFieldRentKm.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textFieldRentKmKeyTyped(evt);
+            }
+        });
 
         comboBoxRentTank.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -957,17 +973,28 @@ public class MainView extends javax.swing.JFrame {
 
         jLabel42.setText("Data de Inicio:");
 
-        formattedTextFieldRentInitDate.setText("jFormattedTextField7");
+        formattedTextFieldRentInitDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        formattedTextFieldRentInitDate.setText("12/06/2020");
 
-        formattedTextFieldRentEndDate.setText("jFormattedTextField8");
+        formattedTextFieldRentEndDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        formattedTextFieldRentEndDate.setText("12/06/2021");
 
         jLabel43.setText("Data de Entrega:");
 
         jLabel44.setText("Valor da diaria:");
 
-        textFieldRentValueDay.setText("jTextField7");
+        textFieldRentValueDay.setEditable(false);
+        textFieldRentValueDay.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textFieldRentValueDay.setText("####");
 
-        textFieldRentValueTotal.setText("jTextField8");
+        textFieldRentValueTotal.setEditable(false);
+        textFieldRentValueTotal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textFieldRentValueTotal.setText("####");
+        textFieldRentValueTotal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldRentValueTotalActionPerformed(evt);
+            }
+        });
 
         jLabel45.setText("Valor Total:");
 
@@ -1101,7 +1128,7 @@ public class MainView extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonRentConfirm)
                     .addComponent(buttonRentCancel))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         jScrollPane4.setViewportView(jPanel1);
@@ -1117,7 +1144,7 @@ public class MainView extends javax.swing.JFrame {
         jLayeredPane2Layout.setVerticalGroup(
             jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
@@ -1348,6 +1375,28 @@ public class MainView extends javax.swing.JFrame {
             model.setList(vehicleService.getRenteds());
         }
     }//GEN-LAST:event_buttonRentConfirmActionPerformed
+
+    private void textFieldRentValueTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldRentValueTotalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldRentValueTotalActionPerformed
+
+    private void textFieldRentClientFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldRentClientFocusGained
+        textFieldRentClient.setText("");
+    }//GEN-LAST:event_textFieldRentClientFocusGained
+
+    private void textFieldRentClientKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textFieldRentClientKeyTyped
+        char c = evt.getKeyChar();
+        if (((c < '0') || (c > '9')) && (c != KeyEvent.VK_BACK_SPACE)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_textFieldRentClientKeyTyped
+
+    private void textFieldRentKmKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textFieldRentKmKeyTyped
+        char c = evt.getKeyChar();
+        if (((c < '0') || (c > '9')) && (c != KeyEvent.VK_BACK_SPACE)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_textFieldRentKmKeyTyped
     
     /**
      * @param args the command line arguments
