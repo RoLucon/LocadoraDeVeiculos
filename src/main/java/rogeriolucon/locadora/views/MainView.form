@@ -1510,712 +1510,401 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPaneRent" alignment="1" pref="420" max="32767" attributes="0"/>
-                          <Component id="jScrollPaneDevolution" alignment="1" pref="420" max="32767" attributes="0"/>
+                          <Component id="jPanel3" alignment="1" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jScrollPaneRent" pref="154" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPaneDevolution" pref="153" max="32767" attributes="0"/>
-                              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                              <Component id="jPanel3" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Container class="javax.swing.JScrollPane" name="jScrollPaneRent">
+                    <Container class="javax.swing.JPanel" name="jPanel3">
 
-                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <Layout>
+                        <DimensionLayout dim="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                  <Component id="jScrollPaneRent" alignment="1" pref="420" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                        <DimensionLayout dim="1">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                  <Component id="jScrollPaneRent" pref="295" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                      </Layout>
                       <SubComponents>
-                        <Container class="javax.swing.JPanel" name="jPanel1">
+                        <Container class="javax.swing.JScrollPane" name="jScrollPaneRent">
 
-                          <Layout>
-                            <DimensionLayout dim="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                                      <Component id="jSeparator7" max="32767" attributes="0"/>
-                                      <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="buttonRentShowVehicles" alignment="0" max="32767" attributes="0"/>
-                                          <Group type="102" attributes="0">
-                                              <Component id="buttonRentConfirm" max="32767" attributes="0"/>
-                                              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                                              <Component id="buttonRentCancel" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Component id="textFieldRentKm" max="32767" attributes="0"/>
-                                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                              <Component id="comboBoxRentTank" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Component id="textFieldRentClient" alignment="0" max="32767" attributes="0"/>
-                                          <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                          <SubComponents>
+                            <Container class="javax.swing.JPanel" name="jPanel1">
+
+                              <Layout>
+                                <DimensionLayout dim="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                                          <Component id="jSeparator7" max="32767" attributes="0"/>
+                                          <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="buttonRentShowVehicles" alignment="0" max="32767" attributes="0"/>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="buttonRentConfirm" max="32767" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                                                  <Component id="buttonRentCancel" max="32767" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="textFieldRentKm" max="32767" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                                                  <Component id="comboBoxRentTank" max="32767" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                              </Group>
+                                              <Component id="textFieldRentClient" alignment="0" max="32767" attributes="0"/>
+                                              <Group type="102" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Group type="102" attributes="0">
+                                                              <Component id="textFieldRentBrand" max="32767" attributes="0"/>
+                                                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Component id="jLabel37" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                                          </Group>
+                                                      </Group>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="jLabel40" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="textFieldRentCategory" max="32767" attributes="0"/>
+                                                      <Group type="102" attributes="0">
+                                                          <Group type="103" groupAlignment="0" attributes="0">
+                                                              <Component id="jLabel41" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                              </Group>
+                                              <Group type="102" attributes="0">
                                                   <Group type="103" groupAlignment="0" attributes="0">
                                                       <Group type="102" attributes="0">
-                                                          <Component id="textFieldRentBrand" max="32767" attributes="0"/>
+                                                          <Component id="formattedTextFieldRentInitDate" max="32767" attributes="0"/>
                                                           <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                                                       </Group>
                                                       <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="jLabel37" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                                          <Component id="jLabel42" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="jLabel40" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="textFieldRentCategory" max="32767" attributes="0"/>
-                                                  <Group type="102" attributes="0">
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jLabel41" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Group type="102" attributes="0">
+                                                          <Component id="jLabel43" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                                       </Group>
-                                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                      <Component id="formattedTextFieldRentEndDate" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="formattedTextFieldRentInitDate" max="32767" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                                              <Group type="102" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="textFieldRentValueDay" min="-2" pref="149" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="jLabel42" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="jLabel43" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                                  </Group>
-                                                  <Component id="formattedTextFieldRentEndDate" max="32767" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="textFieldRentValueDay" min="-2" pref="149" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="jLabel45" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                                  </Group>
-                                                  <Component id="textFieldRentValueTotal" max="32767" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="textFieldRentModel" max="32767" attributes="0"/>
-                                                      <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Group type="102" attributes="0">
+                                                          <Component id="jLabel45" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                      </Group>
+                                                      <Component id="textFieldRentValueTotal" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Group type="102" attributes="0">
+                                                          <Component id="textFieldRentModel" max="32767" attributes="0"/>
+                                                          <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
                                                       <Component id="jLabel56" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace max="32767" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="textFieldRentPlate" pref="0" max="32767" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                            </DimensionLayout>
-                            <DimensionLayout dim="1">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="textFieldRentClient" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                      <Component id="jSeparator7" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                      <Component id="buttonRentShowVehicles" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel56" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="textFieldRentModel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="textFieldRentPlate" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel39" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="textFieldRentBrand" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="textFieldRentCategory" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel40" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel41" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="textFieldRentKm" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="comboBoxRentTank" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel43" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="formattedTextFieldRentInitDate" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="formattedTextFieldRentEndDate" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel45" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="textFieldRentValueDay" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="textFieldRentValueTotal" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="buttonRentConfirm" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="buttonRentCancel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace pref="43" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                            </DimensionLayout>
-                          </Layout>
-                          <SubComponents>
-                            <Component class="javax.swing.JLabel" name="jLabel35">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="CPF do Cliente:"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JTextField" name="textFieldRentClient">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="cpf"/>
-                              </Properties>
-                              <Events>
-                                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="textFieldRentClientFocusGained"/>
-                                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="textFieldRentClientKeyTyped"/>
-                              </Events>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel36">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Modelo:"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JTextField" name="textFieldRentModel">
-                              <Properties>
-                                <Property name="editable" type="boolean" value="false"/>
-                                <Property name="text" type="java.lang.String" value="Selecione um veiculo"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JButton" name="buttonRentShowVehicles">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Veiculo"/>
-                              </Properties>
-                              <Events>
-                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonRentShowVehiclesActionPerformed"/>
-                              </Events>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel37">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Marca:"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JTextField" name="textFieldRentBrand">
-                              <Properties>
-                                <Property name="editable" type="boolean" value="false"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JTextField" name="textFieldRentCategory">
-                              <Properties>
-                                <Property name="editable" type="boolean" value="false"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel39">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Categoria:"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel40">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Kilometragem:"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JTextField" name="textFieldRentKm">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="jTextField6"/>
-                              </Properties>
-                              <Events>
-                                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="textFieldRentKmKeyTyped"/>
-                              </Events>
-                            </Component>
-                            <Component class="javax.swing.JComboBox" name="comboBoxRentTank">
-                              <Properties>
-                                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                  <StringArray count="4">
-                                    <StringItem index="0" value="Item 1"/>
-                                    <StringItem index="1" value="Item 2"/>
-                                    <StringItem index="2" value="Item 3"/>
-                                    <StringItem index="3" value="Item 4"/>
-                                  </StringArray>
-                                </Property>
-                              </Properties>
-                              <AuxValues>
-                                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                              </AuxValues>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel41">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Tanque"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel42">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Data de Inicio:"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JFormattedTextField" name="formattedTextFieldRentInitDate">
-                              <Properties>
-                                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-                                  <Format subtype="1" type="1"/>
-                                </Property>
-                                <Property name="text" type="java.lang.String" value="12/06/2020"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JFormattedTextField" name="formattedTextFieldRentEndDate">
-                              <Properties>
-                                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-                                  <Format subtype="1" type="1"/>
-                                </Property>
-                                <Property name="text" type="java.lang.String" value="12/06/2021"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel43">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Data de Entrega:"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel44">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Valor da diaria:"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JTextField" name="textFieldRentValueDay">
-                              <Properties>
-                                <Property name="editable" type="boolean" value="false"/>
-                                <Property name="horizontalAlignment" type="int" value="0"/>
-                                <Property name="text" type="java.lang.String" value="####"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JTextField" name="textFieldRentValueTotal">
-                              <Properties>
-                                <Property name="editable" type="boolean" value="false"/>
-                                <Property name="horizontalAlignment" type="int" value="0"/>
-                                <Property name="text" type="java.lang.String" value="####"/>
-                              </Properties>
-                              <Events>
-                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldRentValueTotalActionPerformed"/>
-                              </Events>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel45">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Valor Total:"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JButton" name="buttonRentConfirm">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Confirmar"/>
-                              </Properties>
-                              <Events>
-                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonRentConfirmActionPerformed"/>
-                              </Events>
-                            </Component>
-                            <Component class="javax.swing.JButton" name="buttonRentCancel">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Cancelar"/>
-                              </Properties>
-                              <Events>
-                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonRentCancelActionPerformed"/>
-                              </Events>
-                            </Component>
-                            <Component class="javax.swing.JSeparator" name="jSeparator7">
-                            </Component>
-                            <Component class="javax.swing.JTextField" name="textFieldRentPlate">
-                              <Properties>
-                                <Property name="editable" type="boolean" value="false"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel56">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Placa:"/>
-                              </Properties>
-                            </Component>
-                          </SubComponents>
-                        </Container>
-                      </SubComponents>
-                    </Container>
-                    <Container class="javax.swing.JScrollPane" name="jScrollPaneDevolution">
-
-                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                      <SubComponents>
-                        <Container class="javax.swing.JPanel" name="jPanel2">
-
-                          <Layout>
-                            <DimensionLayout dim="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabel47" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <Component id="buttonRentConfirm1" max="32767" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                                                      <Component id="buttonRentCancel1" max="32767" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <Component id="textFieldRentKm1" max="32767" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                                      <Component id="comboBoxRentTank1" max="32767" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <Component id="textFieldRentModel1" max="32767" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                                      <Component id="buttonRentShowVehicles1" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="jLabel46" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                                  </Group>
-                                                  <Component id="textFieldRentClient1" alignment="0" max="32767" attributes="0"/>
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                                              <Group type="102" alignment="0" attributes="0">
-                                                                  <Component id="textFieldRentBrand1" max="32767" attributes="0"/>
-                                                                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                                              </Group>
-                                                              <Group type="102" alignment="0" attributes="0">
-                                                                  <Component id="jLabel48" min="-2" max="-2" attributes="0"/>
-                                                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                                              </Group>
-                                                          </Group>
-                                                          <Group type="102" alignment="0" attributes="0">
-                                                              <Component id="jLabel50" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                                          </Group>
-                                                      </Group>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="textFieldRentCategory1" alignment="0" max="32767" attributes="0"/>
-                                                          <Group type="102" alignment="0" attributes="0">
-                                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                                  <Component id="jLabel51" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="jLabel49" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                              </Group>
-                                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                                          </Group>
-                                                      </Group>
-                                                  </Group>
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Group type="102" alignment="0" attributes="0">
-                                                              <Component id="formattedTextFieldRentInitDate1" max="32767" attributes="0"/>
-                                                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                                          </Group>
-                                                          <Group type="102" alignment="0" attributes="0">
-                                                              <Component id="jLabel52" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
-                                                          </Group>
-                                                      </Group>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Group type="102" alignment="0" attributes="0">
-                                                              <Component id="jLabel53" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                                          </Group>
-                                                          <Component id="formattedTextFieldRentEndDate1" alignment="0" max="32767" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jLabel54" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="textFieldRentValueDay1" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Group type="102" alignment="0" attributes="0">
-                                                              <Component id="jLabel55" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                                          </Group>
-                                                          <Component id="textFieldRentValueTotal1" alignment="0" max="32767" attributes="0"/>
+                                                      <Group type="102" attributes="0">
+                                                          <Component id="textFieldRentPlate" pref="0" max="32767" attributes="0"/>
+                                                          <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                               </Group>
-                                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                           </Group>
+                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                              </Group>
-                            </DimensionLayout>
-                            <DimensionLayout dim="1">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel46" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="textFieldRentClient1" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                      <Component id="jLabel47" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="textFieldRentModel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="buttonRentShowVehicles1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                </DimensionLayout>
+                                <DimensionLayout dim="1">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="textFieldRentClient" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                                          <Component id="jSeparator7" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                                          <Component id="buttonRentShowVehicles" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel56" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="textFieldRentModel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="textFieldRentPlate" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel39" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="textFieldRentBrand" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="textFieldRentCategory" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel40" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel41" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="textFieldRentKm" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="comboBoxRentTank" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel43" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="formattedTextFieldRentInitDate" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="formattedTextFieldRentEndDate" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel45" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="textFieldRentValueDay" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="textFieldRentValueTotal" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="buttonRentConfirm" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="buttonRentCancel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace pref="43" max="32767" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel48" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel49" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="textFieldRentBrand1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="textFieldRentCategory1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel50" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel51" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="textFieldRentKm1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="comboBoxRentTank1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel52" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel53" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="formattedTextFieldRentInitDate1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="formattedTextFieldRentEndDate1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel54" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel55" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="textFieldRentValueDay1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="textFieldRentValueTotal1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="buttonRentConfirm1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="buttonRentCancel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace pref="40" max="32767" attributes="0"/>
                                   </Group>
-                              </Group>
-                            </DimensionLayout>
-                          </Layout>
-                          <SubComponents>
-                            <Component class="javax.swing.JLabel" name="jLabel46">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="CPF do Cliente:"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JTextField" name="textFieldRentClient1">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="cpf"/>
-                              </Properties>
-                              <Events>
-                                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="textFieldRentClient1FocusGained"/>
-                                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="textFieldRentClient1KeyTyped"/>
-                              </Events>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel47">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Modelo:"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JTextField" name="textFieldRentModel1">
-                              <Properties>
-                                <Property name="editable" type="boolean" value="false"/>
-                                <Property name="text" type="java.lang.String" value="Selecione um veiculo"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JButton" name="buttonRentShowVehicles1">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Veiculo"/>
-                              </Properties>
-                              <Events>
-                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonRentShowVehicles1ActionPerformed"/>
-                              </Events>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel48">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Marca:"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JTextField" name="textFieldRentBrand1">
-                              <Properties>
-                                <Property name="editable" type="boolean" value="false"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JTextField" name="textFieldRentCategory1">
-                              <Properties>
-                                <Property name="editable" type="boolean" value="false"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel49">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Categoria:"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel50">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Kilometragem:"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JTextField" name="textFieldRentKm1">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="jTextField6"/>
-                              </Properties>
-                              <Events>
-                                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="textFieldRentKm1KeyTyped"/>
-                              </Events>
-                            </Component>
-                            <Component class="javax.swing.JComboBox" name="comboBoxRentTank1">
-                              <Properties>
-                                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                  <StringArray count="4">
-                                    <StringItem index="0" value="Item 1"/>
-                                    <StringItem index="1" value="Item 2"/>
-                                    <StringItem index="2" value="Item 3"/>
-                                    <StringItem index="3" value="Item 4"/>
-                                  </StringArray>
-                                </Property>
-                              </Properties>
-                              <AuxValues>
-                                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                              </AuxValues>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel51">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Tanque"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel52">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Data de Inicio:"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JFormattedTextField" name="formattedTextFieldRentInitDate1">
-                              <Properties>
-                                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-                                  <Format subtype="1" type="1"/>
-                                </Property>
-                                <Property name="text" type="java.lang.String" value="12/06/2020"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JFormattedTextField" name="formattedTextFieldRentEndDate1">
-                              <Properties>
-                                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-                                  <Format subtype="1" type="1"/>
-                                </Property>
-                                <Property name="text" type="java.lang.String" value="12/06/2021"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel53">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Data de Entrega:"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel54">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Valor da diaria:"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JTextField" name="textFieldRentValueDay1">
-                              <Properties>
-                                <Property name="editable" type="boolean" value="false"/>
-                                <Property name="horizontalAlignment" type="int" value="0"/>
-                                <Property name="text" type="java.lang.String" value="####"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JTextField" name="textFieldRentValueTotal1">
-                              <Properties>
-                                <Property name="editable" type="boolean" value="false"/>
-                                <Property name="horizontalAlignment" type="int" value="0"/>
-                                <Property name="text" type="java.lang.String" value="####"/>
-                              </Properties>
-                              <Events>
-                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldRentValueTotal1ActionPerformed"/>
-                              </Events>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel55">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Valor Total:"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JButton" name="buttonRentConfirm1">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Confirmar"/>
-                              </Properties>
-                              <Events>
-                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonRentConfirm1ActionPerformed"/>
-                              </Events>
-                            </Component>
-                            <Component class="javax.swing.JButton" name="buttonRentCancel1">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Cancelar"/>
-                              </Properties>
-                              <Events>
-                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonRentCancel1ActionPerformed"/>
-                              </Events>
-                            </Component>
+                                </DimensionLayout>
+                              </Layout>
+                              <SubComponents>
+                                <Component class="javax.swing.JLabel" name="jLabel35">
+                                  <Properties>
+                                    <Property name="text" type="java.lang.String" value="CPF do Cliente:"/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JTextField" name="textFieldRentClient">
+                                  <Properties>
+                                    <Property name="text" type="java.lang.String" value="cpf"/>
+                                  </Properties>
+                                  <Events>
+                                    <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="textFieldRentClientFocusGained"/>
+                                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="textFieldRentClientKeyTyped"/>
+                                  </Events>
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="jLabel36">
+                                  <Properties>
+                                    <Property name="text" type="java.lang.String" value="Modelo:"/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JTextField" name="textFieldRentModel">
+                                  <Properties>
+                                    <Property name="editable" type="boolean" value="false"/>
+                                    <Property name="text" type="java.lang.String" value="Selecione um veiculo"/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JButton" name="buttonRentShowVehicles">
+                                  <Properties>
+                                    <Property name="text" type="java.lang.String" value="Veiculo"/>
+                                  </Properties>
+                                  <Events>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonRentShowVehiclesActionPerformed"/>
+                                  </Events>
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="jLabel37">
+                                  <Properties>
+                                    <Property name="text" type="java.lang.String" value="Marca:"/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JTextField" name="textFieldRentBrand">
+                                  <Properties>
+                                    <Property name="editable" type="boolean" value="false"/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JTextField" name="textFieldRentCategory">
+                                  <Properties>
+                                    <Property name="editable" type="boolean" value="false"/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="jLabel39">
+                                  <Properties>
+                                    <Property name="text" type="java.lang.String" value="Categoria:"/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="jLabel40">
+                                  <Properties>
+                                    <Property name="text" type="java.lang.String" value="Kilometragem:"/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JTextField" name="textFieldRentKm">
+                                  <Properties>
+                                    <Property name="text" type="java.lang.String" value="jTextField6"/>
+                                  </Properties>
+                                  <Events>
+                                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="textFieldRentKmKeyTyped"/>
+                                  </Events>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="comboBoxRentTank">
+                                  <Properties>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="4">
+                                        <StringItem index="0" value="Item 1"/>
+                                        <StringItem index="1" value="Item 2"/>
+                                        <StringItem index="2" value="Item 3"/>
+                                        <StringItem index="3" value="Item 4"/>
+                                      </StringArray>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="jLabel41">
+                                  <Properties>
+                                    <Property name="text" type="java.lang.String" value="Tanque"/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="jLabel42">
+                                  <Properties>
+                                    <Property name="text" type="java.lang.String" value="Data de Inicio:"/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JFormattedTextField" name="formattedTextFieldRentInitDate">
+                                  <Properties>
+                                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                                      <Format subtype="1" type="1"/>
+                                    </Property>
+                                    <Property name="text" type="java.lang.String" value="12/06/2020"/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JFormattedTextField" name="formattedTextFieldRentEndDate">
+                                  <Properties>
+                                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                                      <Format subtype="1" type="1"/>
+                                    </Property>
+                                    <Property name="text" type="java.lang.String" value="12/06/2021"/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="jLabel43">
+                                  <Properties>
+                                    <Property name="text" type="java.lang.String" value="Data de Entrega:"/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="jLabel44">
+                                  <Properties>
+                                    <Property name="text" type="java.lang.String" value="Valor da diaria:"/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JTextField" name="textFieldRentValueDay">
+                                  <Properties>
+                                    <Property name="editable" type="boolean" value="false"/>
+                                    <Property name="horizontalAlignment" type="int" value="0"/>
+                                    <Property name="text" type="java.lang.String" value="####"/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JTextField" name="textFieldRentValueTotal">
+                                  <Properties>
+                                    <Property name="editable" type="boolean" value="false"/>
+                                    <Property name="horizontalAlignment" type="int" value="0"/>
+                                    <Property name="text" type="java.lang.String" value="####"/>
+                                  </Properties>
+                                  <Events>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldRentValueTotalActionPerformed"/>
+                                  </Events>
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="jLabel45">
+                                  <Properties>
+                                    <Property name="text" type="java.lang.String" value="Valor Total:"/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JButton" name="buttonRentConfirm">
+                                  <Properties>
+                                    <Property name="text" type="java.lang.String" value="Confirmar"/>
+                                  </Properties>
+                                  <Events>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonRentConfirmActionPerformed"/>
+                                  </Events>
+                                </Component>
+                                <Component class="javax.swing.JButton" name="buttonRentCancel">
+                                  <Properties>
+                                    <Property name="text" type="java.lang.String" value="Cancelar"/>
+                                  </Properties>
+                                  <Events>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonRentCancelActionPerformed"/>
+                                  </Events>
+                                </Component>
+                                <Component class="javax.swing.JSeparator" name="jSeparator7">
+                                </Component>
+                                <Component class="javax.swing.JTextField" name="textFieldRentPlate">
+                                  <Properties>
+                                    <Property name="editable" type="boolean" value="false"/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="jLabel56">
+                                  <Properties>
+                                    <Property name="text" type="java.lang.String" value="Placa:"/>
+                                  </Properties>
+                                </Component>
+                              </SubComponents>
+                            </Container>
                           </SubComponents>
                         </Container>
                       </SubComponents>
