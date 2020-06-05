@@ -9,19 +9,20 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import rogeriolucon.locadora.interfaces.RentServiceInterface;
 import rogeriolucon.locadora.model.RentOperation;
-import rogeriolucon.locadora.model.TradeOperation;
-import rogeriolucon.locadora.model.Vehicle;
+
 
 /**
  *
  * @author rolucon
  */
-public class RentService {
+public class RentService implements RentServiceInterface {
     public Map<Integer, RentOperation> rentedVehicles = new HashMap();
     public Map<Integer, RentOperation> returnedVehicles = new HashMap();
     
-    public boolean rentlVehicle(RentOperation rent){
+    @Override
+    public boolean rentVehicle(RentOperation rent){
         rent.setType(RentOperation.Type.RETIRADA);
         rent.setContractOpen(true);
         rentedVehicles.put(rent.getVehicle().getId(), rent);
@@ -29,10 +30,7 @@ public class RentService {
         return true;
     }
     
-    public ArrayList<RentOperation> getRenteds(){
-        return new ArrayList(rentedVehicles.values());
-    }
-    
+    @Override
     public boolean devolutionVehicle(RentOperation rent){
 //        RentOperation rent = new RentOperation();
 //        rent.setType(RentOperation.Type.DEVOLUÇÃO);
@@ -41,5 +39,22 @@ public class RentService {
 //        rentedVehicles.remove(rent);
         //Passar para o banco
         return true;
+    }
+    
+    @Override
+    public ArrayList<RentOperation> getRenteds(){
+        return new ArrayList(rentedVehicles.values());
+    }
+    
+    @Override
+    public ArrayList<RentOperation> getReturneds(){
+        return new ArrayList(rentedVehicles.values());
+    }
+    
+    @Override
+    public ArrayList<RentOperation> getAllRentOperations(){
+        ArrayList<RentOperation> aux = new ArrayList(rentedVehicles.values());
+        aux.addAll(new ArrayList(returnedVehicles.values()));
+        return aux;
     }
 }

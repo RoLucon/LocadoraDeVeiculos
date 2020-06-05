@@ -6,14 +6,10 @@
 package rogeriolucon.locadora.views;
 
 import java.awt.event.KeyEvent;
-import java.text.DateFormat;
-import java.text.ParseException;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import rogeriolucon.locadora.model.RentOperation;
@@ -123,11 +119,11 @@ public class MainView extends javax.swing.JFrame {
         jSeparator5 = new javax.swing.JSeparator();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        comboBoxRentReportType = new javax.swing.JComboBox<>();
         jLabel31 = new javax.swing.JLabel();
-        jFormattedTextField5 = new javax.swing.JFormattedTextField();
+        formattedTextFieldRentReportInitDate = new javax.swing.JFormattedTextField();
         jLabel32 = new javax.swing.JLabel();
-        jFormattedTextField6 = new javax.swing.JFormattedTextField();
+        formattedTextFieldRentReportEndDate = new javax.swing.JFormattedTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTableRentReport = new javax.swing.JTable();
         jPanelPDV = new javax.swing.JPanel();
@@ -851,18 +847,23 @@ public class MainView extends javax.swing.JFrame {
         jLabel30.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
         jLabel30.setText("Tipo:");
 
-        jComboBox3.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ambos", "Aberto", "Encerrado", " " }));
+        comboBoxRentReportType.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
+        comboBoxRentReportType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ambos", "Aberto", "Encerrado", " " }));
+        comboBoxRentReportType.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboBoxRentReportTypeItemStateChanged(evt);
+            }
+        });
 
         jLabel31.setText("Periodo:");
 
-        jFormattedTextField5.setText("jFormattedTextField1");
-        jFormattedTextField5.setMinimumSize(new java.awt.Dimension(90, 22));
+        formattedTextFieldRentReportInitDate.setText("jFormattedTextField1");
+        formattedTextFieldRentReportInitDate.setMinimumSize(new java.awt.Dimension(90, 22));
 
         jLabel32.setText("ate");
 
-        jFormattedTextField6.setText("jFormattedTextField1");
-        jFormattedTextField6.setMinimumSize(new java.awt.Dimension(90, 22));
+        formattedTextFieldRentReportEndDate.setText("jFormattedTextField1");
+        formattedTextFieldRentReportEndDate.setMinimumSize(new java.awt.Dimension(90, 22));
 
         jTableRentReport.setModel(new RentTableModel());
         jScrollPane3.setViewportView(jTableRentReport);
@@ -879,15 +880,15 @@ public class MainView extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelRentReportLayout.createSequentialGroup()
                         .addGroup(jPanelRentReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel30)
-                            .addComponent(jComboBox3, 0, 109, Short.MAX_VALUE))
+                            .addComponent(comboBoxRentReportType, 0, 109, Short.MAX_VALUE))
                         .addGap(35, 35, 35)
                         .addGroup(jPanelRentReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelRentReportLayout.createSequentialGroup()
-                                .addComponent(jFormattedTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
+                                .addComponent(formattedTextFieldRentReportInitDate, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel32)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jFormattedTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE))
+                                .addComponent(formattedTextFieldRentReportEndDate, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE))
                             .addComponent(jLabel31)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelRentReportLayout.createSequentialGroup()
                         .addGroup(jPanelRentReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -911,9 +912,9 @@ public class MainView extends javax.swing.JFrame {
                     .addComponent(jLabel31))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelRentReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFormattedTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFormattedTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboBoxRentReportType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(formattedTextFieldRentReportInitDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(formattedTextFieldRentReportEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel32))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1015,6 +1016,11 @@ public class MainView extends javax.swing.JFrame {
         });
 
         buttonRentCancel.setText("Cancelar");
+        buttonRentCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonRentCancelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -1369,7 +1375,7 @@ public class MainView extends javax.swing.JFrame {
     }//GEN-LAST:event_bttPDVPanelMouseClicked
 
     private void buttonRentShowVehiclesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRentShowVehiclesActionPerformed
-        BuscaVeiculoView view = new BuscaVeiculoView(vehicleService.getList(), this);
+        BuscaVeiculoView view = new BuscaVeiculoView(vehicleService.getAvailable(), this);
         view.setVisible(true);
     }//GEN-LAST:event_buttonRentShowVehiclesActionPerformed
 
@@ -1378,14 +1384,13 @@ public class MainView extends javax.swing.JFrame {
             rent.setVehicle(selectedVehicle);
             rent.setKm(Double.parseDouble(textFieldRentKm.getText()));
             rent.setTank((Vehicle.Tank)comboBoxRentTank.getSelectedItem());
-            rent.setDate(LocalDate.parse(formattedTextFieldRentInitDate.getText(),
-                    DateTimeFormatter.ofPattern(MY_DATA_F)));
-            rent.setExpirationDate(LocalDate.parse(formattedTextFieldRentEndDate.getText(),
-                    DateTimeFormatter.ofPattern(MY_DATA_F)));
+            rent.setDate(stringDateToLocalDate(formattedTextFieldRentInitDate.getText()));
+            rent.setExpirationDate(stringDateToLocalDate(formattedTextFieldRentEndDate.getText()));
             //Passar as datas e os valores
             if(vehicleService.rentVehicle(rent)){
                 RentTableModel model = (RentTableModel) jTableRentReport.getModel();
                 model.setList(vehicleService.getRenteds());
+                rentClear();
             }
     }//GEN-LAST:event_buttonRentConfirmActionPerformed
 
@@ -1410,6 +1415,14 @@ public class MainView extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_textFieldRentKmKeyTyped
+
+    private void comboBoxRentReportTypeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBoxRentReportTypeItemStateChanged
+        filterRentReport();
+    }//GEN-LAST:event_comboBoxRentReportTypeItemStateChanged
+
+    private void buttonRentCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRentCancelActionPerformed
+        rentClear();
+    }//GEN-LAST:event_buttonRentCancelActionPerformed
     
     /**
      * @param args the command line arguments
@@ -1456,19 +1469,19 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JButton buttonRentCancel;
     private javax.swing.JButton buttonRentConfirm;
     private javax.swing.JButton buttonRentShowVehicles;
+    private javax.swing.JComboBox<String> comboBoxRentReportType;
     private javax.swing.JComboBox<String> comboBoxRentTank;
     private javax.swing.JFormattedTextField formattedTextFieldRentEndDate;
     private javax.swing.JFormattedTextField formattedTextFieldRentInitDate;
+    private javax.swing.JFormattedTextField formattedTextFieldRentReportEndDate;
+    private javax.swing.JFormattedTextField formattedTextFieldRentReportInitDate;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JFormattedTextField jFormattedTextField2;
     private javax.swing.JFormattedTextField jFormattedTextField3;
     private javax.swing.JFormattedTextField jFormattedTextField4;
-    private javax.swing.JFormattedTextField jFormattedTextField5;
-    private javax.swing.JFormattedTextField jFormattedTextField6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1559,7 +1572,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldRentValueDay;
     private javax.swing.JTextField textFieldRentValueTotal;
     // End of variables declaration//GEN-END:variables
-    
+    //Puxa o veiculo da tela de busca para a tela
     public void setSelectedVehicle(Vehicle vehicle){
         this.selectedVehicle = vehicle;
         this.textFieldRentBrand.setText(selectedVehicle.getBrand().toString());
@@ -1567,9 +1580,24 @@ public class MainView extends javax.swing.JFrame {
         this.textFieldRentCategory.setText(selectedVehicle.getCategory().toString());
         this.textFieldRentModel.setText(selectedVehicle.getModel());
     }
-    
+    //Inicia components
     private void setupComponents() {
+        setupComponentsRentReport();
         setupComponentsRegister();
+        setupComponentsRent();
+        
+    }
+ 
+    private  void setupComponentsRent(){
+        comboBoxRentTank.setModel(new DefaultComboBoxModel(Vehicle.Tank.values()));
+        comboBoxRentTank.addItem("<Tank>");
+        comboBoxRentTank.setSelectedItem("<Tank>");
+        
+        formattedTextFieldRentInitDate.setText(dateStringNow());
+        formattedTextFieldRentEndDate.setText(dateStringNow());
+    }
+    
+    private void setupComponentsRentReport(){
         RentTableModel model = (RentTableModel) jTableRentReport.getModel();
         model.setList(vehicleService.getRenteds());
     }
@@ -1586,17 +1614,58 @@ public class MainView extends javax.swing.JFrame {
         registerComboBoxTank.setModel(new DefaultComboBoxModel(Vehicle.Tank.values()));
         registerComboBoxTank.addItem("<Tank>");
         registerComboBoxTank.setSelectedItem("<Tank>");
-        
-        comboBoxRentTank.setModel(new DefaultComboBoxModel(Vehicle.Tank.values()));
-        comboBoxRentTank.addItem("<Tank>");
-        comboBoxRentTank.setSelectedItem("<Tank>");
     }
-    
+    //Limpa tela de locacao
+    private void rentClear() {
+        textFieldRentClient.setText("");
+        textFieldRentBrand.setText("");
+        textFieldRentCategory.setText("");
+        textFieldRentModel.setText("");
+        textFieldRentKm.setText("");
+        textFieldRentValueDay.setText("####");
+        textFieldRentValueTotal.setText("####");
+        comboBoxRentTank.setSelectedItem("<Tank>");
+        formattedTextFieldRentInitDate.setText(dateStringNow());
+        formattedTextFieldRentEndDate.setText(dateStringNow());
+    }
+    //Limpa tela de registros
     private void registerClear() {
         registerComboBoxBrand.setSelectedItem("<Marca>");
         registerComboBoxCategory.setSelectedItem("<Categoria>");
         registerComboBoxTank.setSelectedItem("<Tank>");
         registerTextFieldKm.setText("0Km");
         registerTextFieldPlates.setText("xxx-####");
+    }
+    
+    private void filterRentReport(){
+        LocalDate init = null;
+        LocalDate end = null;
+        List list = null;
+        int selected = comboBoxRentReportType.getSelectedIndex();
+        if(selected == 0){
+            list = vehicleService.getAllRentOperations();
+        } else if(selected == 1){
+            list = vehicleService.getRenteds();
+        } else {
+            list = vehicleService.getReturneds();
+        }
+        
+        if(!formattedTextFieldRentReportInitDate.getText().trim().isEmpty()){
+            init = stringDateToLocalDate(formattedTextFieldRentReportInitDate.getText());
+        }
+        
+        if(!formattedTextFieldRentReportEndDate.getText().trim().isEmpty()){
+            end = stringDateToLocalDate(formattedTextFieldRentReportEndDate.getText());
+        }
+        
+    }
+    
+    private LocalDate stringDateToLocalDate(String date) {
+        return LocalDate.parse(date, DateTimeFormatter.ofPattern(MY_DATA_F));
+    }
+    
+    private String dateStringNow(){
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern(MY_DATA_F);
+        return dtf.format(LocalDate.now()).toString();
     }
 }

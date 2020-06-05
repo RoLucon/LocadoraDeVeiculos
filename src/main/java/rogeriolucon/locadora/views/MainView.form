@@ -1246,16 +1246,16 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel30" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jComboBox3" alignment="0" pref="109" max="32767" attributes="0"/>
+                                      <Component id="comboBoxRentReportType" alignment="0" pref="109" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jFormattedTextField5" pref="91" max="32767" attributes="0"/>
+                                          <Component id="formattedTextFieldRentReportInitDate" pref="91" max="32767" attributes="0"/>
                                           <EmptySpace min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="jFormattedTextField6" pref="90" max="32767" attributes="0"/>
+                                          <Component id="formattedTextFieldRentReportEndDate" pref="90" max="32767" attributes="0"/>
                                       </Group>
                                       <Component id="jLabel31" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -1288,9 +1288,9 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jComboBox3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jFormattedTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jFormattedTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboBoxRentReportType" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="formattedTextFieldRentReportInitDate" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="formattedTextFieldRentReportEndDate" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -1327,7 +1327,7 @@
                     <Property name="text" type="java.lang.String" value="Tipo:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox3">
+                <Component class="javax.swing.JComboBox" name="comboBoxRentReportType">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name=".SF NS Text" size="14" style="0"/>
@@ -1341,6 +1341,9 @@
                       </StringArray>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="comboBoxRentReportTypeItemStateChanged"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -1350,7 +1353,7 @@
                     <Property name="text" type="java.lang.String" value="Periodo:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField5">
+                <Component class="javax.swing.JFormattedTextField" name="formattedTextFieldRentReportInitDate">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="jFormattedTextField1"/>
                     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -1363,7 +1366,7 @@
                     <Property name="text" type="java.lang.String" value="ate"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField6">
+                <Component class="javax.swing.JFormattedTextField" name="formattedTextFieldRentReportEndDate">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="jFormattedTextField1"/>
                     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -1827,6 +1830,9 @@
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Cancelar"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonRentCancelActionPerformed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
