@@ -48,7 +48,7 @@ public class RentService implements RentServiceInterface {
     
     @Override
     public ArrayList<RentOperation> getReturneds(){
-        return new ArrayList(rentedVehicles.values());
+        return new ArrayList(returnedVehicles.values());
     }
     
     @Override

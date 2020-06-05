@@ -9,6 +9,7 @@ import java.awt.event.KeyEvent;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
@@ -857,13 +858,33 @@ public class MainView extends javax.swing.JFrame {
 
         jLabel31.setText("Periodo:");
 
-        formattedTextFieldRentReportInitDate.setText("jFormattedTextField1");
+        formattedTextFieldRentReportInitDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
         formattedTextFieldRentReportInitDate.setMinimumSize(new java.awt.Dimension(90, 22));
+        formattedTextFieldRentReportInitDate.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                formattedTextFieldRentReportInitDateFocusLost(evt);
+            }
+        });
+        formattedTextFieldRentReportInitDate.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                formattedTextFieldRentReportInitDateKeyTyped(evt);
+            }
+        });
 
         jLabel32.setText("ate");
 
-        formattedTextFieldRentReportEndDate.setText("jFormattedTextField1");
+        formattedTextFieldRentReportEndDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
         formattedTextFieldRentReportEndDate.setMinimumSize(new java.awt.Dimension(90, 22));
+        formattedTextFieldRentReportEndDate.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                formattedTextFieldRentReportEndDateFocusLost(evt);
+            }
+        });
+        formattedTextFieldRentReportEndDate.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                formattedTextFieldRentReportEndDateKeyTyped(evt);
+            }
+        });
 
         jTableRentReport.setModel(new RentTableModel());
         jScrollPane3.setViewportView(jTableRentReport);
@@ -1423,6 +1444,22 @@ public class MainView extends javax.swing.JFrame {
     private void buttonRentCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRentCancelActionPerformed
         rentClear();
     }//GEN-LAST:event_buttonRentCancelActionPerformed
+
+    private void formattedTextFieldRentReportInitDateFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formattedTextFieldRentReportInitDateFocusLost
+        filterRentReport();
+    }//GEN-LAST:event_formattedTextFieldRentReportInitDateFocusLost
+
+    private void formattedTextFieldRentReportInitDateKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formattedTextFieldRentReportInitDateKeyTyped
+        filterRentReport();
+    }//GEN-LAST:event_formattedTextFieldRentReportInitDateKeyTyped
+
+    private void formattedTextFieldRentReportEndDateFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formattedTextFieldRentReportEndDateFocusLost
+        filterRentReport();
+    }//GEN-LAST:event_formattedTextFieldRentReportEndDateFocusLost
+
+    private void formattedTextFieldRentReportEndDateKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formattedTextFieldRentReportEndDateKeyTyped
+        filterRentReport();
+    }//GEN-LAST:event_formattedTextFieldRentReportEndDateKeyTyped
     
     /**
      * @param args the command line arguments
@@ -1580,11 +1617,11 @@ public class MainView extends javax.swing.JFrame {
         this.textFieldRentCategory.setText(selectedVehicle.getCategory().toString());
         this.textFieldRentModel.setText(selectedVehicle.getModel());
     }
-    //Inicia components
+    /*                Setups/Init                 */
     private void setupComponents() {
-        setupComponentsRentReport();
-        setupComponentsRegister();
         setupComponentsRent();
+        setupComponentsRegister();
+        setupComponentsRentReport();
         
     }
  
@@ -1599,7 +1636,9 @@ public class MainView extends javax.swing.JFrame {
     
     private void setupComponentsRentReport(){
         RentTableModel model = (RentTableModel) jTableRentReport.getModel();
-        model.setList(vehicleService.getRenteds());
+        model.setList(vehicleService.getAllRentOperations());
+        formattedTextFieldRentReportInitDate.setText("01/06/2020");
+        formattedTextFieldRentReportEndDate.setText(dateStringNow());
     }
     
     private void setupComponentsRegister(){
@@ -1615,7 +1654,8 @@ public class MainView extends javax.swing.JFrame {
         registerComboBoxTank.addItem("<Tank>");
         registerComboBoxTank.setSelectedItem("<Tank>");
     }
-    //Limpa tela de locacao
+    
+    /*                Clear                 */
     private void rentClear() {
         textFieldRentClient.setText("");
         textFieldRentBrand.setText("");
@@ -1627,8 +1667,9 @@ public class MainView extends javax.swing.JFrame {
         comboBoxRentTank.setSelectedItem("<Tank>");
         formattedTextFieldRentInitDate.setText(dateStringNow());
         formattedTextFieldRentEndDate.setText(dateStringNow());
+        selectedVehicle = null;
     }
-    //Limpa tela de registros
+
     private void registerClear() {
         registerComboBoxBrand.setSelectedItem("<Marca>");
         registerComboBoxCategory.setSelectedItem("<Categoria>");
@@ -1637,11 +1678,13 @@ public class MainView extends javax.swing.JFrame {
         registerTextFieldPlates.setText("xxx-####");
     }
     
+    /*                Filtros                 */
     private void filterRentReport(){
         LocalDate init = null;
         LocalDate end = null;
-        List list = null;
+        ArrayList<RentOperation> list = null;
         int selected = comboBoxRentReportType.getSelectedIndex();
+
         if(selected == 0){
             list = vehicleService.getAllRentOperations();
         } else if(selected == 1){
@@ -1652,16 +1695,42 @@ public class MainView extends javax.swing.JFrame {
         
         if(!formattedTextFieldRentReportInitDate.getText().trim().isEmpty()){
             init = stringDateToLocalDate(formattedTextFieldRentReportInitDate.getText());
+            if(init != null){
+                ArrayList<RentOperation> aux = new ArrayList<>();
+                for (RentOperation rentOperation : list) {
+                    if(rentOperation.getDate().isAfter(init) 
+                            || rentOperation.getDate().isEqual(init)){
+                        aux.add(rentOperation);
+                    }
+                }
+                list = aux;
+            }
         }
         
         if(!formattedTextFieldRentReportEndDate.getText().trim().isEmpty()){
             end = stringDateToLocalDate(formattedTextFieldRentReportEndDate.getText());
+            if(end != null){
+                ArrayList<RentOperation> aux = new ArrayList<>();
+                for (RentOperation rentOperation : list) {
+                    if(rentOperation.getDate().isBefore(end)
+                            ||rentOperation.getDate().isEqual(end)){
+                        aux.add(rentOperation);
+                    }
+                }
+                list = aux;
+            }
         }
-        
+        RentTableModel model = (RentTableModel) jTableRentReport.getModel();
+        model.setList(list);
     }
     
+    /*                Outros                 */
     private LocalDate stringDateToLocalDate(String date) {
-        return LocalDate.parse(date, DateTimeFormatter.ofPattern(MY_DATA_F));
+        try{
+            return LocalDate.parse(date, DateTimeFormatter.ofPattern(MY_DATA_F));
+        } catch(Exception e){
+            return null;
+        }
     }
     
     private String dateStringNow(){

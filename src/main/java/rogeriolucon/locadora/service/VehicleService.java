@@ -51,7 +51,7 @@ public class VehicleService implements RentServiceInterface {
         return new ArrayList(vehicleMap.values());
     }
     
-    public ArrayList<Vehicle> getAvailable(){
+    public ArrayList<Vehicle> getAvailable() {
         Map<Integer, Vehicle> filtered = vehicleMap.entrySet().stream()
                 .filter(map -> map.getValue().isAvailability() == true)
                 .collect(Collectors.toMap(p -> p.getKey(), p -> p.getValue()));
