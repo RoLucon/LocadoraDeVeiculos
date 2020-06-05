@@ -100,6 +100,7 @@ public class VehicleService implements RentServiceInterface {
             aux.setModel("Modelo: " + i);
             aux.setKm(i * 5);
             aux.setPrice(1000.0 * i);
+            aux.setPlate("ABC-123"+i);
             aux.setAvailability(true);
             vehicleMap.put(aux.getId(), aux);
         }

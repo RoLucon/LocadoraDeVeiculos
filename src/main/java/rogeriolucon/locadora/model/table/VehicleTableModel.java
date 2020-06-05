@@ -16,7 +16,7 @@ import rogeriolucon.locadora.model.Vehicle;
 public class VehicleTableModel extends AbstractTableModel {
     ArrayList<Vehicle> list = new ArrayList<Vehicle>();
     
-    String[] column = {"ID", "Categoria", "Marca", "Modelo", "Km", "Preço"};
+    String[] column = {"ID", "Categoria", "Marca", "Modelo","Placa", "Km", "Preço"};
     
     @Override
     public String getColumnName(int column) {
@@ -45,8 +45,10 @@ public class VehicleTableModel extends AbstractTableModel {
             case 3:
                 return list.get(rowIndex).getModel();
             case 4:
-                return list.get(rowIndex).getKm();
+                return list.get(rowIndex).getPlate();
             case 5:
+                return list.get(rowIndex).getKm();
+            case 6:
                 return list.get(rowIndex).getPrice();
         }
         return null;
