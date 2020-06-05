@@ -1260,7 +1260,7 @@ public class MainView extends javax.swing.JFrame {
 
         jScrollPaneRent1.setPreferredSize(new java.awt.Dimension(341, 553));
 
-        jPanel2.setPreferredSize(new java.awt.Dimension(339, 667));
+        jPanel2.setPreferredSize(new java.awt.Dimension(339, 700));
 
         jLabel46.setText("CPF do Cliente:");
 
@@ -1557,7 +1557,7 @@ public class MainView extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonRentConfirm1)
                     .addComponent(buttonRentCancel1))
-                .addGap(84, 84, 84))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         jScrollPaneRent1.setViewportView(jPanel2);
