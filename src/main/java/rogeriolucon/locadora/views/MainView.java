@@ -53,6 +53,7 @@ public class MainView extends javax.swing.JFrame {
 
         jTextField13 = new javax.swing.JTextField();
         jLabel61 = new javax.swing.JLabel();
+        jSeparator10 = new javax.swing.JSeparator();
         parent = new javax.swing.JPanel();
         sidePanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -101,13 +102,21 @@ public class MainView extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        jTextField3 = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
-        jFormattedTextField2 = new javax.swing.JFormattedTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel70 = new javax.swing.JLabel();
+        jSeparator11 = new javax.swing.JSeparator();
+        jLabel71 = new javax.swing.JLabel();
+        jLabel72 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel73 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jPanelSalesReport = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
@@ -738,70 +747,86 @@ public class MainView extends javax.swing.JFrame {
         jPanelFinancialReport.setMinimumSize(new java.awt.Dimension(420, 500));
 
         jLabel14.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
-        jLabel14.setText("TADS | Vendas");
+        jLabel14.setText("TADS | Financas");
 
         jLabel16.setFont(new java.awt.Font(".SF NS Text", 0, 22)); // NOI18N
         jLabel16.setText("Relatorio");
 
         jLabel17.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
-        jLabel17.setText("Tipo:");
+        jLabel17.setText("Saldo de locações:");
 
-        jComboBox1.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ambos", "Aberto", "Encerrado", " " }));
+        jTextField1.setText("jTextField1");
 
-        jLabel18.setText("Periodo:");
+        jTextField2.setText("jTextField2");
 
-        jFormattedTextField1.setText("jFormattedTextField1");
-        jFormattedTextField1.setMinimumSize(new java.awt.Dimension(90, 22));
+        jLabel18.setText("Saldo de vendas:");
 
-        jLabel19.setText("ate");
+        jTextField3.setText("jTextField3");
 
-        jFormattedTextField2.setText("jFormattedTextField1");
-        jFormattedTextField2.setMinimumSize(new java.awt.Dimension(90, 22));
+        jLabel19.setText("Saldo de compras:");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        jTextField4.setText("jTextField4");
+
+        jLabel70.setText("Total:");
+
+        jLabel71.setFont(new java.awt.Font(".SF NS Text", 0, 22)); // NOI18N
+        jLabel71.setText("Configurações");
+
+        jLabel72.setText("Valor da diaria:");
+
+        jTextField5.setText("jTextField5");
+
+        jTextField6.setText("jTextField6");
+
+        jLabel73.setText("Depreciacao por Km:");
+
+        jButton1.setText("jButton1");
+
+        jButton3.setText("jButton1");
 
         javax.swing.GroupLayout jPanelFinancialReportLayout = new javax.swing.GroupLayout(jPanelFinancialReport);
         jPanelFinancialReport.setLayout(jPanelFinancialReportLayout);
         jPanelFinancialReportLayout.setHorizontalGroup(
             jPanelFinancialReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelFinancialReportLayout.createSequentialGroup()
+            .addGroup(jPanelFinancialReportLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addGroup(jPanelFinancialReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSeparator3)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelFinancialReportLayout.createSequentialGroup()
-                        .addGroup(jPanelFinancialReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel17)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelFinancialReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelFinancialReportLayout.createSequentialGroup()
-                                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel19)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelFinancialReportLayout.createSequentialGroup()
-                                .addComponent(jLabel18)
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelFinancialReportLayout.createSequentialGroup()
+                .addGroup(jPanelFinancialReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelFinancialReportLayout.createSequentialGroup()
+                        .addComponent(jLabel71)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelFinancialReportLayout.createSequentialGroup()
                         .addGroup(jPanelFinancialReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(41, 41, 41))
+                            .addComponent(jSeparator11)
+                            .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelFinancialReportLayout.createSequentialGroup()
+                                .addGroup(jPanelFinancialReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel17)
+                                    .addComponent(jLabel18)
+                                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel19)
+                                    .addComponent(jLabel70))
+                                .addGap(93, 93, 93)
+                                .addGroup(jPanelFinancialReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
+                                    .addComponent(jTextField3)
+                                    .addComponent(jTextField2)
+                                    .addComponent(jTextField1)))
+                            .addGroup(jPanelFinancialReportLayout.createSequentialGroup()
+                                .addGroup(jPanelFinancialReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanelFinancialReportLayout.createSequentialGroup()
+                                        .addComponent(jTextField5)
+                                        .addGap(9, 9, 9))
+                                    .addComponent(jLabel72))
+                                .addGap(92, 92, 92)
+                                .addGroup(jPanelFinancialReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField6)
+                                    .addComponent(jLabel73)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelFinancialReportLayout.createSequentialGroup()
+                                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(76, 76, 76)
+                                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(32, 32, 32))))
         );
         jPanelFinancialReportLayout.setVerticalGroup(
             jPanelFinancialReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -809,22 +834,42 @@ public class MainView extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(jLabel16)
-                .addGap(26, 26, 26)
+                .addGap(24, 24, 24)
                 .addGroup(jPanelFinancialReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16)
+                .addGroup(jPanelFinancialReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18))
+                .addGap(16, 16, 16)
+                .addGroup(jPanelFinancialReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel19))
+                .addGap(16, 16, 16)
+                .addGroup(jPanelFinancialReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel70))
+                .addGap(32, 32, 32)
+                .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jLabel71)
+                .addGap(24, 24, 24)
+                .addGroup(jPanelFinancialReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel72)
+                    .addComponent(jLabel73))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelFinancialReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel19))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
-                .addGap(54, 54, 54))
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addGroup(jPanelFinancialReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton3))
+                .addGap(22, 22, 22))
         );
 
         jPanelSalesReport.setBackground(new java.awt.Color(218, 230, 242));
@@ -2309,9 +2354,8 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField formattedTextFieldRentReportInitDate;
     private javax.swing.JFormattedTextField formattedTextFieldTradeReportEndDate;
     private javax.swing.JFormattedTextField formattedTextFieldTradeReportInitDate;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JFormattedTextField jFormattedTextField2;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2379,6 +2423,10 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel70;
+    private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel8;
@@ -2397,13 +2445,14 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelRentReport;
     private javax.swing.JPanel jPanelSale;
     private javax.swing.JPanel jPanelSalesReport;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPaneRent;
     private javax.swing.JScrollPane jScrollPaneRent1;
     private javax.swing.JScrollPane jScrollPaneRent2;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator10;
+    private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
@@ -2412,10 +2461,15 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTableRentReport;
     private javax.swing.JTable jTableTradeReport;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     private javax.swing.JPanel parent;
     private javax.swing.JButton registerButtonCancel;
     private javax.swing.JButton registerButtonSave;
