@@ -114,8 +114,8 @@ public class VehicleService implements RentServiceInterface {
         rent.setVehicle(vehicleMap.get(0));
         rent.setKm(100);
         rent.setTank((Vehicle.Tank.FULL));
-        rent.setDate(LocalDate.parse("2017-02-03"));
-        rent.setExpirationDate(LocalDate.parse("2017-02-03"));
+        rent.setDate(LocalDate.parse("2020-06-03"));
+        rent.setExpirationDate(LocalDate.parse("2020-06-04"));
         rentVehicle(rent);
     }
 }

@@ -207,6 +207,29 @@ public class MainView extends javax.swing.JFrame {
         buttonDevConfirm = new javax.swing.JButton();
         buttonDevCancel = new javax.swing.JButton();
         comboBoxDevTank = new javax.swing.JComboBox<>();
+        jPanelSale = new javax.swing.JPanel();
+        jScrollPaneRent2 = new javax.swing.JScrollPane();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel60 = new javax.swing.JLabel();
+        textFieldSaleClient = new javax.swing.JTextField();
+        jLabel65 = new javax.swing.JLabel();
+        textFieldSaleModel = new javax.swing.JTextField();
+        buttonSaleShowVehicles = new javax.swing.JButton();
+        jLabel66 = new javax.swing.JLabel();
+        textFieldSaleBrand = new javax.swing.JTextField();
+        textFieldSaleCategory = new javax.swing.JTextField();
+        jLabel67 = new javax.swing.JLabel();
+        jLabel68 = new javax.swing.JLabel();
+        textFieldSaleKm = new javax.swing.JTextField();
+        comboBoxSaleTank = new javax.swing.JComboBox<>();
+        jLabel69 = new javax.swing.JLabel();
+        buttonSaleConfirm = new javax.swing.JButton();
+        buttonSaleCancel = new javax.swing.JButton();
+        jSeparator9 = new javax.swing.JSeparator();
+        textFieldSalePlate = new javax.swing.JTextField();
+        jLabel74 = new javax.swing.JLabel();
+        jLabel75 = new javax.swing.JLabel();
+        textFieldSaleValue = new javax.swing.JTextField();
 
         jTextField13.setText("jTextField12");
 
@@ -1610,8 +1633,210 @@ public class MainView extends javax.swing.JFrame {
                 .addComponent(jScrollPaneRent1, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE))
         );
 
+        jScrollPaneRent2.setPreferredSize(new java.awt.Dimension(339, 521));
+
+        jLabel60.setText("CPF do Cliente:");
+
+        textFieldSaleClient.setText("cpf");
+        textFieldSaleClient.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                textFieldSaleClientFocusGained(evt);
+            }
+        });
+        textFieldSaleClient.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textFieldSaleClientKeyTyped(evt);
+            }
+        });
+
+        jLabel65.setText("Modelo:");
+
+        textFieldSaleModel.setEditable(false);
+        textFieldSaleModel.setText("Selecione um veiculo");
+
+        buttonSaleShowVehicles.setText("Veiculo");
+        buttonSaleShowVehicles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSaleShowVehiclesActionPerformed(evt);
+            }
+        });
+
+        jLabel66.setText("Marca:");
+
+        textFieldSaleBrand.setEditable(false);
+
+        textFieldSaleCategory.setEditable(false);
+
+        jLabel67.setText("Categoria:");
+
+        jLabel68.setText("Kilometragem:");
+
+        textFieldSaleKm.setText("jTextField6");
+        textFieldSaleKm.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textFieldSaleKmKeyTyped(evt);
+            }
+        });
+
+        comboBoxSaleTank.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel69.setText("Tanque");
+
+        buttonSaleConfirm.setText("Confirmar");
+        buttonSaleConfirm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSaleConfirmActionPerformed(evt);
+            }
+        });
+
+        buttonSaleCancel.setText("Cancelar");
+        buttonSaleCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSaleCancelActionPerformed(evt);
+            }
+        });
+
+        textFieldSalePlate.setEditable(false);
+
+        jLabel74.setText("Placa:");
+
+        jLabel75.setText("Valor de Venda:");
+
+        textFieldSaleValue.setEditable(false);
+        textFieldSaleValue.setText("jTextField2");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(jSeparator9)
+                .addGap(64, 64, 64))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel75)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(textFieldSaleValue, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(buttonSaleShowVehicles, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(buttonSaleConfirm, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                                .addGap(64, 64, 64)
+                                .addComponent(buttonSaleCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(textFieldSaleKm)
+                                .addGap(23, 23, 23)
+                                .addComponent(comboBoxSaleTank, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel60)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(textFieldSaleClient, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel4Layout.createSequentialGroup()
+                                            .addComponent(textFieldSaleBrand)
+                                            .addGap(23, 23, 23))
+                                        .addGroup(jPanel4Layout.createSequentialGroup()
+                                            .addComponent(jLabel66)
+                                            .addGap(32, 32, 32)))
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addComponent(jLabel68)
+                                        .addGap(23, 23, 23)))
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textFieldSaleCategory)
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel69)
+                                            .addComponent(jLabel67))
+                                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addComponent(textFieldSaleModel)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addComponent(jLabel65)
+                                        .addGap(150, 150, 150)))
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel74)
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addComponent(textFieldSalePlate, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                                        .addGap(2, 2, 2)))))
+                        .addGap(32, 32, 32))))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel60)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(textFieldSaleClient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
+                .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
+                .addComponent(buttonSaleShowVehicles)
+                .addGap(16, 16, 16)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel65)
+                    .addComponent(jLabel74))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textFieldSaleModel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldSalePlate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel66)
+                    .addComponent(jLabel67))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textFieldSaleBrand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldSaleCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel68)
+                    .addComponent(jLabel69))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textFieldSaleKm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboBoxSaleTank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addComponent(jLabel75)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(textFieldSaleValue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonSaleConfirm)
+                    .addComponent(buttonSaleCancel))
+                .addGap(32, 32, 32))
+        );
+
+        jScrollPaneRent2.setViewportView(jPanel4);
+
+        javax.swing.GroupLayout jPanelSaleLayout = new javax.swing.GroupLayout(jPanelSale);
+        jPanelSale.setLayout(jPanelSaleLayout);
+        jPanelSaleLayout.setHorizontalGroup(
+            jPanelSaleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelSaleLayout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(jScrollPaneRent2, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
+        );
+        jPanelSaleLayout.setVerticalGroup(
+            jPanelSaleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelSaleLayout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(jScrollPaneRent2, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
+        );
+
         jLayeredPane2.setLayer(jPanelRent, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jPanelDevolution, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jPanelSale, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
         jLayeredPane2.setLayout(jLayeredPane2Layout);
@@ -1619,11 +1844,14 @@ public class MainView extends javax.swing.JFrame {
             jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanelRent, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanelDevolution, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelSale, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jLayeredPane2Layout.setVerticalGroup(
             jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPane2Layout.createSequentialGroup()
                 .addComponent(jPanelRent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanelSale, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelDevolution, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(12, 12, 12))
@@ -1917,10 +2145,17 @@ public class MainView extends javax.swing.JFrame {
         if(selected == 0){
             jPanelRent.setVisible(true);
             jPanelDevolution.setVisible(false);
+            jPanelSale.setVisible(false);
         }
         if(selected == 1){
             jPanelRent.setVisible(false);
             jPanelDevolution.setVisible(true);
+            jPanelSale.setVisible(false);
+        }
+        if(selected == 2){
+            jPanelRent.setVisible(false);
+            jPanelDevolution.setVisible(false);
+            jPanelSale.setVisible(true);
         }
     }//GEN-LAST:event_comboBoxPDDOperationItemStateChanged
 
@@ -1968,6 +2203,31 @@ public class MainView extends javax.swing.JFrame {
         devolutionClear();
         selectedRent = null;
     }//GEN-LAST:event_buttonDevConfirmActionPerformed
+
+    private void textFieldSaleClientFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldSaleClientFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldSaleClientFocusGained
+
+    private void textFieldSaleClientKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textFieldSaleClientKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldSaleClientKeyTyped
+
+    private void buttonSaleShowVehiclesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSaleShowVehiclesActionPerformed
+        BuscaVeiculoView view = new BuscaVeiculoView(vehicleService.getAvailable(), this);
+        view.setVisible(true);
+    }//GEN-LAST:event_buttonSaleShowVehiclesActionPerformed
+
+    private void textFieldSaleKmKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textFieldSaleKmKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldSaleKmKeyTyped
+
+    private void buttonSaleConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSaleConfirmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonSaleConfirmActionPerformed
+
+    private void buttonSaleCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSaleCancelActionPerformed
+        salesClear();
+    }//GEN-LAST:event_buttonSaleCancelActionPerformed
     
     /**
      * @param args the command line arguments
@@ -2017,10 +2277,14 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JButton buttonRentCancel;
     private javax.swing.JButton buttonRentConfirm;
     private javax.swing.JButton buttonRentShowVehicles;
+    private javax.swing.JButton buttonSaleCancel;
+    private javax.swing.JButton buttonSaleConfirm;
+    private javax.swing.JButton buttonSaleShowVehicles;
     private javax.swing.JComboBox<String> comboBoxDevTank;
     private javax.swing.JComboBox<String> comboBoxPDDOperation;
     private javax.swing.JComboBox<String> comboBoxRentReportType;
     private javax.swing.JComboBox<String> comboBoxRentTank;
+    private javax.swing.JComboBox<String> comboBoxSaleTank;
     private javax.swing.JFormattedTextField formattedTextFieldDevDevolutionDay;
     private javax.swing.JFormattedTextField formattedTextFieldDevExpetedDay;
     private javax.swing.JFormattedTextField formattedTextFieldDevRentDay;
@@ -2090,11 +2354,19 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel74;
+    private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
@@ -2102,18 +2374,21 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanelDevolution;
     private javax.swing.JPanel jPanelFinancialReport;
     private javax.swing.JPanel jPanelPDV;
     private javax.swing.JPanel jPanelRegister;
     private javax.swing.JPanel jPanelRent;
     private javax.swing.JPanel jPanelRentReport;
+    private javax.swing.JPanel jPanelSale;
     private javax.swing.JPanel jPanelSalesReport;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPaneRent;
     private javax.swing.JScrollPane jScrollPaneRent1;
+    private javax.swing.JScrollPane jScrollPaneRent2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -2122,6 +2397,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTableRentReport;
@@ -2163,16 +2439,32 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldRentPlate;
     private javax.swing.JTextField textFieldRentValueDay;
     private javax.swing.JTextField textFieldRentValueTotal;
+    private javax.swing.JTextField textFieldSaleBrand;
+    private javax.swing.JTextField textFieldSaleCategory;
+    private javax.swing.JTextField textFieldSaleClient;
+    private javax.swing.JTextField textFieldSaleKm;
+    private javax.swing.JTextField textFieldSaleModel;
+    private javax.swing.JTextField textFieldSalePlate;
+    private javax.swing.JTextField textFieldSaleValue;
     // End of variables declaration//GEN-END:variables
     
 //Puxa o veiculo da tela de busca para a tela
     public void setSelectedVehicle(Vehicle vehicle){
+        int selected = comboBoxPDDOperation.getSelectedIndex();
         this.selectedVehicle = vehicle;
-        this.textFieldRentBrand.setText(selectedVehicle.getBrand().toString());
-        this.textFieldRentCategory.setText(selectedVehicle.getCategory().toString());
-        this.textFieldRentCategory.setText(selectedVehicle.getCategory().toString());
-        this.textFieldRentModel.setText(selectedVehicle.getModel());
-        this.textFieldRentPlate.setText(selectedVehicle.getPlate());
+        if(selected == 0) {
+            this.textFieldRentBrand.setText(selectedVehicle.getBrand().toString());
+            this.textFieldRentCategory.setText(selectedVehicle.getCategory().toString());
+            this.textFieldRentCategory.setText(selectedVehicle.getCategory().toString());
+            this.textFieldRentModel.setText(selectedVehicle.getModel());
+            this.textFieldRentPlate.setText(selectedVehicle.getPlate());
+        } else if(selected == 2) {
+            this.textFieldSaleModel.setText(selectedVehicle.getModel());
+            this.textFieldSaleBrand.setText(selectedVehicle.getBrand().toString());
+            this.textFieldSaleCategory.setText(selectedVehicle.getCategory().toString());
+            this.textFieldSaleKm.setText(Double.toString(selectedVehicle.getKm()));
+            this.textFieldSalePlate.setText(selectedVehicle.getPlate());
+        }
     }
     
     /*                Setups/Init                 */
@@ -2180,7 +2472,7 @@ public class MainView extends javax.swing.JFrame {
         setupComponentsRent();
         setupComponentsRegister();
         setupComponentsRentReport();
-        
+        setupComponentsDev();
     }
  
     private  void setupComponentsRent(){
@@ -2193,6 +2485,7 @@ public class MainView extends javax.swing.JFrame {
         //Set a panel 
         jPanelRent.setVisible(true);
         jPanelDevolution.setVisible(false);
+        jPanelSale.setVisible(false);
     }
     
     private void setupComponentsDev(){
@@ -2254,6 +2547,15 @@ public class MainView extends javax.swing.JFrame {
         formattedTextFieldDevRentDay.setText("");
         formattedTextFieldDevExpetedDay.setText("");
         formattedTextFieldDevDevolutionDay.setText(dateStringNow());
+    }
+    
+    private void salesClear(){
+        this.textFieldSaleModel.setText("");
+        this.textFieldSaleBrand.setText("");
+        this.textFieldSaleCategory.setText("");
+        this.textFieldSaleKm.setText("");
+        this.textFieldSalePlate.setText("");
+        this.selectedVehicle = null;
     }
     
     private void registerClear() {
