@@ -18,25 +18,26 @@ import rogeriolucon.locadora.model.RentOperation;
  * @author rolucon
  */
 public class RentService implements RentServiceInterface {
+    private static int id = 0;
     public Map<Integer, RentOperation> rentedVehicles = new HashMap();
     public Map<Integer, RentOperation> returnedVehicles = new HashMap();
     
     @Override
     public boolean rentVehicle(RentOperation rent){
         rent.setType(RentOperation.Type.RETIRADA);
+        rent.setId(id);
         rent.setContractOpen(true);
-        rentedVehicles.put(rent.getVehicle().getId(), rent);
+        rentedVehicles.put(rent.getId(), rent);
         //Passar para o banco
         return true;
     }
     
     @Override
     public boolean devolutionVehicle(RentOperation rent){
-//        RentOperation rent = new RentOperation();
-//        rent.setType(RentOperation.Type.DEVOLUÇÃO);
-//        rent.setVehicle(vehicle);
-//        returnedVehicles.put(vehicle.getId(), rent);
-//        rentedVehicles.remove(rent);
+        System.out.println("Final dev");
+        rentedVehicles.remove(rent.getId());
+        returnedVehicles.put(rent.getId(), rent);
+        rent.setContractOpen(false);
         //Passar para o banco
         return true;
     }

@@ -2034,15 +2034,15 @@
                                                           <Component id="jLabel53" min="-2" max="-2" attributes="0"/>
                                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                                       </Group>
-                                                      <Component id="jComboBox3" max="32767" attributes="0"/>
+                                                      <Component id="comboBoxDevTank" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                               <Group type="102" attributes="0">
-                                                  <Component id="jormattedTextFieldDevRentDay" max="32767" attributes="0"/>
+                                                  <Component id="formattedTextFieldDevRentDay" max="32767" attributes="0"/>
                                                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
                                                       <Group type="102" attributes="0">
-                                                          <Component id="jormattedTextFieldDevExpetedDay" max="32767" attributes="0"/>
+                                                          <Component id="formattedTextFieldDevExpetedDay" max="32767" attributes="0"/>
                                                           <EmptySpace max="-2" attributes="0"/>
                                                       </Group>
                                                       <Group type="102" alignment="0" attributes="0">
@@ -2055,7 +2055,7 @@
                                                           <Component id="jLabel58" min="-2" max="-2" attributes="0"/>
                                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                                       </Group>
-                                                      <Component id="jormattedTextFieldDevDevolutionDay" max="32767" attributes="0"/>
+                                                      <Component id="formattedTextFieldDevDevolutionDay" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                               <Group type="102" attributes="0">
@@ -2129,7 +2129,7 @@
                                           <EmptySpace min="-2" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
                                               <Component id="textFieldDevInitTank" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jComboBox3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="comboBoxDevTank" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
@@ -2139,9 +2139,9 @@
                                           </Group>
                                           <EmptySpace min="-2" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jormattedTextFieldDevRentDay" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jormattedTextFieldDevExpetedDay" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jormattedTextFieldDevDevolutionDay" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="formattedTextFieldDevRentDay" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="formattedTextFieldDevExpetedDay" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="formattedTextFieldDevDevolutionDay" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
@@ -2191,6 +2191,9 @@
                                       <Dimension value="[100, 22]"/>
                                     </Property>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="textFieldDevPlateKeyTyped"/>
+                                  </Events>
                                 </Component>
                                 <Component class="javax.swing.JButton" name="buttonDevSearchRent">
                                   <Properties>
@@ -2205,6 +2208,9 @@
                                       <Dimension value="[120, 22]"/>
                                     </Property>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonDevSearchRentActionPerformed"/>
+                                  </Events>
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="jLabel48">
                                   <Properties>
@@ -2276,19 +2282,19 @@
                                     <Property name="text" type="java.lang.String" value="Retirada:"/>
                                   </Properties>
                                 </Component>
-                                <Component class="javax.swing.JFormattedTextField" name="jormattedTextFieldDevRentDay">
+                                <Component class="javax.swing.JFormattedTextField" name="formattedTextFieldDevRentDay">
                                   <Properties>
                                     <Property name="editable" type="boolean" value="false"/>
                                     <Property name="text" type="java.lang.String" value="12/12/12"/>
                                   </Properties>
                                 </Component>
-                                <Component class="javax.swing.JFormattedTextField" name="jormattedTextFieldDevExpetedDay">
+                                <Component class="javax.swing.JFormattedTextField" name="formattedTextFieldDevExpetedDay">
                                   <Properties>
                                     <Property name="editable" type="boolean" value="false"/>
                                     <Property name="text" type="java.lang.String" value="12/12/12"/>
                                   </Properties>
                                 </Component>
-                                <Component class="javax.swing.JFormattedTextField" name="jormattedTextFieldDevDevolutionDay">
+                                <Component class="javax.swing.JFormattedTextField" name="formattedTextFieldDevDevolutionDay">
                                   <Properties>
                                     <Property name="text" type="java.lang.String" value="12/12/12"/>
                                   </Properties>
@@ -2434,15 +2440,21 @@
                                       <Properties>
                                         <Property name="text" type="java.lang.String" value="Confirmar"/>
                                       </Properties>
+                                      <Events>
+                                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonDevConfirmActionPerformed"/>
+                                      </Events>
                                     </Component>
                                     <Component class="javax.swing.JButton" name="buttonDevCancel">
                                       <Properties>
                                         <Property name="text" type="java.lang.String" value="Cancelar"/>
                                       </Properties>
+                                      <Events>
+                                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonDevCancelActionPerformed"/>
+                                      </Events>
                                     </Component>
                                   </SubComponents>
                                 </Container>
-                                <Component class="javax.swing.JComboBox" name="jComboBox3">
+                                <Component class="javax.swing.JComboBox" name="comboBoxDevTank">
                                   <Properties>
                                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                                       <StringArray count="4">

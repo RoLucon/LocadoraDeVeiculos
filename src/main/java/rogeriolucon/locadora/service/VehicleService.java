@@ -5,6 +5,8 @@
  */
 package rogeriolucon.locadora.service;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -13,6 +15,7 @@ import java.util.stream.Collectors;
 import rogeriolucon.locadora.interfaces.RentServiceInterface;
 import rogeriolucon.locadora.model.RentOperation;
 import rogeriolucon.locadora.model.Vehicle;
+import static rogeriolucon.locadora.views.MainView.MY_DATA_F;
 
 /**
  *
@@ -33,10 +36,6 @@ public class VehicleService implements RentServiceInterface {
             return true;
         }
         return false;
-    }
-    
-    public boolean devolutionVehicle(){
-        return true;
     }
     
     public boolean purchaseVehicle(Vehicle vehicle){
@@ -72,7 +71,12 @@ public class VehicleService implements RentServiceInterface {
 
     @Override
     public boolean devolutionVehicle(RentOperation rent) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(rentService.devolutionVehicle(rent)){
+            rent.getVehicle().setAvailability(true);
+            System.out.println("Availability true");
+            return true;
+        }
+        return false;
     }
 
     @Override
@@ -104,5 +108,14 @@ public class VehicleService implements RentServiceInterface {
             aux.setAvailability(true);
             vehicleMap.put(aux.getId(), aux);
         }
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern(MY_DATA_F);
+
+        RentOperation rent = new RentOperation();
+        rent.setVehicle(vehicleMap.get(0));
+        rent.setKm(100);
+        rent.setTank((Vehicle.Tank.FULL));
+        rent.setDate(LocalDate.parse("2017-02-03"));
+        rent.setExpirationDate(LocalDate.parse("2017-02-03"));
+        rentVehicle(rent);
     }
 }
