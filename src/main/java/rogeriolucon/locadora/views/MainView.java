@@ -185,7 +185,6 @@ public class MainView extends javax.swing.JFrame {
         textFieldDevEndKm = new javax.swing.JTextField();
         jLabel52 = new javax.swing.JLabel();
         textFieldDevInitTank = new javax.swing.JTextField();
-        textFieldDevEndTank = new javax.swing.JTextField();
         jLabel53 = new javax.swing.JLabel();
         jLabel54 = new javax.swing.JLabel();
         jormattedTextFieldDevRentDay = new javax.swing.JFormattedTextField();
@@ -206,6 +205,7 @@ public class MainView extends javax.swing.JFrame {
         jLabel64 = new javax.swing.JLabel();
         buttonDevConfirm = new javax.swing.JButton();
         buttonDevCancel = new javax.swing.JButton();
+        jComboBox3 = new javax.swing.JComboBox<>();
 
         jTextField13.setText("jTextField12");
 
@@ -1299,42 +1299,49 @@ public class MainView extends javax.swing.JFrame {
 
         jLabel48.setText("Modelo:");
 
+        textFieldDevModel.setEditable(false);
         textFieldDevModel.setText("jTextField4");
 
         jLabel49.setText("Marca:");
 
+        textFieldDevBrand.setEditable(false);
         textFieldDevBrand.setText("jTextField2");
 
+        textFieldDevCategory.setEditable(false);
         textFieldDevCategory.setText("jTextField5");
 
         jLabel50.setText("Categoria:");
 
         jLabel51.setText("Km inicial:");
 
+        textFieldDevInitKm.setEditable(false);
         textFieldDevInitKm.setText("jTextField6");
 
         textFieldDevEndKm.setText("jTextField7");
 
         jLabel52.setText("Tanque inicial:");
 
+        textFieldDevInitTank.setEditable(false);
         textFieldDevInitTank.setText("jTextField8");
-
-        textFieldDevEndTank.setText("jTextField9");
 
         jLabel53.setText("Tanque final:");
 
         jLabel54.setText("Retirada:");
 
+        jormattedTextFieldDevRentDay.setEditable(false);
         jormattedTextFieldDevRentDay.setText("12/12/12");
 
+        jormattedTextFieldDevExpetedDay.setEditable(false);
         jormattedTextFieldDevExpetedDay.setText("12/12/12");
 
         jormattedTextFieldDevDevolutionDay.setText("12/12/12");
 
         jLabel55.setText("Dias excedidos:");
 
+        textFieldDevExceedDays.setEditable(false);
         textFieldDevExceedDays.setText("jTextField10");
 
+        textFieldDevValueDay.setEditable(false);
         textFieldDevValueDay.setText("jTextField11");
 
         jLabel57.setText("Contratado:");
@@ -1345,10 +1352,13 @@ public class MainView extends javax.swing.JFrame {
 
         jLabel62.setText("Valor total:");
 
+        textFieldDevTotalValue.setEditable(false);
         textFieldDevTotalValue.setText("jTextField12");
 
+        textFieldDevPaidoutValue.setEditable(false);
         textFieldDevPaidoutValue.setText("jTextField12");
 
+        textFieldDevDueValue.setEditable(false);
         textFieldDevDueValue.setText("jTextField12");
 
         jLabel63.setText("ja pago:");
@@ -1389,7 +1399,7 @@ public class MainView extends javax.swing.JFrame {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel64)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(textFieldDevDueValue))))
+                            .addComponent(textFieldDevDueValue, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE))))
                 .addGap(32, 32, 32))
         );
         jPanel3Layout.setVerticalGroup(
@@ -1410,6 +1420,8 @@ public class MainView extends javax.swing.JFrame {
                     .addComponent(buttonDevCancel))
                 .addGap(0, 49, Short.MAX_VALUE))
         );
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -1463,7 +1475,7 @@ public class MainView extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel53)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(textFieldDevEndTank)))
+                            .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jormattedTextFieldDevRentDay)
                         .addGap(6, 6, 6)
@@ -1536,7 +1548,7 @@ public class MainView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textFieldDevInitTank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textFieldDevEndTank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel54)
@@ -1955,6 +1967,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField formattedTextFieldRentReportInitDate;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JFormattedTextField jFormattedTextField2;
     private javax.swing.JFormattedTextField jFormattedTextField3;
@@ -2075,7 +2088,6 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldDevClient;
     private javax.swing.JTextField textFieldDevDueValue;
     private javax.swing.JTextField textFieldDevEndKm;
-    private javax.swing.JTextField textFieldDevEndTank;
     private javax.swing.JTextField textFieldDevExceedDays;
     private javax.swing.JTextField textFieldDevInitKm;
     private javax.swing.JTextField textFieldDevInitTank;

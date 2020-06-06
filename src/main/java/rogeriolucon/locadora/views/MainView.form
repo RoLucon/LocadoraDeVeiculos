@@ -2034,7 +2034,7 @@
                                                           <Component id="jLabel53" min="-2" max="-2" attributes="0"/>
                                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                                       </Group>
-                                                      <Component id="textFieldDevEndTank" max="32767" attributes="0"/>
+                                                      <Component id="jComboBox3" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                               <Group type="102" attributes="0">
@@ -2129,7 +2129,7 @@
                                           <EmptySpace min="-2" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
                                               <Component id="textFieldDevInitTank" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="textFieldDevEndTank" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jComboBox3" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
@@ -2213,6 +2213,7 @@
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="textFieldDevModel">
                                   <Properties>
+                                    <Property name="editable" type="boolean" value="false"/>
                                     <Property name="text" type="java.lang.String" value="jTextField4"/>
                                   </Properties>
                                 </Component>
@@ -2223,11 +2224,13 @@
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="textFieldDevBrand">
                                   <Properties>
+                                    <Property name="editable" type="boolean" value="false"/>
                                     <Property name="text" type="java.lang.String" value="jTextField2"/>
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="textFieldDevCategory">
                                   <Properties>
+                                    <Property name="editable" type="boolean" value="false"/>
                                     <Property name="text" type="java.lang.String" value="jTextField5"/>
                                   </Properties>
                                 </Component>
@@ -2243,6 +2246,7 @@
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="textFieldDevInitKm">
                                   <Properties>
+                                    <Property name="editable" type="boolean" value="false"/>
                                     <Property name="text" type="java.lang.String" value="jTextField6"/>
                                   </Properties>
                                 </Component>
@@ -2258,12 +2262,8 @@
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="textFieldDevInitTank">
                                   <Properties>
+                                    <Property name="editable" type="boolean" value="false"/>
                                     <Property name="text" type="java.lang.String" value="jTextField8"/>
-                                  </Properties>
-                                </Component>
-                                <Component class="javax.swing.JTextField" name="textFieldDevEndTank">
-                                  <Properties>
-                                    <Property name="text" type="java.lang.String" value="jTextField9"/>
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="jLabel53">
@@ -2278,11 +2278,13 @@
                                 </Component>
                                 <Component class="javax.swing.JFormattedTextField" name="jormattedTextFieldDevRentDay">
                                   <Properties>
+                                    <Property name="editable" type="boolean" value="false"/>
                                     <Property name="text" type="java.lang.String" value="12/12/12"/>
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JFormattedTextField" name="jormattedTextFieldDevExpetedDay">
                                   <Properties>
+                                    <Property name="editable" type="boolean" value="false"/>
                                     <Property name="text" type="java.lang.String" value="12/12/12"/>
                                   </Properties>
                                 </Component>
@@ -2298,11 +2300,13 @@
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="textFieldDevExceedDays">
                                   <Properties>
+                                    <Property name="editable" type="boolean" value="false"/>
                                     <Property name="text" type="java.lang.String" value="jTextField10"/>
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="textFieldDevValueDay">
                                   <Properties>
+                                    <Property name="editable" type="boolean" value="false"/>
                                     <Property name="text" type="java.lang.String" value="jTextField11"/>
                                   </Properties>
                                 </Component>
@@ -2360,7 +2364,7 @@
                                                               <Component id="jLabel64" min="-2" max="-2" attributes="0"/>
                                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                                           </Group>
-                                                          <Component id="textFieldDevDueValue" max="32767" attributes="0"/>
+                                                          <Component id="textFieldDevDueValue" pref="95" max="32767" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                               </Group>
@@ -2400,16 +2404,19 @@
                                     </Component>
                                     <Component class="javax.swing.JTextField" name="textFieldDevTotalValue">
                                       <Properties>
+                                        <Property name="editable" type="boolean" value="false"/>
                                         <Property name="text" type="java.lang.String" value="jTextField12"/>
                                       </Properties>
                                     </Component>
                                     <Component class="javax.swing.JTextField" name="textFieldDevPaidoutValue">
                                       <Properties>
+                                        <Property name="editable" type="boolean" value="false"/>
                                         <Property name="text" type="java.lang.String" value="jTextField12"/>
                                       </Properties>
                                     </Component>
                                     <Component class="javax.swing.JTextField" name="textFieldDevDueValue">
                                       <Properties>
+                                        <Property name="editable" type="boolean" value="false"/>
                                         <Property name="text" type="java.lang.String" value="jTextField12"/>
                                       </Properties>
                                     </Component>
@@ -2435,6 +2442,21 @@
                                     </Component>
                                   </SubComponents>
                                 </Container>
+                                <Component class="javax.swing.JComboBox" name="jComboBox3">
+                                  <Properties>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="4">
+                                        <StringItem index="0" value="Item 1"/>
+                                        <StringItem index="1" value="Item 2"/>
+                                        <StringItem index="2" value="Item 3"/>
+                                        <StringItem index="3" value="Item 4"/>
+                                      </StringArray>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
                               </SubComponents>
                             </Container>
                           </SubComponents>
