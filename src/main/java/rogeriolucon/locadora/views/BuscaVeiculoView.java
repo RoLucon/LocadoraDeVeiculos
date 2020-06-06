@@ -7,7 +7,6 @@ package rogeriolucon.locadora.views;
 
 import java.awt.event.MouseAdapter;
 import java.util.ArrayList;
-import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.AbstractTableModel;
 import rogeriolucon.locadora.SliderPopupListener;
@@ -249,13 +248,14 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
     }
     
     private void filter(){
+        System.out.println(sliderPrice.getValue());
         ArrayList<Vehicle> list = new ArrayList<>();
         for (Vehicle vehicle : mainList) {
             if (vehicle.getBrand() == comboBoxBrand.getSelectedItem() 
                     || allBrands == comboBoxBrand.getSelectedItem()) {
                 if(vehicle.getCategory() == comboBoxCategoty.getSelectedItem()
                         || allBrands == comboBoxCategoty.getSelectedItem()){
-                    if(vehicle.getPrice() <= sliderPrice.getValue() * 100) {
+                    if(vehicle.getPrice() <= sliderPrice.getValue() * 1000 || sliderPrice.getValue() == 100) {
                         list.add(vehicle);
                     }
                 }

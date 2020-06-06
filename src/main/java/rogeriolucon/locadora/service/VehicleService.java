@@ -55,7 +55,11 @@ public class VehicleService implements RentServiceInterface, TradeServiceInterfa
     @Override
     public boolean purchaseVehicle(Vehicle vehicle){
         if(tradeService.purchaseVehicle(vehicle)){
+            System.out.println("ADD veiculo");
+            vehicle.setId(vehicleMap.size());
+            System.out.println(vehicle.getId());
             vehicleMap.put(vehicle.getId(), vehicle);
+            System.out.println(vehicleMap.size());
             return true;
         }
         return false;

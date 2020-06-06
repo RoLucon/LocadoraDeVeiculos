@@ -10,7 +10,7 @@ import java.awt.event.KeyEvent;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Random;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import rogeriolucon.locadora.model.RentOperation;
@@ -93,7 +93,7 @@ public class MainView extends javax.swing.JFrame {
         registerButtonCancel = new javax.swing.JButton();
         buttonConsultar = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        textFieldRegisterValue = new javax.swing.JTextField();
         jPanelFinancialReport = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
@@ -624,7 +624,12 @@ public class MainView extends javax.swing.JFrame {
 
         jLabel20.setText("Valor de Compra");
 
-        jTextField1.setText("jTextField1");
+        textFieldRegisterValue.setText("jTextField1");
+        textFieldRegisterValue.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textFieldRegisterValueKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelRegisterLayout = new javax.swing.GroupLayout(jPanelRegister);
         jPanelRegister.setLayout(jPanelRegisterLayout);
@@ -669,7 +674,7 @@ public class MainView extends javax.swing.JFrame {
                                     .addComponent(jLabel11))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1, Short.MAX_VALUE))
                             .addGroup(jPanelRegisterLayout.createSequentialGroup()
-                                .addComponent(jTextField1)
+                                .addComponent(textFieldRegisterValue)
                                 .addGap(24, 24, 24)))
                         .addGroup(jPanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelRegisterLayout.createSequentialGroup()
@@ -716,7 +721,7 @@ public class MainView extends javax.swing.JFrame {
                     .addComponent(jLabel13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldRegisterValue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(registerTextFieldKm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24)
                 .addGroup(jPanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1984,8 +1989,9 @@ public class MainView extends javax.swing.JFrame {
         vehicle.setModel(String.valueOf(registerComboBoxModel.getSelectedItem()));
         vehicle.setCategory((Vehicle.Category)registerComboBoxCategory.getSelectedItem());
         vehicle.setBrand((Vehicle.Brand)(registerComboBoxBrand.getSelectedItem()));
+        vehicle.setPlate(registerTextFieldPlates.getText());
         vehicle.setKm(Integer.parseInt(registerTextFieldKm.getText()));
-//        vehicle.setPrice(Integer.parseInt(registerTextField.getText()));
+        vehicle.setPrice(Double.parseDouble(textFieldRegisterValue.getText()));
         if(vehicleService.purchaseVehicle(vehicle)){
             JOptionPane.showMessageDialog(this, "Adicionado com sucesso");
             registerClear();
@@ -2228,6 +2234,13 @@ public class MainView extends javax.swing.JFrame {
     private void buttonSaleCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSaleCancelActionPerformed
         salesClear();
     }//GEN-LAST:event_buttonSaleCancelActionPerformed
+
+    private void textFieldRegisterValueKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textFieldRegisterValueKeyTyped
+        char c = evt.getKeyChar();
+        if (((c < '0') || (c > '9')) && (c != KeyEvent.VK_BACK_SPACE)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_textFieldRegisterValueKeyTyped
     
     /**
      * @param args the command line arguments
@@ -2401,7 +2414,6 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTableRentReport;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JPanel parent;
     private javax.swing.JButton registerButtonCancel;
@@ -2431,6 +2443,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldDevPlate;
     private javax.swing.JTextField textFieldDevTotalValue;
     private javax.swing.JTextField textFieldDevValueDay;
+    private javax.swing.JTextField textFieldRegisterValue;
     private javax.swing.JTextField textFieldRentBrand;
     private javax.swing.JTextField textFieldRentCategory;
     private javax.swing.JTextField textFieldRentClient;
