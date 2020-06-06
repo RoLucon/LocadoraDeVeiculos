@@ -14,7 +14,7 @@ import rogeriolucon.locadora.model.Vehicle;
  * @author rolucon
  */
 public interface TradeServiceInterface {
-    boolean sellVehicle(Vehicle vehicle);
+    boolean sellVehicle(TradeOperation trade);
     boolean purchaseVehicle(Vehicle vehicle);
     ArrayList<TradeOperation> getSales();
     ArrayList<TradeOperation> getPurchases();

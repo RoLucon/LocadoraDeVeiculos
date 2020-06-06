@@ -14,6 +14,7 @@ import java.util.Random;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import rogeriolucon.locadora.model.RentOperation;
+import rogeriolucon.locadora.model.TradeOperation;
 import rogeriolucon.locadora.model.Vehicle;
 import rogeriolucon.locadora.model.table.RentTableModel;
 import rogeriolucon.locadora.model.table.TradeTableModel;
@@ -112,13 +113,13 @@ public class MainView extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JSeparator();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        comboBoxTradeReportType = new javax.swing.JComboBox<>();
         jLabel24 = new javax.swing.JLabel();
-        jFormattedTextField3 = new javax.swing.JFormattedTextField();
+        formattedTextFieldTradeReportInitDate = new javax.swing.JFormattedTextField();
         jLabel25 = new javax.swing.JLabel();
-        jFormattedTextField4 = new javax.swing.JFormattedTextField();
+        formattedTextFieldTradeReportEndDate = new javax.swing.JFormattedTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        jTableTradeReport = new javax.swing.JTable();
         jPanelRentReport = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
@@ -838,21 +839,21 @@ public class MainView extends javax.swing.JFrame {
         jLabel23.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
         jLabel23.setText("Tipo:");
 
-        jComboBox2.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ambos", "Aberto", "Encerrado", " " }));
+        comboBoxTradeReportType.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
+        comboBoxTradeReportType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ambos", "Aberto", "Encerrado", " " }));
 
         jLabel24.setText("Periodo:");
 
-        jFormattedTextField3.setText("jFormattedTextField1");
-        jFormattedTextField3.setMinimumSize(new java.awt.Dimension(90, 22));
+        formattedTextFieldTradeReportInitDate.setText("jFormattedTextField1");
+        formattedTextFieldTradeReportInitDate.setMinimumSize(new java.awt.Dimension(90, 22));
 
         jLabel25.setText("ate");
 
-        jFormattedTextField4.setText("jFormattedTextField1");
-        jFormattedTextField4.setMinimumSize(new java.awt.Dimension(90, 22));
+        formattedTextFieldTradeReportEndDate.setText("jFormattedTextField1");
+        formattedTextFieldTradeReportEndDate.setMinimumSize(new java.awt.Dimension(90, 22));
 
-        jTable2.setModel(new TradeTableModel());
-        jScrollPane2.setViewportView(jTable2);
+        jTableTradeReport.setModel(new TradeTableModel());
+        jScrollPane2.setViewportView(jTableTradeReport);
 
         javax.swing.GroupLayout jPanelSalesReportLayout = new javax.swing.GroupLayout(jPanelSalesReport);
         jPanelSalesReport.setLayout(jPanelSalesReportLayout);
@@ -866,15 +867,15 @@ public class MainView extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelSalesReportLayout.createSequentialGroup()
                         .addGroup(jPanelSalesReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel23)
-                            .addComponent(jComboBox2, 0, 109, Short.MAX_VALUE))
+                            .addComponent(comboBoxTradeReportType, 0, 109, Short.MAX_VALUE))
                         .addGap(35, 35, 35)
                         .addGroup(jPanelSalesReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelSalesReportLayout.createSequentialGroup()
-                                .addComponent(jFormattedTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
+                                .addComponent(formattedTextFieldTradeReportInitDate, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel25)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jFormattedTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE))
+                                .addComponent(formattedTextFieldTradeReportEndDate, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE))
                             .addComponent(jLabel24)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelSalesReportLayout.createSequentialGroup()
                         .addGroup(jPanelSalesReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -898,9 +899,9 @@ public class MainView extends javax.swing.JFrame {
                     .addComponent(jLabel24))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelSalesReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFormattedTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFormattedTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboBoxTradeReportType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(formattedTextFieldTradeReportInitDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(formattedTextFieldTradeReportEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel25))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1423,14 +1424,14 @@ public class MainView extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(textFieldDevTotalValue, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                                .addComponent(textFieldDevTotalValue, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
                                 .addGap(6, 6, 6))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel62)
                                 .addGap(21, 21, 21)))
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(textFieldDevPaidoutValue, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                                .addComponent(textFieldDevPaidoutValue, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
                                 .addGap(6, 6, 6))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel63)
@@ -1439,7 +1440,7 @@ public class MainView extends javax.swing.JFrame {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel64)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(textFieldDevDueValue, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE))))
+                            .addComponent(textFieldDevDueValue, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE))))
                 .addGap(32, 32, 32))
         );
         jPanel3Layout.setVerticalGroup(
@@ -1674,6 +1675,7 @@ public class MainView extends javax.swing.JFrame {
             }
         });
 
+        comboBoxSaleTank.setEditable(true);
         comboBoxSaleTank.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel69.setText("Tanque");
@@ -1720,9 +1722,9 @@ public class MainView extends javax.swing.JFrame {
                             .addComponent(textFieldSaleValue, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(buttonSaleShowVehicles, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(buttonSaleConfirm, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                                .addComponent(buttonSaleConfirm, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
                                 .addGap(64, 64, 64)
-                                .addComponent(buttonSaleCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE))
+                                .addComponent(buttonSaleCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(textFieldSaleKm)
                                 .addGap(23, 23, 23)
@@ -2219,7 +2221,15 @@ public class MainView extends javax.swing.JFrame {
     }//GEN-LAST:event_textFieldSaleKmKeyTyped
 
     private void buttonSaleConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSaleConfirmActionPerformed
-        // TODO add your handling code here:
+        //Confirma compra
+        TradeOperation trade = new TradeOperation();
+        trade.setDate(stringDateToLocalDate(dateStringNow()));
+        trade.setVehicle(selectedVehicle);
+        trade.setValue(selectedVehicle.getPrice());
+        trade.setTank((Vehicle.Tank)comboBoxSaleTank.getSelectedItem());
+        vehicleService.sellVehicle(trade);
+        updateTradeReport();
+        salesClear();
     }//GEN-LAST:event_buttonSaleConfirmActionPerformed
 
     private void buttonSaleCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSaleCancelActionPerformed
@@ -2289,6 +2299,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> comboBoxRentReportType;
     private javax.swing.JComboBox<String> comboBoxRentTank;
     private javax.swing.JComboBox<String> comboBoxSaleTank;
+    private javax.swing.JComboBox<String> comboBoxTradeReportType;
     private javax.swing.JFormattedTextField formattedTextFieldDevDevolutionDay;
     private javax.swing.JFormattedTextField formattedTextFieldDevExpetedDay;
     private javax.swing.JFormattedTextField formattedTextFieldDevRentDay;
@@ -2296,12 +2307,11 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField formattedTextFieldRentInitDate;
     private javax.swing.JFormattedTextField formattedTextFieldRentReportEndDate;
     private javax.swing.JFormattedTextField formattedTextFieldRentReportInitDate;
+    private javax.swing.JFormattedTextField formattedTextFieldTradeReportEndDate;
+    private javax.swing.JFormattedTextField formattedTextFieldTradeReportInitDate;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JFormattedTextField jFormattedTextField2;
-    private javax.swing.JFormattedTextField jFormattedTextField3;
-    private javax.swing.JFormattedTextField jFormattedTextField4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2403,8 +2413,8 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTable jTableRentReport;
+    private javax.swing.JTable jTableTradeReport;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JPanel parent;
     private javax.swing.JButton registerButtonCancel;
@@ -2468,6 +2478,7 @@ public class MainView extends javax.swing.JFrame {
             this.textFieldSaleCategory.setText(selectedVehicle.getCategory().toString());
             this.textFieldSaleKm.setText(Double.toString(selectedVehicle.getKm()));
             this.textFieldSalePlate.setText(selectedVehicle.getPlate());
+            this.textFieldSaleValue.setText(Double.toString(selectedVehicle.getPrice()));
         }
     }
     
@@ -2477,6 +2488,8 @@ public class MainView extends javax.swing.JFrame {
         setupComponentsRegister();
         setupComponentsRentReport();
         setupComponentsDev();
+        setupComponentsSale();
+        setupComponetsTradeReport();
     }
  
     private  void setupComponentsRent(){
@@ -2498,11 +2511,24 @@ public class MainView extends javax.swing.JFrame {
         comboBoxDevTank.setSelectedItem("<Tank>");
     }
     
+    private void setupComponentsSale(){
+        comboBoxSaleTank.setModel(new DefaultComboBoxModel(Vehicle.Tank.values()));
+        comboBoxSaleTank.addItem("<Tank>");
+        comboBoxSaleTank.setSelectedItem("<Tank>");
+    }
+    
     private void setupComponentsRentReport(){
         RentTableModel model = (RentTableModel) jTableRentReport.getModel();
         model.setList(vehicleService.getAllRentOperations());
         formattedTextFieldRentReportInitDate.setText("01/06/2020");
         formattedTextFieldRentReportEndDate.setText(dateStringNow());
+    }
+    
+    private void setupComponetsTradeReport(){
+        TradeTableModel model = (TradeTableModel) jTableTradeReport.getModel();
+        model.setList(vehicleService.getAllTradeOperations());
+        formattedTextFieldTradeReportInitDate.setText("01/06/2020");
+        formattedTextFieldTradeReportEndDate.setText(dateStringNow());
     }
     
     private void setupComponentsRegister(){
@@ -2554,11 +2580,14 @@ public class MainView extends javax.swing.JFrame {
     }
     
     private void salesClear(){
+        this.textFieldSaleClient.setText("");
         this.textFieldSaleModel.setText("");
         this.textFieldSaleBrand.setText("");
         this.textFieldSaleCategory.setText("");
         this.textFieldSaleKm.setText("");
         this.textFieldSalePlate.setText("");
+        this.comboBoxSaleTank.setSelectedItem("<Tank>");
+        this.textFieldSaleValue.setText("");
         this.selectedVehicle = null;
     }
     
@@ -2590,7 +2619,13 @@ public class MainView extends javax.swing.JFrame {
     private void updateRentReport(){
         RentTableModel model = (RentTableModel) jTableRentReport.getModel();
         model.setList(vehicleService.getAllRentOperations());
-        System.out.println("Atualizada");
+        comboBoxRentReportType.setSelectedIndex(0);
+    }
+    
+    private void updateTradeReport(){
+        TradeTableModel model = (TradeTableModel) jTableTradeReport.getModel();
+        model.setList(vehicleService.getAllTradeOperations());
+        comboBoxTradeReportType.setSelectedIndex(0);
     }
     
     /*                Filtros                 */

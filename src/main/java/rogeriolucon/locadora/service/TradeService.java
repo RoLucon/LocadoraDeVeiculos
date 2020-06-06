@@ -20,10 +20,8 @@ public class TradeService implements TradeServiceInterface {
     public ArrayList<TradeOperation> soldVehicles = new ArrayList();
     
     @Override
-    public boolean sellVehicle(Vehicle vehicle){
-        TradeOperation trade = new TradeOperation();
+    public boolean sellVehicle(TradeOperation trade){
         trade.setType(TradeOperation.Type.VENDA);
-        trade.setVehicle(vehicle);
         soldVehicles.add(trade);
         //Passar para o banco
         return true;

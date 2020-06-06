@@ -1092,16 +1092,16 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel23" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jComboBox2" alignment="0" pref="109" max="32767" attributes="0"/>
+                                      <Component id="comboBoxTradeReportType" alignment="0" pref="109" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jFormattedTextField3" pref="91" max="32767" attributes="0"/>
+                                          <Component id="formattedTextFieldTradeReportInitDate" pref="91" max="32767" attributes="0"/>
                                           <EmptySpace min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="jFormattedTextField4" pref="90" max="32767" attributes="0"/>
+                                          <Component id="formattedTextFieldTradeReportEndDate" pref="90" max="32767" attributes="0"/>
                                       </Group>
                                       <Component id="jLabel24" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -1134,9 +1134,9 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jFormattedTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jFormattedTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboBoxTradeReportType" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="formattedTextFieldTradeReportInitDate" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="formattedTextFieldTradeReportEndDate" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel25" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -1173,7 +1173,7 @@
                     <Property name="text" type="java.lang.String" value="Tipo:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox2">
+                <Component class="javax.swing.JComboBox" name="comboBoxTradeReportType">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name=".SF NS Text" size="14" style="0"/>
@@ -1196,7 +1196,7 @@
                     <Property name="text" type="java.lang.String" value="Periodo:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField3">
+                <Component class="javax.swing.JFormattedTextField" name="formattedTextFieldTradeReportInitDate">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="jFormattedTextField1"/>
                     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -1209,7 +1209,7 @@
                     <Property name="text" type="java.lang.String" value="ate"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField4">
+                <Component class="javax.swing.JFormattedTextField" name="formattedTextFieldTradeReportEndDate">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="jFormattedTextField1"/>
                     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -1224,7 +1224,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTable" name="jTable2">
+                    <Component class="javax.swing.JTable" name="jTableTradeReport">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                           <Connection code="new TradeTableModel()" type="code"/>
@@ -2348,7 +2348,7 @@
                                                   <Group type="102" attributes="0">
                                                       <Group type="103" groupAlignment="0" attributes="0">
                                                           <Group type="102" attributes="0">
-                                                              <Component id="textFieldDevTotalValue" pref="0" max="32767" attributes="0"/>
+                                                              <Component id="textFieldDevTotalValue" pref="107" max="32767" attributes="0"/>
                                                               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                                           </Group>
                                                           <Group type="102" alignment="0" attributes="0">
@@ -2358,7 +2358,7 @@
                                                       </Group>
                                                       <Group type="103" groupAlignment="0" attributes="0">
                                                           <Group type="102" attributes="0">
-                                                              <Component id="textFieldDevPaidoutValue" pref="0" max="32767" attributes="0"/>
+                                                              <Component id="textFieldDevPaidoutValue" pref="107" max="32767" attributes="0"/>
                                                               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                                           </Group>
                                                           <Group type="102" alignment="0" attributes="0">
@@ -2371,7 +2371,7 @@
                                                               <Component id="jLabel64" min="-2" max="-2" attributes="0"/>
                                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                                           </Group>
-                                                          <Component id="textFieldDevDueValue" pref="95" max="32767" attributes="0"/>
+                                                          <Component id="textFieldDevDueValue" pref="118" max="32767" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                               </Group>
@@ -2530,9 +2530,9 @@
                                                       <Component id="textFieldSaleValue" alignment="0" max="32767" attributes="0"/>
                                                       <Component id="buttonSaleShowVehicles" alignment="0" max="32767" attributes="0"/>
                                                       <Group type="102" alignment="1" attributes="0">
-                                                          <Component id="buttonSaleConfirm" pref="110" max="32767" attributes="0"/>
+                                                          <Component id="buttonSaleConfirm" pref="144" max="32767" attributes="0"/>
                                                           <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                                                          <Component id="buttonSaleCancel" pref="101" max="32767" attributes="0"/>
+                                                          <Component id="buttonSaleCancel" pref="136" max="32767" attributes="0"/>
                                                       </Group>
                                                       <Group type="102" alignment="1" attributes="0">
                                                           <Component id="textFieldSaleKm" max="32767" attributes="0"/>
@@ -2722,6 +2722,7 @@
                                 </Component>
                                 <Component class="javax.swing.JComboBox" name="comboBoxSaleTank">
                                   <Properties>
+                                    <Property name="editable" type="boolean" value="true"/>
                                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                                       <StringArray count="4">
                                         <StringItem index="0" value="Item 1"/>

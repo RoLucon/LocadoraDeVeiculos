@@ -45,9 +45,9 @@ public class VehicleService implements RentServiceInterface, TradeServiceInterfa
     }
     //Trade
     @Override
-    public boolean sellVehicle(Vehicle vehicle){
-        if(tradeService.sellVehicle(vehicle)){
-            vehicleMap.remove(vehicle.getId());
+    public boolean sellVehicle(TradeOperation trade){
+        if(tradeService.sellVehicle(trade)){
+            vehicleMap.remove(trade.getVehicle().getId());
             return true;
         }
         return false;
@@ -77,7 +77,7 @@ public class VehicleService implements RentServiceInterface, TradeServiceInterfa
 
     @Override
     public ArrayList<TradeOperation> getAllTradeOperations() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return tradeService.getAllTradeOperations();
     }
     //Rent
     @Override

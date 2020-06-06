@@ -34,7 +34,7 @@ public class RentService implements RentServiceInterface {
     
     @Override
     public boolean devolutionVehicle(RentOperation rent){
-        System.out.println("Final dev");
+        rent.setType(RentOperation.Type.DEVOLUÇÃO);
         rentedVehicles.remove(rent.getId());
         returnedVehicles.put(rent.getId(), rent);
         rent.setContractOpen(false);
