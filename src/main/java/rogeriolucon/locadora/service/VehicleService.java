@@ -13,7 +13,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 import rogeriolucon.locadora.interfaces.RentServiceInterface;
+import rogeriolucon.locadora.interfaces.TradeServiceInterface;
 import rogeriolucon.locadora.model.RentOperation;
+import rogeriolucon.locadora.model.TradeOperation;
 import rogeriolucon.locadora.model.Vehicle;
 import static rogeriolucon.locadora.views.MainView.MY_DATA_F;
 
@@ -21,7 +23,7 @@ import static rogeriolucon.locadora.views.MainView.MY_DATA_F;
  *
  * @author rolucon
  */
-public class VehicleService implements RentServiceInterface {
+public class VehicleService implements RentServiceInterface, TradeServiceInterface {
     private TradeService tradeService = new TradeService();
     private RentService rentService = new RentService();
     private Map<Integer,Vehicle> vehicleMap = new HashMap<>();
@@ -29,24 +31,8 @@ public class VehicleService implements RentServiceInterface {
     public VehicleService() {
         generateList();
     }
-    
-    public boolean sellVehicle(Vehicle vehicle){
-        if(tradeService.purchaseVehicle(vehicle)){
-            vehicleMap.remove(vehicle.getId());
-            return true;
-        }
-        return false;
-    }
-    
-    public boolean purchaseVehicle(Vehicle vehicle){
-        if(tradeService.purchaseVehicle(vehicle)){
-            vehicleMap.put(vehicle.getId(), vehicle);
-            return true;
-        }
-        return false;
-    }
-    
-    public ArrayList<Vehicle> getList(){
+    //Propios
+    public ArrayList<Vehicle> getOwnVehicles(){
         return new ArrayList(vehicleMap.values());
     }
     
@@ -57,7 +43,39 @@ public class VehicleService implements RentServiceInterface {
         Collection<Vehicle> values = filtered.values();
         return new ArrayList<>(values);
     }
+    //Trade
+    @Override
+    public boolean sellVehicle(Vehicle vehicle){
+        if(tradeService.sellVehicle(vehicle)){
+            vehicleMap.remove(vehicle.getId());
+            return true;
+        }
+        return false;
+    }
+    @Override
+    public boolean purchaseVehicle(Vehicle vehicle){
+        if(tradeService.purchaseVehicle(vehicle)){
+            vehicleMap.put(vehicle.getId(), vehicle);
+            return true;
+        }
+        return false;
+    }
+    
+    @Override
+    public ArrayList<TradeOperation> getSales() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
+    @Override
+    public ArrayList<TradeOperation> getPurchases() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ArrayList<TradeOperation> getAllTradeOperations() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    //Rent
     @Override
     public boolean rentVehicle(RentOperation rent) {
         if(rentService.rentVehicle(rent)){
@@ -118,4 +136,6 @@ public class VehicleService implements RentServiceInterface {
         rent.setExpirationDate(LocalDate.parse("2020-06-04"));
         rentVehicle(rent);
     }
+
+    
 }

@@ -6,6 +6,7 @@
 package rogeriolucon.locadora.model;
 
 import java.time.LocalDate;
+import rogeriolucon.locadora.model.Vehicle.Tank;
 
 /**
  *
@@ -14,9 +15,12 @@ import java.time.LocalDate;
 public class RentOperation extends Operation {
         public enum Type {RETIRADA, DEVOLUÇÃO;}
         private Type type;
+        private Tank finalTank;
         private LocalDate expirationDate;
         private LocalDate waxedDate;
         private boolean contractOpen; 
+        private double finalKm;
+        
 
     public Type getType() {
         return type;

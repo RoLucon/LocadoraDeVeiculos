@@ -2001,7 +2001,7 @@ public class MainView extends javax.swing.JFrame {
 
     private void buttonConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonConsultarActionPerformed
         //Abre a view com a tabela de veiculos
-        BuscaVeiculoView view = new BuscaVeiculoView(vehicleService.getList());
+        BuscaVeiculoView view = new BuscaVeiculoView(vehicleService.getOwnVehicles());
         view.setVisible(true);
     }//GEN-LAST:event_buttonConsultarActionPerformed
 
