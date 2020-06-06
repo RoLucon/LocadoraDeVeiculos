@@ -12,6 +12,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
+import rogeriolucon.locadora.interfaces.FinancialServiceInterface;
 import rogeriolucon.locadora.interfaces.RentServiceInterface;
 import rogeriolucon.locadora.interfaces.TradeServiceInterface;
 import rogeriolucon.locadora.model.RentOperation;
@@ -23,9 +24,10 @@ import static rogeriolucon.locadora.views.MainView.MY_DATA_F;
  *
  * @author rolucon
  */
-public class VehicleService implements RentServiceInterface, TradeServiceInterface {
+public class VehicleService implements RentServiceInterface, TradeServiceInterface, FinancialServiceInterface {
     private TradeService tradeService = new TradeService();
     private RentService rentService = new RentService();
+    private FinancialService financialService = new FinancialService();
     private Map<Integer,Vehicle> vehicleMap = new HashMap<>();
     
     public VehicleService() {
@@ -116,6 +118,21 @@ public class VehicleService implements RentServiceInterface, TradeServiceInterfa
         return rentService.getAllRentOperations();
     }
     
+    @Override
+    public void changeConfig(double rentValuePerDay, double depreciationPerDay) {
+        financialService.changeConfig(rentValuePerDay, depreciationPerDay);
+    }
+
+    @Override
+    public double rentValuePerDay() {
+        return financialService.rentValuePerDay();
+    }
+
+    @Override
+    public double depreciationPerDay() {
+        return financialService.depreciationPerDay();
+    }
+
     // Gerando lista de testes
     private void generateList(){
         for (int i = 0; i < 5; i++) {
@@ -140,6 +157,4 @@ public class VehicleService implements RentServiceInterface, TradeServiceInterfa
         rent.setExpirationDate(LocalDate.parse("2020-06-04"));
         rentVehicle(rent);
     }
-
-    
 }
