@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
 import rogeriolucon.locadora.model.RentOperation;
 import rogeriolucon.locadora.model.Vehicle;
 import rogeriolucon.locadora.model.table.RentTableModel;
+import rogeriolucon.locadora.model.table.TradeTableModel;
 import rogeriolucon.locadora.service.VehicleService;
 
 /**
@@ -850,17 +851,7 @@ public class MainView extends javax.swing.JFrame {
         jFormattedTextField4.setText("jFormattedTextField1");
         jFormattedTextField4.setMinimumSize(new java.awt.Dimension(90, 22));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
+        jTable2.setModel(new TradeTableModel());
         jScrollPane2.setViewportView(jTable2);
 
         javax.swing.GroupLayout jPanelSalesReportLayout = new javax.swing.GroupLayout(jPanelSalesReport);

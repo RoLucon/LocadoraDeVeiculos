@@ -7,14 +7,14 @@ package rogeriolucon.locadora.model.table;
 
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
-import rogeriolucon.locadora.model.RentOperation;
+import rogeriolucon.locadora.model.TradeOperation;
 
 /**
  *
  * @author rolucon
  */
-public class RentTableModel extends AbstractTableModel {
-    ArrayList<RentOperation> list = new ArrayList<>();
+public class TradeTableModel extends AbstractTableModel{
+    ArrayList<TradeOperation> list = new ArrayList<>();
     
     String[] column = {"ID", "Categoria", "Marca", "Modelo", "Km", "Preço",
         "Inicio","Validade","Devolvido"};
@@ -51,10 +51,6 @@ public class RentTableModel extends AbstractTableModel {
                 return list.get(rowIndex).getValue();
             case 6:
                 return list.get(rowIndex).getDate();
-            case 7:
-                return list.get(rowIndex).getExpirationDate();
-            case 8:
-                return list.get(rowIndex).getWaxedDate();
         }
         return null;
     }
@@ -63,16 +59,16 @@ public class RentTableModel extends AbstractTableModel {
         fireTableDataChanged();
     }
     
-    public void setList(ArrayList<RentOperation> list) {
+    public void setList(ArrayList<TradeOperation> list) {
         this.list = list;
         update();
     }
     
-    public RentOperation getAtIndex(int index){
+    public TradeOperation getAtIndex(int index){
         return list.get(index);
     }
     
-    public void addVehicle(RentOperation vehicle) {
+    public void addVehicle(TradeOperation vehicle) {
         list.add(vehicle);
         update();
     }
