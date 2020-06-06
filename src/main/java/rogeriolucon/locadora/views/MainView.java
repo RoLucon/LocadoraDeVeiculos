@@ -172,40 +172,40 @@ public class MainView extends javax.swing.JFrame {
         textFieldDevClient = new javax.swing.JTextField();
         jSeparator8 = new javax.swing.JSeparator();
         jLabel47 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        textFieldDevPlate = new javax.swing.JTextField();
+        buttonDevSearchRent = new javax.swing.JButton();
         jLabel48 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        textFieldDevModel = new javax.swing.JTextField();
         jLabel49 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        textFieldDevBrand = new javax.swing.JTextField();
+        textFieldDevCategory = new javax.swing.JTextField();
         jLabel50 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
+        textFieldDevInitKm = new javax.swing.JTextField();
+        textFieldDevEndKm = new javax.swing.JTextField();
         jLabel52 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
+        textFieldDevInitTank = new javax.swing.JTextField();
+        textFieldDevEndTank = new javax.swing.JTextField();
         jLabel53 = new javax.swing.JLabel();
         jLabel54 = new javax.swing.JLabel();
-        jFormattedTextField5 = new javax.swing.JFormattedTextField();
-        jFormattedTextField6 = new javax.swing.JFormattedTextField();
-        jFormattedTextField7 = new javax.swing.JFormattedTextField();
+        jormattedTextFieldDevRentDay = new javax.swing.JFormattedTextField();
+        jormattedTextFieldDevExpetedDay = new javax.swing.JFormattedTextField();
+        jormattedTextFieldDevDevolutionDay = new javax.swing.JFormattedTextField();
         jLabel55 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
+        textFieldDevExceedDays = new javax.swing.JTextField();
+        textFieldDevValueDay = new javax.swing.JTextField();
         jLabel57 = new javax.swing.JLabel();
         jLabel58 = new javax.swing.JLabel();
         jLabel59 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel62 = new javax.swing.JLabel();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
+        textFieldDevTotalValue = new javax.swing.JTextField();
+        textFieldDevPaidoutValue = new javax.swing.JTextField();
+        textFieldDevDueValue = new javax.swing.JTextField();
         jLabel63 = new javax.swing.JLabel();
         jLabel64 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        buttonDevConfirm = new javax.swing.JButton();
+        buttonDevCancel = new javax.swing.JButton();
 
         jTextField13.setText("jTextField12");
 
@@ -1288,54 +1288,54 @@ public class MainView extends javax.swing.JFrame {
 
         jLabel47.setText("Placa:");
 
-        jTextField3.setText("jTextField3");
-        jTextField3.setMinimumSize(new java.awt.Dimension(100, 22));
-        jTextField3.setPreferredSize(new java.awt.Dimension(100, 22));
+        textFieldDevPlate.setText("jTextField3");
+        textFieldDevPlate.setMinimumSize(new java.awt.Dimension(100, 22));
+        textFieldDevPlate.setPreferredSize(new java.awt.Dimension(100, 22));
 
-        jButton1.setText("jButton1");
-        jButton1.setMinimumSize(new java.awt.Dimension(120, 22));
-        jButton1.setPreferredSize(new java.awt.Dimension(120, 22));
-        jButton1.setSize(new java.awt.Dimension(120, 22));
+        buttonDevSearchRent.setText("Buscar locação");
+        buttonDevSearchRent.setMinimumSize(new java.awt.Dimension(120, 22));
+        buttonDevSearchRent.setPreferredSize(new java.awt.Dimension(120, 22));
+        buttonDevSearchRent.setSize(new java.awt.Dimension(120, 22));
 
         jLabel48.setText("Modelo:");
 
-        jTextField4.setText("jTextField4");
+        textFieldDevModel.setText("jTextField4");
 
         jLabel49.setText("Marca:");
 
-        jTextField2.setText("jTextField2");
+        textFieldDevBrand.setText("jTextField2");
 
-        jTextField5.setText("jTextField5");
+        textFieldDevCategory.setText("jTextField5");
 
         jLabel50.setText("Categoria:");
 
         jLabel51.setText("Km inicial:");
 
-        jTextField6.setText("jTextField6");
+        textFieldDevInitKm.setText("jTextField6");
 
-        jTextField7.setText("jTextField7");
+        textFieldDevEndKm.setText("jTextField7");
 
         jLabel52.setText("Tanque inicial:");
 
-        jTextField8.setText("jTextField8");
+        textFieldDevInitTank.setText("jTextField8");
 
-        jTextField9.setText("jTextField9");
+        textFieldDevEndTank.setText("jTextField9");
 
         jLabel53.setText("Tanque final:");
 
         jLabel54.setText("Retirada:");
 
-        jFormattedTextField5.setText("12/12/12");
+        jormattedTextFieldDevRentDay.setText("12/12/12");
 
-        jFormattedTextField6.setText("12/12/12");
+        jormattedTextFieldDevExpetedDay.setText("12/12/12");
 
-        jFormattedTextField7.setText("12/12/12");
+        jormattedTextFieldDevDevolutionDay.setText("12/12/12");
 
         jLabel55.setText("Dias excedidos:");
 
-        jTextField10.setText("jTextField10");
+        textFieldDevExceedDays.setText("jTextField10");
 
-        jTextField11.setText("jTextField11");
+        textFieldDevValueDay.setText("jTextField11");
 
         jLabel57.setText("Contratado:");
 
@@ -1345,19 +1345,19 @@ public class MainView extends javax.swing.JFrame {
 
         jLabel62.setText("Valor total:");
 
-        jTextField12.setText("jTextField12");
+        textFieldDevTotalValue.setText("jTextField12");
 
-        jTextField14.setText("jTextField12");
+        textFieldDevPaidoutValue.setText("jTextField12");
 
-        jTextField15.setText("jTextField12");
+        textFieldDevDueValue.setText("jTextField12");
 
         jLabel63.setText("ja pago:");
 
         jLabel64.setText("a pagar:");
 
-        jButton2.setText("jButton2");
+        buttonDevConfirm.setText("Confirmar");
 
-        jButton3.setText("jButton2");
+        buttonDevCancel.setText("Cancelar");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -1367,20 +1367,20 @@ public class MainView extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(buttonDevConfirm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(42, 42, 42)
-                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(buttonDevCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                                .addComponent(textFieldDevTotalValue, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
                                 .addGap(6, 6, 6))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel62)
                                 .addGap(21, 21, 21)))
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                                .addComponent(textFieldDevPaidoutValue, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
                                 .addGap(6, 6, 6))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel63)
@@ -1389,7 +1389,7 @@ public class MainView extends javax.swing.JFrame {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel64)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jTextField15))))
+                            .addComponent(textFieldDevDueValue))))
                 .addGap(32, 32, 32))
         );
         jPanel3Layout.setVerticalGroup(
@@ -1401,13 +1401,13 @@ public class MainView extends javax.swing.JFrame {
                     .addComponent(jLabel64))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textFieldDevTotalValue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldDevPaidoutValue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldDevDueValue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(64, 64, 64)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(buttonDevConfirm)
+                    .addComponent(buttonDevCancel))
                 .addGap(0, 49, Short.MAX_VALUE))
         );
 
@@ -1424,14 +1424,14 @@ public class MainView extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(textFieldDevClient)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(textFieldDevPlate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(23, 23, 23)
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jTextField4)
+                        .addComponent(buttonDevSearchRent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(textFieldDevModel)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jTextField2)
+                                .addComponent(textFieldDevBrand)
                                 .addGap(23, 23, 23))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel49)
@@ -1440,11 +1440,11 @@ public class MainView extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel50)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jTextField5)))
+                            .addComponent(textFieldDevCategory)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jTextField6)
+                        .addComponent(textFieldDevInitKm)
                         .addGap(23, 23, 23)
-                        .addComponent(jTextField7))
+                        .addComponent(textFieldDevEndKm))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel46)
@@ -1454,7 +1454,7 @@ public class MainView extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jTextField8)
+                                .addComponent(textFieldDevInitTank)
                                 .addGap(23, 23, 23))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel52)
@@ -1463,13 +1463,13 @@ public class MainView extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel53)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jTextField9)))
+                            .addComponent(textFieldDevEndTank)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jFormattedTextField5)
+                        .addComponent(jormattedTextFieldDevRentDay)
                         .addGap(6, 6, 6)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jFormattedTextField6)
+                                .addComponent(jormattedTextFieldDevExpetedDay)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel57)
@@ -1478,11 +1478,11 @@ public class MainView extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel58)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jFormattedTextField7)))
+                            .addComponent(jormattedTextFieldDevDevolutionDay)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jTextField10)
+                                .addComponent(textFieldDevExceedDays)
                                 .addGap(23, 23, 23))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1492,7 +1492,7 @@ public class MainView extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel59)
-                            .addComponent(jTextField11))))
+                            .addComponent(textFieldDevValueDay))))
                 .addGap(32, 32, 32))
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -1509,34 +1509,34 @@ public class MainView extends javax.swing.JFrame {
                 .addComponent(jLabel47)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textFieldDevPlate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonDevSearchRent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
                 .addComponent(jLabel48)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textFieldDevModel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel49)
                     .addComponent(jLabel50))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textFieldDevBrand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldDevCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
                 .addComponent(jLabel51)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textFieldDevInitKm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldDevEndKm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel52)
                     .addComponent(jLabel53))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textFieldDevInitTank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldDevEndTank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel54)
@@ -1544,17 +1544,17 @@ public class MainView extends javax.swing.JFrame {
                     .addComponent(jLabel58))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jFormattedTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFormattedTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFormattedTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jormattedTextFieldDevRentDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jormattedTextFieldDevExpetedDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jormattedTextFieldDevDevolutionDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel55)
                     .addComponent(jLabel59))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textFieldDevExceedDays, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldDevValueDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1940,6 +1940,9 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JPanel bttSalesReportPanel;
     private javax.swing.JPanel bttVehicleRegistrationPanel;
     private javax.swing.JButton buttonConsultar;
+    private javax.swing.JButton buttonDevCancel;
+    private javax.swing.JButton buttonDevConfirm;
+    private javax.swing.JButton buttonDevSearchRent;
     private javax.swing.JButton buttonRentCancel;
     private javax.swing.JButton buttonRentConfirm;
     private javax.swing.JButton buttonRentShowVehicles;
@@ -1950,18 +1953,12 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField formattedTextFieldRentInitDate;
     private javax.swing.JFormattedTextField formattedTextFieldRentReportEndDate;
     private javax.swing.JFormattedTextField formattedTextFieldRentReportInitDate;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JFormattedTextField jFormattedTextField2;
     private javax.swing.JFormattedTextField jFormattedTextField3;
     private javax.swing.JFormattedTextField jFormattedTextField4;
-    private javax.swing.JFormattedTextField jFormattedTextField5;
-    private javax.swing.JFormattedTextField jFormattedTextField6;
-    private javax.swing.JFormattedTextField jFormattedTextField7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2054,20 +2051,10 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTableRentReport;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JFormattedTextField jormattedTextFieldDevDevolutionDay;
+    private javax.swing.JFormattedTextField jormattedTextFieldDevExpetedDay;
+    private javax.swing.JFormattedTextField jormattedTextFieldDevRentDay;
     private javax.swing.JPanel parent;
     private javax.swing.JButton registerButtonCancel;
     private javax.swing.JButton registerButtonSave;
@@ -2083,7 +2070,20 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JPanel selected4;
     private javax.swing.JPanel selected5;
     private javax.swing.JPanel sidePanel;
+    private javax.swing.JTextField textFieldDevBrand;
+    private javax.swing.JTextField textFieldDevCategory;
     private javax.swing.JTextField textFieldDevClient;
+    private javax.swing.JTextField textFieldDevDueValue;
+    private javax.swing.JTextField textFieldDevEndKm;
+    private javax.swing.JTextField textFieldDevEndTank;
+    private javax.swing.JTextField textFieldDevExceedDays;
+    private javax.swing.JTextField textFieldDevInitKm;
+    private javax.swing.JTextField textFieldDevInitTank;
+    private javax.swing.JTextField textFieldDevModel;
+    private javax.swing.JTextField textFieldDevPaidoutValue;
+    private javax.swing.JTextField textFieldDevPlate;
+    private javax.swing.JTextField textFieldDevTotalValue;
+    private javax.swing.JTextField textFieldDevValueDay;
     private javax.swing.JTextField textFieldRentBrand;
     private javax.swing.JTextField textFieldRentCategory;
     private javax.swing.JTextField textFieldRentClient;
