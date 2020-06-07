@@ -1117,6 +1117,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Confirmar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonFinConfirmActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="buttonFinCancel">
                   <Properties>
@@ -1875,6 +1878,7 @@
                                     <Property name="text" type="java.lang.String" value="jTextField6"/>
                                   </Properties>
                                   <Events>
+                                    <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="textFieldRentKmFocusGained"/>
                                     <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="textFieldRentKmKeyTyped"/>
                                   </Events>
                                 </Component>
@@ -1918,6 +1922,9 @@
                                     </Property>
                                     <Property name="text" type="java.lang.String" value="12/06/2021"/>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="formattedTextFieldRentEndDateActionPerformed"/>
+                                  </Events>
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="jLabel43">
                                   <Properties>
@@ -1935,6 +1942,9 @@
                                     <Property name="horizontalAlignment" type="int" value="0"/>
                                     <Property name="text" type="java.lang.String" value="####"/>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldRentValueDayActionPerformed"/>
+                                  </Events>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="textFieldRentValueTotal">
                                   <Properties>
@@ -2402,7 +2412,7 @@
                                                   <Group type="102" attributes="0">
                                                       <Group type="103" groupAlignment="0" attributes="0">
                                                           <Group type="102" attributes="0">
-                                                              <Component id="textFieldDevTotalValue" pref="107" max="32767" attributes="0"/>
+                                                              <Component id="textFieldDevTotalValue" pref="0" max="32767" attributes="0"/>
                                                               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                                           </Group>
                                                           <Group type="102" alignment="0" attributes="0">
@@ -2412,7 +2422,7 @@
                                                       </Group>
                                                       <Group type="103" groupAlignment="0" attributes="0">
                                                           <Group type="102" attributes="0">
-                                                              <Component id="textFieldDevPaidoutValue" pref="107" max="32767" attributes="0"/>
+                                                              <Component id="textFieldDevPaidoutValue" pref="0" max="32767" attributes="0"/>
                                                               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                                           </Group>
                                                           <Group type="102" alignment="0" attributes="0">
@@ -2425,7 +2435,7 @@
                                                               <Component id="jLabel64" min="-2" max="-2" attributes="0"/>
                                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                                           </Group>
-                                                          <Component id="textFieldDevDueValue" pref="118" max="32767" attributes="0"/>
+                                                          <Component id="textFieldDevDueValue" pref="95" max="32767" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                               </Group>

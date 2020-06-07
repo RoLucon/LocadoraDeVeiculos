@@ -31,7 +31,7 @@ public class VehicleService implements RentServiceInterface, TradeServiceInterfa
     private Map<Integer,Vehicle> vehicleMap = new HashMap<>();
     
     public VehicleService() {
-        generateList();
+//        generateList();
     }
     //Propios
     public ArrayList<Vehicle> getOwnVehicles(){

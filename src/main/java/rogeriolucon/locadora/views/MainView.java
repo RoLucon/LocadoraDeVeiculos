@@ -9,6 +9,7 @@ import java.awt.event.KeyEvent;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.DefaultComboBoxModel;
@@ -781,6 +782,11 @@ public class MainView extends javax.swing.JFrame {
         jLabel73.setText("Depreciacao por Km:");
 
         buttonFinConfirm.setText("Confirmar");
+        buttonFinConfirm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonFinConfirmActionPerformed(evt);
+            }
+        });
 
         buttonFinCancel.setText("Cancelar");
 
@@ -1121,6 +1127,11 @@ public class MainView extends javax.swing.JFrame {
         jLabel40.setText("Kilometragem:");
 
         textFieldRentKm.setText("jTextField6");
+        textFieldRentKm.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                textFieldRentKmFocusGained(evt);
+            }
+        });
         textFieldRentKm.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 textFieldRentKmKeyTyped(evt);
@@ -1138,6 +1149,11 @@ public class MainView extends javax.swing.JFrame {
 
         formattedTextFieldRentEndDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
         formattedTextFieldRentEndDate.setText("12/06/2021");
+        formattedTextFieldRentEndDate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                formattedTextFieldRentEndDateActionPerformed(evt);
+            }
+        });
 
         jLabel43.setText("Data de Entrega:");
 
@@ -1146,6 +1162,11 @@ public class MainView extends javax.swing.JFrame {
         textFieldRentValueDay.setEditable(false);
         textFieldRentValueDay.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textFieldRentValueDay.setText("####");
+        textFieldRentValueDay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldRentValueDayActionPerformed(evt);
+            }
+        });
 
         textFieldRentValueTotal.setEditable(false);
         textFieldRentValueTotal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -2015,10 +2036,16 @@ public class MainView extends javax.swing.JFrame {
         if(String.valueOf(registerComboBoxBrand.getSelectedItem()).contains("<")){
             error += "- Marca deve ser selecionada\n";
         }
+        if(String.valueOf(registerComboBoxTank.getSelectedItem()).contains("<")){
+            error += "- Marca deve ser selecionada\n";
+        }
         if(registerTextFieldKm.getText().trim().isEmpty() ){
             error += "- Valor de Kilometragem invalido\n";
         }
-//                && registerTextFieldKm.getText().trim().isEmpty()
+        if(textFieldRegisterValue.getText().trim().isEmpty() ){
+            error += "- Valor de Kilometragem invalido\n";
+        }
+//
         if(!error.trim().isEmpty()) {
             JOptionPane.showMessageDialog(this, error);
             return;
@@ -2030,13 +2057,14 @@ public class MainView extends javax.swing.JFrame {
         vehicle.setPlate(registerTextFieldPlates.getText());
         vehicle.setKm(Integer.parseInt(registerTextFieldKm.getText()));
         vehicle.setPrice(Double.parseDouble(textFieldRegisterValue.getText()));
+        vehicle.setAvailability(true);
         if(vehicleService.purchaseVehicle(vehicle)){
             JOptionPane.showMessageDialog(this, "Adicionado com sucesso");
             registerClear();
         } else {
             JOptionPane.showMessageDialog(this, "Falha ao adicionar");
         }
-        
+        update();
     }//GEN-LAST:event_registerButtonSaveActionPerformed
 
     private void registerButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonCancelActionPerformed
@@ -2130,12 +2158,12 @@ public class MainView extends javax.swing.JFrame {
             rent.setTank((Vehicle.Tank)comboBoxRentTank.getSelectedItem());
             rent.setDate(stringDateToLocalDate(formattedTextFieldRentInitDate.getText()));
             rent.setExpirationDate(stringDateToLocalDate(formattedTextFieldRentEndDate.getText()));
+            rent.setValue(Double.parseDouble(textFieldRentValueTotal.getText()));
             //Passar as datas e os valores
             if(vehicleService.rentVehicle(rent)){
-                updateRentReport();
                 rentClear();
             }
-            updateFinancial();
+            update();
     }//GEN-LAST:event_buttonRentConfirmActionPerformed
 
     private void textFieldRentValueTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldRentValueTotalActionPerformed
@@ -2244,10 +2272,9 @@ public class MainView extends javax.swing.JFrame {
 //        rent.setVehicle(selectedVehicle);
         rent.setWaxedDate(stringDateToLocalDate(formattedTextFieldDevDevolutionDay.getText()));
         vehicleService.devolutionVehicle(rent);
-        updateRentReport();
         devolutionClear();
         selectedRent = null;
-        updateFinancial();
+        update();
     }//GEN-LAST:event_buttonDevConfirmActionPerformed
 
     private void textFieldSaleClientFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldSaleClientFocusGained
@@ -2275,9 +2302,8 @@ public class MainView extends javax.swing.JFrame {
         trade.setValue(selectedVehicle.getPrice());
         trade.setTank((Vehicle.Tank)comboBoxSaleTank.getSelectedItem());
         vehicleService.sellVehicle(trade);
-        updateTradeReport();
         salesClear();
-        updateFinancial();
+        update();
     }//GEN-LAST:event_buttonSaleConfirmActionPerformed
 
     private void buttonSaleCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSaleCancelActionPerformed
@@ -2290,6 +2316,27 @@ public class MainView extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_textFieldRegisterValueKeyTyped
+
+    private void buttonFinConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonFinConfirmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonFinConfirmActionPerformed
+
+    private void textFieldRentValueDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldRentValueDayActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldRentValueDayActionPerformed
+
+    private void textFieldRentKmFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldRentKmFocusGained
+        textFieldRentKm.setText("");
+    }//GEN-LAST:event_textFieldRentKmFocusGained
+
+    private void formattedTextFieldRentEndDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_formattedTextFieldRentEndDateActionPerformed
+        try{
+            textFieldRentValueTotal.setText((Double.toString(rentPrice(formattedTextFieldRentInitDate.getText(),
+                formattedTextFieldRentEndDate.getText()))));
+        } catch (Exception e){
+        
+        } 
+    }//GEN-LAST:event_formattedTextFieldRentEndDateActionPerformed
     
     /**
      * @param args the command line arguments
@@ -2547,7 +2594,7 @@ public class MainView extends javax.swing.JFrame {
         setupComponentsDev();
         setupComponentsSale();
         setupComponetsTradeReport();
-        updateFinancial();
+        update();
     }
  
     private  void setupComponentsRent(){
@@ -2557,6 +2604,11 @@ public class MainView extends javax.swing.JFrame {
         
         formattedTextFieldRentInitDate.setText(dateStringNow());
         formattedTextFieldRentEndDate.setText(dateStringNow());
+        textFieldRentKm.setText("0");
+        textFieldRentValueDay.setText(Double.toString(vehicleService.rentValuePerDay()));
+        textFieldRentValueTotal.setText((Double.toString(rentPrice(formattedTextFieldRentInitDate.getText(),
+                formattedTextFieldRentEndDate.getText()))));
+                
         //Set a panel 
         jPanelRent.setVisible(true);
         jPanelDevolution.setVisible(false);
@@ -2610,8 +2662,10 @@ public class MainView extends javax.swing.JFrame {
         textFieldRentCategory.setText("");
         textFieldRentModel.setText("");
         textFieldRentKm.setText("");
-        textFieldRentValueDay.setText("####");
-        textFieldRentValueTotal.setText("####");
+        textFieldRentPlate.setText("");
+        textFieldRentValueDay.setText(Double.toString(vehicleService.rentValuePerDay()));
+        textFieldRentValueTotal.setText((Double.toString(rentPrice(formattedTextFieldRentInitDate.getText(),
+                formattedTextFieldRentEndDate.getText()))));
         comboBoxRentTank.setSelectedItem("<Tank>");
         formattedTextFieldRentInitDate.setText(dateStringNow());
         formattedTextFieldRentEndDate.setText(dateStringNow());
@@ -2665,13 +2719,22 @@ public class MainView extends javax.swing.JFrame {
         textFieldDevInitTank.setText(rent.getTank().toString());
         textFieldDevInitKm.setText(Double.toString(rent.getKm()));
         textFieldDevPaidoutValue.setText("");
-        textFieldDevValueDay.setText("");
-        textFieldDevExceedDays.setText("");
-        textFieldDevDueValue.setText("");
-        textFieldDevTotalValue.setText("");
+        textFieldDevValueDay.setText(Double.toString(vehicleService.rentValuePerDay()));
+        textFieldDevExceedDays.setText(Integer.toString(difBetweenDates(rent.getDate(),rent.getExpirationDate())));
+        double total = rentPrice(rent.getDate(),
+                stringDateToLocalDate(formattedTextFieldDevDevolutionDay.getText()));
+        textFieldDevDueValue.setText(Double.toString(total - rent.getValue()));
+        textFieldDevTotalValue.setText(Double.toString(total));
         formattedTextFieldDevRentDay.setText(dateToString(rent.getDate()));
         formattedTextFieldDevExpetedDay.setText(dateToString(rent.getExpirationDate()));
+        formattedTextFieldDevDevolutionDay.setText(dateStringNow());
         selectedVehicle = rent.getVehicle();
+    }
+    
+    private void update(){
+        updateRentReport();
+        updateTradeReport();
+        updateFinancial();
     }
     
     private void updateRentReport(){
@@ -2758,5 +2821,21 @@ public class MainView extends javax.swing.JFrame {
     private String dateToString(LocalDate date){
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern(MY_DATA_F);
         return dtf.format(date).toString();
+    }
+    
+    private int difBetweenDates(LocalDate start, LocalDate end){
+        return (int)ChronoUnit.DAYS.between(start, end);
+    }
+    
+    private double rentPrice(String start, String end){
+        long daysBetween = ChronoUnit.DAYS.between(stringDateToLocalDate(start), stringDateToLocalDate(end));
+        double value = daysBetween * vehicleService.rentValuePerDay();
+        return value == 0 ? vehicleService.rentValuePerDay() : value;
+    }
+    
+    private double rentPrice(LocalDate start, LocalDate end){
+        long daysBetween = ChronoUnit.DAYS.between(start, end);
+        double value = daysBetween * vehicleService.rentValuePerDay();
+        return value == 0 ? vehicleService.rentValuePerDay() : value;
     }
 }
