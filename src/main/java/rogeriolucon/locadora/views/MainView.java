@@ -2169,16 +2169,17 @@ public class MainView extends javax.swing.JFrame {
     private void buttonRentConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRentConfirmActionPerformed
         String error = "";
         if(selectedVehicle == null) {
-            error = "- Selecione um veiculo";
+            error = "- Selecione um veiculo\n";
         }
         if(textFieldRentKm.getText().trim().isEmpty()){
-            error += "- Entre um valor valido para kilometragem";
+            error += "- Entre um valor valido para kilometragem\n";
         }
         if(String.valueOf(comboBoxRentTank.getSelectedItem()).contains("<")){
-            error += "- Entre um valor para o tanque";
+            error += "- Entre um valor para o tanque\n";
         }
         if(!error.trim().isEmpty()){
-            JOptionPane.showConfirmDialog(this, error);
+            JOptionPane.showMessageDialog(this, error);
+            return;
         }
         RentOperation rent = new RentOperation();
         rent.setVehicle(selectedVehicle);
