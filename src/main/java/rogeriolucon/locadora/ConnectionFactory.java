@@ -7,6 +7,7 @@ package rogeriolucon.locadora;
  */
 
 
+import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -20,19 +21,25 @@ import java.util.logging.Logger;
  * @author Rogerio
  */
 public class ConnectionFactory {
-//    private static final String DRIVER = "com,mysql.jdbc.Driver";
-    private static String nomeBD = "locadora";
-    private static final String URL = "jdbc:mysql://localhost:3306/" + nomeBD; 
-    private static final String USER = "root"; 
-    private static final String PASS = ""; 
+    private static final String DB_NAME = "locadora";
+    private static final String URL = "jdbc:mysql://localhost:3306/" + DB_NAME
+            +"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+    private static final String USER = "root";
+    private static final String PW = "";
 
-    public static Connection getConnection() {
-        
+    public static Connection getConnection() throws SQLException {
+        MysqlDataSource dataSource = new MysqlDataSource();
+        dataSource.setUser(USER);
+        dataSource.setPassword(PW);
+        System.out.println(URL);
+        dataSource.setURL(URL);
         try {
-            return DriverManager.getConnection(URL, USER, PASS);
+            Connection connection = dataSource.getConnection();
+            return connection;
         } catch (SQLException ex) {
-            throw new RuntimeException("Erro na conexao", ex);
-        }   
+            Logger.getLogger(ConnectionFactory.class.getName()).log(Level.SEVERE, null, ex);
+            throw new RuntimeException("Erro de Conexao", ex);
+        }
     }
     
     public static void closeConnection(Connection con){

@@ -35,7 +35,7 @@ public class VehicleDAO implements DAOInterface<Vehicle>{
                 + "VALUES(?,?,?,?,?,?,?,?,?,?)";
         try(Connection conn = ConnectionFactory.getConnection(); 
                 PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)){
-            conn.setAutoCommit(true);
+            conn.setAutoCommit(false);
             
             stmt.setString(1, vehicle.getBrand().toString());
             stmt.setString(2, vehicle.getCategory().toString());
@@ -43,14 +43,15 @@ public class VehicleDAO implements DAOInterface<Vehicle>{
             stmt.setString(4, vehicle.getModel().toString());
             stmt.setString(5, vehicle.getYear());
             stmt.setString(6, vehicle.getPlate());
-            stmt.setDouble(7, vehicle.getKm());
-            stmt.setBoolean(8, vehicle.isAvailability());
-            stmt.setBoolean(9, false);
+            stmt.setDouble(7, vehicle.getPrice());
+            stmt.setDouble(8, vehicle.getKm());
+            stmt.setBoolean(9, vehicle.isAvailability());
+            stmt.setBoolean(10, false);
         
             stmt.executeUpdate();
             
             ResultSet rs = stmt.getGeneratedKeys();
-            int id = (int) rs.getLong(1);
+            int id = -1;
             if(rs.next()){
                 id = (int) rs.getLong(1);
             } else{
@@ -59,10 +60,10 @@ public class VehicleDAO implements DAOInterface<Vehicle>{
             
             
             conn.commit();
-            ConnectionFactory.closeConnection(conn, stmt, rs);;
+            conn.close();
             return id;
         }catch (SQLException ex) {
-            Logger.getLogger(VehicleDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(VehicleDAO.class.getName()).log(Level.SEVERE, null, ex); 
         }
         return -1;
     }

@@ -40,7 +40,7 @@ public class TradeService implements TradeServiceInterface {
         try {
             int id = dao.insert(vehicle);
             if(id < 0){
-                System.out.println("ERRO DE ID");
+                System.out.println("ERRO DE ID: " + id);
                 return false;
             }
             else{

@@ -31,7 +31,7 @@ public class VehicleService implements RentServiceInterface, TradeServiceInterfa
     private Map<Integer,Vehicle> vehicleMap = new HashMap<>();
     
     public VehicleService() {
-        generateList();
+//        generateList();
     }
     //Propios
     public ArrayList<Vehicle> getOwnVehicles(){
@@ -160,6 +160,7 @@ public class VehicleService implements RentServiceInterface, TradeServiceInterfa
             aux.setId(i);
             aux.setCategory(Vehicle.Category.ECO);
             aux.setBrand(Vehicle.Brand.FORD);
+            aux.setTank(Vehicle.Tank.HALF);
             aux.setModel("Modelo: " + i);
             aux.setKm(i * 5);
             aux.setPrice(1000.0 * i);
