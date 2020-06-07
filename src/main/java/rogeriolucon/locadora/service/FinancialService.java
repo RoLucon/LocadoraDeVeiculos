@@ -27,30 +27,34 @@ public class FinancialService implements FinancialServiceInterface{
         
     }
 
-    public double getRentBalance() {
-        return rentBalance;
-    }
-
     public void addRentBalance(double rentBalance) {
         this.rentBalance += rentBalance;
-    }
-
-    public double getSalesBalance() {
-        return salesBalance;
     }
 
     public void addSalesBalance(double salesBalance) {
         this.salesBalance += salesBalance;
     }
 
-    public double getPurchaseBalance() {
-        return purchaseBalance;
-    }
-
     public void addPurchaseBalance(double purchaseBalance) {
         this.purchaseBalance += purchaseBalance;
     }
     
+    @Override
+    public double rentBalance(){
+        return rentBalance;
+    }
+    
+    @Override
+    public double salesBalance(){
+        return salesBalance;
+    }
+    
+    @Override
+    public double purchaseBalance(){
+        return purchaseBalance;
+    }
+    
+    @Override
     public double getBalance(){
         return  (rentBalance + salesBalance - purchaseBalance);
     }
@@ -62,12 +66,12 @@ public class FinancialService implements FinancialServiceInterface{
 
     @Override
     public double rentValuePerDay() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return valueRentPerDay;
     }
 
     @Override
-    public double depreciationPerDay() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public double depreciationPerKm() {
+        return depreciationPerKm;
     }
     
     

@@ -119,6 +119,26 @@ public class VehicleService implements RentServiceInterface, TradeServiceInterfa
     }
     
     @Override
+    public double rentBalance(){
+     return financialService.rentBalance();
+    }
+    
+    @Override
+    public double salesBalance(){
+        return financialService.salesBalance();
+    }
+    
+    @Override
+    public double purchaseBalance(){
+        return financialService.purchaseBalance();
+    }
+    
+    @Override
+    public double getBalance(){
+        return  financialService.getBalance();
+    }
+    
+    @Override
     public void changeConfig(double rentValuePerDay, double depreciationPerDay) {
         financialService.changeConfig(rentValuePerDay, depreciationPerDay);
     }
@@ -129,8 +149,8 @@ public class VehicleService implements RentServiceInterface, TradeServiceInterfa
     }
 
     @Override
-    public double depreciationPerDay() {
-        return financialService.depreciationPerDay();
+    public double depreciationPerKm() {
+        return financialService.depreciationPerKm();
     }
 
     // Gerando lista de testes

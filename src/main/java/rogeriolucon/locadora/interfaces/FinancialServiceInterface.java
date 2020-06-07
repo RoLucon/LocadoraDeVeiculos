@@ -12,6 +12,9 @@ package rogeriolucon.locadora.interfaces;
 public interface FinancialServiceInterface {
     void changeConfig(double rentValuePerDay, double depreciationPerDay);
     double rentValuePerDay();
-    double depreciationPerDay();
-    
+    double depreciationPerKm();
+    double rentBalance();
+    double salesBalance();
+    double purchaseBalance();
+    double getBalance();
 }

@@ -2135,6 +2135,7 @@ public class MainView extends javax.swing.JFrame {
                 updateRentReport();
                 rentClear();
             }
+            updateFinancial();
     }//GEN-LAST:event_buttonRentConfirmActionPerformed
 
     private void textFieldRentValueTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldRentValueTotalActionPerformed
@@ -2246,6 +2247,7 @@ public class MainView extends javax.swing.JFrame {
         updateRentReport();
         devolutionClear();
         selectedRent = null;
+        updateFinancial();
     }//GEN-LAST:event_buttonDevConfirmActionPerformed
 
     private void textFieldSaleClientFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldSaleClientFocusGained
@@ -2275,6 +2277,7 @@ public class MainView extends javax.swing.JFrame {
         vehicleService.sellVehicle(trade);
         updateTradeReport();
         salesClear();
+        updateFinancial();
     }//GEN-LAST:event_buttonSaleConfirmActionPerformed
 
     private void buttonSaleCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSaleCancelActionPerformed
@@ -2544,6 +2547,7 @@ public class MainView extends javax.swing.JFrame {
         setupComponentsDev();
         setupComponentsSale();
         setupComponetsTradeReport();
+        updateFinancial();
     }
  
     private  void setupComponentsRent(){
@@ -2680,6 +2684,15 @@ public class MainView extends javax.swing.JFrame {
         TradeTableModel model = (TradeTableModel) jTableTradeReport.getModel();
         model.setList(vehicleService.getAllTradeOperations());
         comboBoxTradeReportType.setSelectedIndex(0);
+    }
+    
+    private void updateFinancial(){
+        textFieldFinRentBalance.setText(Double.toString(vehicleService.rentBalance()));
+        textFieldFinSalesBalance.setText(Double.toString(vehicleService.salesBalance()));
+        textFieldFinPurchaseBalance.setText(Double.toString(vehicleService.purchaseBalance()));
+        textFieldFinTotal.setText(Double.toString(vehicleService.getBalance()));
+        textFieldFinDeprePerKm.setText(Double.toString(vehicleService.depreciationPerKm()));
+        textFieldFinRentDayValue.setText(Double.toString(vehicleService.rentValuePerDay()));
     }
     
     /*                Filtros                 */
