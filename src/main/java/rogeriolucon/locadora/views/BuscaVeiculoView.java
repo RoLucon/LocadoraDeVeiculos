@@ -238,6 +238,7 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
             AbstractTableModel model = (AbstractTableModel) jTable1.getModel();
             int index = jTable1.getSelectedRow();
             Vehicle vehicle = tableModel.getAtIndex(index);
+            System.out.println(vehicle.getPlate());
             parent.setSelectedVehicle(vehicle);
         }
 

@@ -2297,8 +2297,11 @@
                                 <Component class="javax.swing.JTextField" name="textFieldDevModel">
                                   <Properties>
                                     <Property name="editable" type="boolean" value="false"/>
-                                    <Property name="text" type="java.lang.String" value="jTextField4"/>
+                                    <Property name="text" type="java.lang.String" value="Modelo"/>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldDevModelActionPerformed"/>
+                                  </Events>
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="jLabel49">
                                   <Properties>
@@ -2308,13 +2311,13 @@
                                 <Component class="javax.swing.JTextField" name="textFieldDevBrand">
                                   <Properties>
                                     <Property name="editable" type="boolean" value="false"/>
-                                    <Property name="text" type="java.lang.String" value="jTextField2"/>
+                                    <Property name="text" type="java.lang.String" value="Marca         "/>
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="textFieldDevCategory">
                                   <Properties>
                                     <Property name="editable" type="boolean" value="false"/>
-                                    <Property name="text" type="java.lang.String" value="jTextField5"/>
+                                    <Property name="text" type="java.lang.String" value="Categoria"/>
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="jLabel50">
@@ -2330,13 +2333,10 @@
                                 <Component class="javax.swing.JTextField" name="textFieldDevInitKm">
                                   <Properties>
                                     <Property name="editable" type="boolean" value="false"/>
-                                    <Property name="text" type="java.lang.String" value="jTextField6"/>
+                                    <Property name="text" type="java.lang.String" value="0000000"/>
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="textFieldDevEndKm">
-                                  <Properties>
-                                    <Property name="text" type="java.lang.String" value="jTextField7"/>
-                                  </Properties>
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="jLabel52">
                                   <Properties>
@@ -2384,13 +2384,11 @@
                                 <Component class="javax.swing.JTextField" name="textFieldDevExceedDays">
                                   <Properties>
                                     <Property name="editable" type="boolean" value="false"/>
-                                    <Property name="text" type="java.lang.String" value="jTextField10"/>
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="textFieldDevValueDay">
                                   <Properties>
                                     <Property name="editable" type="boolean" value="false"/>
-                                    <Property name="text" type="java.lang.String" value="jTextField11"/>
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="jLabel57">
@@ -2488,20 +2486,20 @@
                                     <Component class="javax.swing.JTextField" name="textFieldDevTotalValue">
                                       <Properties>
                                         <Property name="editable" type="boolean" value="false"/>
-                                        <Property name="text" type="java.lang.String" value="jTextField12"/>
                                       </Properties>
                                     </Component>
                                     <Component class="javax.swing.JTextField" name="textFieldDevPaidoutValue">
                                       <Properties>
                                         <Property name="editable" type="boolean" value="false"/>
-                                        <Property name="text" type="java.lang.String" value="jTextField12"/>
                                       </Properties>
                                     </Component>
                                     <Component class="javax.swing.JTextField" name="textFieldDevDueValue">
                                       <Properties>
                                         <Property name="editable" type="boolean" value="false"/>
-                                        <Property name="text" type="java.lang.String" value="jTextField12"/>
                                       </Properties>
+                                      <Events>
+                                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldDevDueValueActionPerformed"/>
+                                      </Events>
                                     </Component>
                                     <Component class="javax.swing.JLabel" name="jLabel63">
                                       <Properties>
@@ -2611,9 +2609,9 @@
                                                       <Component id="textFieldSaleValue" alignment="0" max="32767" attributes="0"/>
                                                       <Component id="buttonSaleShowVehicles" alignment="0" max="32767" attributes="0"/>
                                                       <Group type="102" alignment="1" attributes="0">
-                                                          <Component id="buttonSaleConfirm" pref="144" max="32767" attributes="0"/>
+                                                          <Component id="buttonSaleConfirm" pref="105" max="32767" attributes="0"/>
                                                           <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                                                          <Component id="buttonSaleCancel" pref="136" max="32767" attributes="0"/>
+                                                          <Component id="buttonSaleCancel" pref="97" max="32767" attributes="0"/>
                                                       </Group>
                                                       <Group type="102" alignment="1" attributes="0">
                                                           <Component id="textFieldSaleKm" max="32767" attributes="0"/>

@@ -1403,24 +1403,27 @@ public class MainView extends javax.swing.JFrame {
         jLabel48.setText("Modelo:");
 
         textFieldDevModel.setEditable(false);
-        textFieldDevModel.setText("jTextField4");
+        textFieldDevModel.setText("Modelo");
+        textFieldDevModel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldDevModelActionPerformed(evt);
+            }
+        });
 
         jLabel49.setText("Marca:");
 
         textFieldDevBrand.setEditable(false);
-        textFieldDevBrand.setText("jTextField2");
+        textFieldDevBrand.setText("Marca         ");
 
         textFieldDevCategory.setEditable(false);
-        textFieldDevCategory.setText("jTextField5");
+        textFieldDevCategory.setText("Categoria");
 
         jLabel50.setText("Categoria:");
 
         jLabel51.setText("Km inicial:");
 
         textFieldDevInitKm.setEditable(false);
-        textFieldDevInitKm.setText("jTextField6");
-
-        textFieldDevEndKm.setText("jTextField7");
+        textFieldDevInitKm.setText("0000000");
 
         jLabel52.setText("Tanque inicial:");
 
@@ -1442,10 +1445,8 @@ public class MainView extends javax.swing.JFrame {
         jLabel55.setText("Dias excedidos:");
 
         textFieldDevExceedDays.setEditable(false);
-        textFieldDevExceedDays.setText("jTextField10");
 
         textFieldDevValueDay.setEditable(false);
-        textFieldDevValueDay.setText("jTextField11");
 
         jLabel57.setText("Contratado:");
 
@@ -1456,13 +1457,15 @@ public class MainView extends javax.swing.JFrame {
         jLabel62.setText("Valor total:");
 
         textFieldDevTotalValue.setEditable(false);
-        textFieldDevTotalValue.setText("jTextField12");
 
         textFieldDevPaidoutValue.setEditable(false);
-        textFieldDevPaidoutValue.setText("jTextField12");
 
         textFieldDevDueValue.setEditable(false);
-        textFieldDevDueValue.setText("jTextField12");
+        textFieldDevDueValue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldDevDueValueActionPerformed(evt);
+            }
+        });
 
         jLabel63.setText("ja pago:");
 
@@ -1803,9 +1806,9 @@ public class MainView extends javax.swing.JFrame {
                             .addComponent(textFieldSaleValue, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(buttonSaleShowVehicles, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(buttonSaleConfirm, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
+                                .addComponent(buttonSaleConfirm, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
                                 .addGap(64, 64, 64)
-                                .addComponent(buttonSaleCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE))
+                                .addComponent(buttonSaleCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(textFieldSaleKm)
                                 .addGap(23, 23, 23)
@@ -2177,6 +2180,12 @@ public class MainView extends javax.swing.JFrame {
         if(String.valueOf(comboBoxRentTank.getSelectedItem()).contains("<")){
             error += "- Entre um valor para o tanque\n";
         }
+        if(stringDateToLocalDate(formattedTextFieldRentInitDate.getText()) == null){
+            error += "- Entre uma data de inicio valida no formato(dd/mm/aaaa)";
+        }
+         if(stringDateToLocalDate(formattedTextFieldRentEndDate.getText()) == null){
+            error += "- Entre uma data de termino valida no formato(dd/mm/aaaa)";
+        }
         if(!error.trim().isEmpty()){
             JOptionPane.showMessageDialog(this, error);
             return;
@@ -2191,6 +2200,8 @@ public class MainView extends javax.swing.JFrame {
         //Passar as datas e os valores
         if(vehicleService.rentVehicle(rent)){
             rentClear();
+        }else{
+            JOptionPane.showMessageDialog(this, "Falha ao executar a operação");
         }
         update();
     }//GEN-LAST:event_buttonRentConfirmActionPerformed
@@ -2274,7 +2285,7 @@ public class MainView extends javax.swing.JFrame {
     }//GEN-LAST:event_textFieldDevClientFocusGained
 
     private void buttonDevSearchRentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDevSearchRentActionPerformed
-        //Abrir lista de alugados
+        //Abre popup com 
     }//GEN-LAST:event_buttonDevSearchRentActionPerformed
 
     private void buttonDevCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDevCancelActionPerformed
@@ -2297,12 +2308,31 @@ public class MainView extends javax.swing.JFrame {
     }//GEN-LAST:event_textFieldDevPlateKeyTyped
 
     private void buttonDevConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDevConfirmActionPerformed
+        String error = "";
+        if(selectedVehicle == null){
+            error = "- Selecione um veiculo\n";
+        }
+        if(textFieldDevEndKm.getText().trim().isEmpty()){
+            error += "- Digite o valor da Km final\n";
+        }
+        if(String.valueOf(comboBoxDevTank.getSelectedItem()).contains("<")){
+            error += "- Entre um valor para o tanque\n";
+        }
+        if(stringDateToLocalDate(formattedTextFieldDevDevolutionDay.getText()) == null){
+            error += "- Entre uma data valida para a devolução\n";
+        }
+        if(!error.trim().isEmpty()){
+            JOptionPane.showMessageDialog(this, error);
+            return;
+        }
         RentOperation rent = selectedRent;
         rent.setValue(Double.parseDouble(textFieldDevTotalValue.getText()));
         rent.setWaxedDate(stringDateToLocalDate(formattedTextFieldDevDevolutionDay.getText()));
-        vehicleService.devolutionVehicle(rent);
-        devolutionClear();
-        selectedRent = null;
+        if(vehicleService.devolutionVehicle(rent)){
+            devolutionClear();
+        } else {
+            JOptionPane.showMessageDialog(this, "Falha ao executar a operação");
+        }
         update();
     }//GEN-LAST:event_buttonDevConfirmActionPerformed
 
@@ -2324,14 +2354,28 @@ public class MainView extends javax.swing.JFrame {
     }//GEN-LAST:event_textFieldSaleKmKeyTyped
 
     private void buttonSaleConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSaleConfirmActionPerformed
-        //Confirma compra
+        String error = "";
+        if(selectedVehicle == null){
+            error = "- Selecione um veiculo\n";
+        }
+        if(String.valueOf(comboBoxSaleTank.getSelectedItem()).contains("<")){
+            error += "- Entre um valor para o tanque\n";
+        }
+        if(!error.trim().isEmpty()){
+            JOptionPane.showMessageDialog(this, error);
+            return;
+        }
         TradeOperation trade = new TradeOperation();
         trade.setDate(stringDateToLocalDate(dateStringNow()));
         trade.setVehicle(selectedVehicle);
         trade.setValue(selectedVehicle.getPrice());
         trade.setTank((Vehicle.Tank)comboBoxSaleTank.getSelectedItem());
-        vehicleService.sellVehicle(trade);
-        salesClear();
+        if(vehicleService.sellVehicle(trade)) {
+            JOptionPane.showMessageDialog(this, "Venda concluida.");
+            salesClear();
+        } else {
+            JOptionPane.showMessageDialog(this, "Falha na operação.");
+        }
         update();
     }//GEN-LAST:event_buttonSaleConfirmActionPerformed
 
@@ -2370,6 +2414,14 @@ public class MainView extends javax.swing.JFrame {
         
         } 
     }//GEN-LAST:event_formattedTextFieldRentEndDateKeyTyped
+
+    private void textFieldDevModelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldDevModelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldDevModelActionPerformed
+
+    private void textFieldDevDueValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldDevDueValueActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldDevDueValueActionPerformed
     
     /**
      * @param args the command line arguments
@@ -2611,6 +2663,8 @@ public class MainView extends javax.swing.JFrame {
             this.textFieldRentModel.setText(selectedVehicle.getModel());
             this.textFieldRentPlate.setText(selectedVehicle.getPlate());
             this.textFieldRentKm.setText(Double.toString(selectedVehicle.getKm()));
+        } else if(selected == 1) {
+            setDevFields(selectedRent);
         } else if(selected == 2) {
             this.textFieldSaleModel.setText(selectedVehicle.getModel());
             this.textFieldSaleBrand.setText(selectedVehicle.getBrand().toString());
@@ -2726,6 +2780,8 @@ public class MainView extends javax.swing.JFrame {
         formattedTextFieldDevRentDay.setText("");
         formattedTextFieldDevExpetedDay.setText("");
         formattedTextFieldDevDevolutionDay.setText(dateStringNow());
+        
+        selectedVehicle = null;
     }
     
     private void salesClear(){
@@ -2737,6 +2793,7 @@ public class MainView extends javax.swing.JFrame {
         this.textFieldSalePlate.setText("");
         this.comboBoxSaleTank.setSelectedItem("<Tank>");
         this.textFieldSaleValue.setText("");
+        
         this.selectedVehicle = null;
     }
     
@@ -2747,6 +2804,8 @@ public class MainView extends javax.swing.JFrame {
         registerTextFieldKm.setText("");
         registerTextFieldPlates.setText("xxx-####");
         textFieldRegisterValue.setText("");
+        
+        selectedVehicle = null;
     }
     
     /*           Puxa informacoes para a tela                 */
