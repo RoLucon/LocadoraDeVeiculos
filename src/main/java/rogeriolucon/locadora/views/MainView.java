@@ -102,21 +102,21 @@ public class MainView extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        textFieldFinRentBalance = new javax.swing.JTextField();
+        textFieldFinSalesBalance = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        textFieldFinPurchaseBalance = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        textFieldFinTotal = new javax.swing.JTextField();
         jLabel70 = new javax.swing.JLabel();
         jSeparator11 = new javax.swing.JSeparator();
         jLabel71 = new javax.swing.JLabel();
         jLabel72 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        textFieldFinRentDayValue = new javax.swing.JTextField();
+        textFieldFinDeprePerKm = new javax.swing.JTextField();
         jLabel73 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        buttonFinConfirm = new javax.swing.JButton();
+        buttonFinCancel = new javax.swing.JButton();
         jPanelSalesReport = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
@@ -755,17 +755,17 @@ public class MainView extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
         jLabel17.setText("Saldo de locações:");
 
-        jTextField1.setText("jTextField1");
+        textFieldFinRentBalance.setText("jTextField1");
 
-        jTextField2.setText("jTextField2");
+        textFieldFinSalesBalance.setText("jTextField2");
 
         jLabel18.setText("Saldo de vendas:");
 
-        jTextField3.setText("jTextField3");
+        textFieldFinPurchaseBalance.setText("jTextField3");
 
         jLabel19.setText("Saldo de compras:");
 
-        jTextField4.setText("jTextField4");
+        textFieldFinTotal.setText("jTextField4");
 
         jLabel70.setText("Total:");
 
@@ -774,15 +774,15 @@ public class MainView extends javax.swing.JFrame {
 
         jLabel72.setText("Valor da diaria:");
 
-        jTextField5.setText("jTextField5");
+        textFieldFinRentDayValue.setText("jTextField5");
 
-        jTextField6.setText("jTextField6");
+        textFieldFinDeprePerKm.setText("jTextField6");
 
         jLabel73.setText("Depreciacao por Km:");
 
-        jButton1.setText("jButton1");
+        buttonFinConfirm.setText("Confirmar");
 
-        jButton3.setText("jButton1");
+        buttonFinCancel.setText("Cancelar");
 
         javax.swing.GroupLayout jPanelFinancialReportLayout = new javax.swing.GroupLayout(jPanelFinancialReport);
         jPanelFinancialReport.setLayout(jPanelFinancialReportLayout);
@@ -808,24 +808,24 @@ public class MainView extends javax.swing.JFrame {
                                     .addComponent(jLabel70))
                                 .addGap(93, 93, 93)
                                 .addGroup(jPanelFinancialReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
-                                    .addComponent(jTextField3)
-                                    .addComponent(jTextField2)
-                                    .addComponent(jTextField1)))
+                                    .addComponent(textFieldFinTotal, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
+                                    .addComponent(textFieldFinPurchaseBalance)
+                                    .addComponent(textFieldFinSalesBalance)
+                                    .addComponent(textFieldFinRentBalance)))
                             .addGroup(jPanelFinancialReportLayout.createSequentialGroup()
                                 .addGroup(jPanelFinancialReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanelFinancialReportLayout.createSequentialGroup()
-                                        .addComponent(jTextField5)
+                                        .addComponent(textFieldFinRentDayValue)
                                         .addGap(9, 9, 9))
                                     .addComponent(jLabel72))
                                 .addGap(92, 92, 92)
                                 .addGroup(jPanelFinancialReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField6)
+                                    .addComponent(textFieldFinDeprePerKm)
                                     .addComponent(jLabel73)))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelFinancialReportLayout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(buttonFinConfirm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(76, 76, 76)
-                                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(buttonFinCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(32, 32, 32))))
         );
         jPanelFinancialReportLayout.setVerticalGroup(
@@ -840,18 +840,18 @@ public class MainView extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addGroup(jPanelFinancialReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textFieldFinRentBalance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
                 .addGroup(jPanelFinancialReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldFinSalesBalance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18))
                 .addGap(16, 16, 16)
                 .addGroup(jPanelFinancialReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldFinPurchaseBalance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel19))
                 .addGap(16, 16, 16)
                 .addGroup(jPanelFinancialReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldFinTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel70))
                 .addGap(32, 32, 32)
                 .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -863,12 +863,12 @@ public class MainView extends javax.swing.JFrame {
                     .addComponent(jLabel73))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelFinancialReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textFieldFinRentDayValue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldFinDeprePerKm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(jPanelFinancialReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton3))
+                    .addComponent(buttonFinConfirm)
+                    .addComponent(buttonFinCancel))
                 .addGap(22, 22, 22))
         );
 
@@ -2333,6 +2333,8 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JButton buttonDevCancel;
     private javax.swing.JButton buttonDevConfirm;
     private javax.swing.JButton buttonDevSearchRent;
+    private javax.swing.JButton buttonFinCancel;
+    private javax.swing.JButton buttonFinConfirm;
     private javax.swing.JButton buttonRentCancel;
     private javax.swing.JButton buttonRentConfirm;
     private javax.swing.JButton buttonRentShowVehicles;
@@ -2354,8 +2356,6 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField formattedTextFieldRentReportInitDate;
     private javax.swing.JFormattedTextField formattedTextFieldTradeReportEndDate;
     private javax.swing.JFormattedTextField formattedTextFieldTradeReportInitDate;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2463,13 +2463,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTable jTableRentReport;
     private javax.swing.JTable jTableTradeReport;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JPanel parent;
     private javax.swing.JButton registerButtonCancel;
     private javax.swing.JButton registerButtonSave;
@@ -2498,6 +2492,12 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldDevPlate;
     private javax.swing.JTextField textFieldDevTotalValue;
     private javax.swing.JTextField textFieldDevValueDay;
+    private javax.swing.JTextField textFieldFinDeprePerKm;
+    private javax.swing.JTextField textFieldFinPurchaseBalance;
+    private javax.swing.JTextField textFieldFinRentBalance;
+    private javax.swing.JTextField textFieldFinRentDayValue;
+    private javax.swing.JTextField textFieldFinSalesBalance;
+    private javax.swing.JTextField textFieldFinTotal;
     private javax.swing.JTextField textFieldRegisterValue;
     private javax.swing.JTextField textFieldRentBrand;
     private javax.swing.JTextField textFieldRentCategory;

@@ -936,30 +936,30 @@
                                           </Group>
                                           <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jTextField4" pref="93" max="32767" attributes="0"/>
-                                              <Component id="jTextField3" max="32767" attributes="0"/>
-                                              <Component id="jTextField2" max="32767" attributes="0"/>
-                                              <Component id="jTextField1" max="32767" attributes="0"/>
+                                              <Component id="textFieldFinTotal" pref="93" max="32767" attributes="0"/>
+                                              <Component id="textFieldFinPurchaseBalance" max="32767" attributes="0"/>
+                                              <Component id="textFieldFinSalesBalance" max="32767" attributes="0"/>
+                                              <Component id="textFieldFinRentBalance" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jTextField5" max="32767" attributes="0"/>
+                                                  <Component id="textFieldFinRentDayValue" max="32767" attributes="0"/>
                                                   <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
                                               </Group>
                                               <Component id="jLabel72" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jTextField6" max="32767" attributes="0"/>
+                                              <Component id="textFieldFinDeprePerKm" max="32767" attributes="0"/>
                                               <Component id="jLabel73" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jButton1" max="32767" attributes="0"/>
+                                          <Component id="buttonFinConfirm" max="32767" attributes="0"/>
                                           <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                                          <Component id="jButton3" max="32767" attributes="0"/>
+                                          <Component id="buttonFinCancel" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
@@ -980,21 +980,21 @@
                           <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="textFieldFinRentBalance" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="textFieldFinSalesBalance" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="textFieldFinPurchaseBalance" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="textFieldFinTotal" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel70" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
@@ -1008,13 +1008,13 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="textFieldFinRentDayValue" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="textFieldFinDeprePerKm" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="buttonFinConfirm" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="buttonFinCancel" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       </Group>
@@ -1048,12 +1048,12 @@
                     <Property name="text" type="java.lang.String" value="Saldo de loca&#xe7;&#xf5;es:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField1">
+                <Component class="javax.swing.JTextField" name="textFieldFinRentBalance">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="jTextField1"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField2">
+                <Component class="javax.swing.JTextField" name="textFieldFinSalesBalance">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="jTextField2"/>
                   </Properties>
@@ -1063,7 +1063,7 @@
                     <Property name="text" type="java.lang.String" value="Saldo de vendas:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField3">
+                <Component class="javax.swing.JTextField" name="textFieldFinPurchaseBalance">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="jTextField3"/>
                   </Properties>
@@ -1073,7 +1073,7 @@
                     <Property name="text" type="java.lang.String" value="Saldo de compras:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField4">
+                <Component class="javax.swing.JTextField" name="textFieldFinTotal">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="jTextField4"/>
                   </Properties>
@@ -1098,12 +1098,12 @@
                     <Property name="text" type="java.lang.String" value="Valor da diaria:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField5">
+                <Component class="javax.swing.JTextField" name="textFieldFinRentDayValue">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="jTextField5"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField6">
+                <Component class="javax.swing.JTextField" name="textFieldFinDeprePerKm">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="jTextField6"/>
                   </Properties>
@@ -1113,14 +1113,14 @@
                     <Property name="text" type="java.lang.String" value="Depreciacao por Km:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton1">
+                <Component class="javax.swing.JButton" name="buttonFinConfirm">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jButton1"/>
+                    <Property name="text" type="java.lang.String" value="Confirmar"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton3">
+                <Component class="javax.swing.JButton" name="buttonFinCancel">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jButton1"/>
+                    <Property name="text" type="java.lang.String" value="Cancelar"/>
                   </Properties>
                 </Component>
               </SubComponents>

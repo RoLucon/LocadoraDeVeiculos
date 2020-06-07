@@ -18,10 +18,11 @@ public class RentOperation extends Operation {
         private Tank finalTank;
         private LocalDate expirationDate;
         private LocalDate waxedDate;
-        private boolean contractOpen; 
+        private boolean contractOpen;
+        private double finalValue;
         private double finalKm;
         
-
+        
     public Type getType() {
         return type;
     }
@@ -53,6 +54,17 @@ public class RentOperation extends Operation {
     public void setContractOpen(boolean contractOpen) {
         this.contractOpen = contractOpen;
     }
-        
+
+    public double getFinalValue() {
+        return finalValue;
+    }
+
+    public void setFinalValue(double finalValue) {
+        this.finalValue = finalValue;
+    }
+    
+    public double devolutionDif() {
+        return finalValue - getValue();
+    }    
         
 }

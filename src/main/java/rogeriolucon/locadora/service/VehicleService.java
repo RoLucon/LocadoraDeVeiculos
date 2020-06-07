@@ -50,6 +50,7 @@ public class VehicleService implements RentServiceInterface, TradeServiceInterfa
     public boolean sellVehicle(TradeOperation trade){
         if(tradeService.sellVehicle(trade)){
             vehicleMap.remove(trade.getVehicle().getId());
+            financialService.addSalesBalance(trade.getValue());
             return true;
         }
         return false;
@@ -57,11 +58,9 @@ public class VehicleService implements RentServiceInterface, TradeServiceInterfa
     @Override
     public boolean purchaseVehicle(Vehicle vehicle){
         if(tradeService.purchaseVehicle(vehicle)){
-            System.out.println("ADD veiculo");
             vehicle.setId(vehicleMap.size());
-            System.out.println(vehicle.getId());
             vehicleMap.put(vehicle.getId(), vehicle);
-            System.out.println(vehicleMap.size());
+            financialService.addPurchaseBalance(vehicle.getPrice());
             return true;
         }
         return false;
@@ -87,6 +86,7 @@ public class VehicleService implements RentServiceInterface, TradeServiceInterfa
         if(rentService.rentVehicle(rent)){
             Vehicle vehicle = vehicleMap.get(rent.getVehicle().getId());
             vehicle.setAvailability(false);
+            financialService.addRentBalance(rent.getValue());
             //Setar veiculo para indisponivel
             return true;
         }
@@ -97,7 +97,7 @@ public class VehicleService implements RentServiceInterface, TradeServiceInterfa
     public boolean devolutionVehicle(RentOperation rent) {
         if(rentService.devolutionVehicle(rent)){
             rent.getVehicle().setAvailability(true);
-            System.out.println("Availability true");
+            financialService.addRentBalance(rent.devolutionDif());
             return true;
         }
         return false;
