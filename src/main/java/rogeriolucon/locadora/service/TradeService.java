@@ -7,8 +7,10 @@ package rogeriolucon.locadora.service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import rogeriolucon.locadora.interfaces.TradeServiceInterface;
-import rogeriolucon.locadora.model.RentOperation;
+import rogeriolucon.locadora.DAO.*;
 import rogeriolucon.locadora.model.TradeOperation;
 import rogeriolucon.locadora.model.Vehicle;
 
@@ -34,6 +36,20 @@ public class TradeService implements TradeServiceInterface {
         trade.setVehicle(vehicle);
         trade.setDate(LocalDate.now());
         purchasedVehicles.add(trade);
+        VehicleDAO dao = new VehicleDAO();
+        try {
+            int id = dao.insert(vehicle);
+            if(id < 0){
+                System.out.println("ERRO DE ID");
+                return false;
+            }
+            else{
+                vehicle.setId(id);
+                System.out.println("TUDO CERTO");
+            }
+        } catch (DaoException ex) {
+            Logger.getLogger(TradeService.class.getName()).log(Level.SEVERE, null, ex);
+        }
         //Passar para o banco
         return true;
     }

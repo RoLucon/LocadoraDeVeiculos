@@ -58,7 +58,7 @@ public class VehicleService implements RentServiceInterface, TradeServiceInterfa
     @Override
     public boolean purchaseVehicle(Vehicle vehicle){
         if(tradeService.purchaseVehicle(vehicle)){
-            vehicle.setId(vehicleMap.size());
+//            vehicle.setId(vehicleMap.size());
             vehicleMap.put(vehicle.getId(), vehicle);
             financialService.addPurchaseBalance(vehicle.getPrice());
             return true;
@@ -165,17 +165,17 @@ public class VehicleService implements RentServiceInterface, TradeServiceInterfa
             aux.setPrice(1000.0 * i);
             aux.setPlate("ABC-123"+i);
             aux.setAvailability(true);
-            vehicleMap.put(aux.getId(), aux);
+            purchaseVehicle(aux);
         }
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern(MY_DATA_F);
-
-        RentOperation rent = new RentOperation();
-        rent.setVehicle(vehicleMap.get(0));
-        rent.setKm(100);
-        rent.setTank((Vehicle.Tank.FULL));
-        rent.setDate(LocalDate.parse("2020-06-03"));
-        rent.setExpirationDate(LocalDate.parse("2020-06-04"));
-        rent.setValue(45);
-        rentVehicle(rent);
+//        DateTimeFormatter dtf = DateTimeFormatter.ofPattern(MY_DATA_F);
+//
+//        RentOperation rent = new RentOperation();
+//        rent.setVehicle(vehicleMap.get(0));
+//        rent.setKm(100);
+//        rent.setTank((Vehicle.Tank.FULL));
+//        rent.setDate(LocalDate.parse("2020-06-03"));
+//        rent.setExpirationDate(LocalDate.parse("2020-06-04"));
+//        rent.setValue(45);
+//        rentVehicle(rent);
     }
 }

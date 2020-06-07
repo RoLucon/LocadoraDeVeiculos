@@ -15,7 +15,7 @@ import java.util.ArrayList;
  */
 public interface DAOInterface<T> {
     public ArrayList<T> selectAll() throws DaoException;
-    public boolean insert(T t) throws DaoException;
+    public int insert(T t) throws DaoException;
     public T selectById(int id) throws DaoException;
     public boolean update(T t) throws DaoException ;
     public boolean delete(T t) throws DaoException;
