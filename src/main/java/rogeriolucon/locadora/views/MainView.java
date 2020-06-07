@@ -5,6 +5,7 @@
  */
 package rogeriolucon.locadora.views;
 
+import java.awt.Color;
 import java.awt.event.KeyEvent;
 
 import java.time.LocalDate;
@@ -62,7 +63,7 @@ public class MainView extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         bttPDVPanel = new javax.swing.JPanel();
-        selected01 = new javax.swing.JPanel();
+        selected1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         bttVehicleRegistrationPanel = new javax.swing.JPanel();
         selected2 = new javax.swing.JPanel();
@@ -270,6 +271,7 @@ public class MainView extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font(".SF NS Text", 2, 10)); // NOI18N
         jLabel7.setText("By Rogerio Lucon");
 
+        bttPDVPanel.setBackground(new java.awt.Color(51, 153, 255));
         bttPDVPanel.setMaximumSize(new java.awt.Dimension(32767, 64));
         bttPDVPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -277,18 +279,18 @@ public class MainView extends javax.swing.JFrame {
             }
         });
 
-        selected01.setBackground(new java.awt.Color(0, 0, 0));
-        selected01.setMaximumSize(new java.awt.Dimension(8, 64));
-        selected01.setMinimumSize(new java.awt.Dimension(8, 64));
+        selected1.setBackground(new java.awt.Color(0, 0, 0));
+        selected1.setMaximumSize(new java.awt.Dimension(8, 64));
+        selected1.setMinimumSize(new java.awt.Dimension(8, 64));
 
-        javax.swing.GroupLayout selected01Layout = new javax.swing.GroupLayout(selected01);
-        selected01.setLayout(selected01Layout);
-        selected01Layout.setHorizontalGroup(
-            selected01Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout selected1Layout = new javax.swing.GroupLayout(selected1);
+        selected1.setLayout(selected1Layout);
+        selected1Layout.setHorizontalGroup(
+            selected1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 8, Short.MAX_VALUE)
         );
-        selected01Layout.setVerticalGroup(
-            selected01Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        selected1Layout.setVerticalGroup(
+            selected1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 64, Short.MAX_VALUE)
         );
 
@@ -301,20 +303,21 @@ public class MainView extends javax.swing.JFrame {
         bttPDVPanelLayout.setHorizontalGroup(
             bttPDVPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bttPDVPanelLayout.createSequentialGroup()
-                .addComponent(selected01, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(selected1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         bttPDVPanelLayout.setVerticalGroup(
             bttPDVPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(selected01, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(selected1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bttPDVPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
+        bttVehicleRegistrationPanel.setBackground(new java.awt.Color(51, 153, 255));
         bttVehicleRegistrationPanel.setMaximumSize(new java.awt.Dimension(32767, 64));
         bttVehicleRegistrationPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -359,6 +362,7 @@ public class MainView extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        bttRentReportPanel.setBackground(new java.awt.Color(51, 153, 255));
         bttRentReportPanel.setMaximumSize(new java.awt.Dimension(32767, 64));
         bttRentReportPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -405,6 +409,7 @@ public class MainView extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        bttSalesReportPanel.setBackground(new java.awt.Color(51, 153, 255));
         bttSalesReportPanel.setMaximumSize(new java.awt.Dimension(32767, 64));
         bttSalesReportPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -451,6 +456,7 @@ public class MainView extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        bttFinancialReportPanel.setBackground(new java.awt.Color(51, 153, 255));
         bttFinancialReportPanel.setMaximumSize(new java.awt.Dimension(32767, 64));
         bttFinancialReportPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -815,7 +821,7 @@ public class MainView extends javax.swing.JFrame {
                                     .addComponent(jLabel70))
                                 .addGap(93, 93, 93)
                                 .addGroup(jPanelFinancialReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(textFieldFinTotal, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
+                                    .addComponent(textFieldFinTotal)
                                     .addComponent(textFieldFinPurchaseBalance)
                                     .addComponent(textFieldFinSalesBalance)
                                     .addComponent(textFieldFinRentBalance)))
@@ -1089,7 +1095,13 @@ public class MainView extends javax.swing.JFrame {
             }
         });
 
+        jPanelRent.setBackground(new java.awt.Color(218, 230, 242));
+
+        jScrollPaneRent.setBackground(new java.awt.Color(218, 230, 242));
+        jScrollPaneRent.setBorder(null);
         jScrollPaneRent.setPreferredSize(new java.awt.Dimension(339, 521));
+
+        jPanel1.setBackground(new java.awt.Color(218, 230, 242));
 
         jLabel35.setText("CPF do Cliente:");
 
@@ -1357,12 +1369,17 @@ public class MainView extends javax.swing.JFrame {
             jPanelRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelRentLayout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(jScrollPaneRent, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+                .addComponent(jScrollPaneRent, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
+        jPanelDevolution.setBackground(new java.awt.Color(218, 230, 242));
+
+        jScrollPaneRent1.setBackground(new java.awt.Color(218, 230, 242));
+        jScrollPaneRent1.setBorder(null);
         jScrollPaneRent1.setPreferredSize(new java.awt.Dimension(341, 553));
 
+        jPanel2.setBackground(new java.awt.Color(218, 230, 242));
         jPanel2.setPreferredSize(new java.awt.Dimension(339, 700));
 
         jLabel46.setText("CPF do Cliente:");
@@ -1453,6 +1470,8 @@ public class MainView extends javax.swing.JFrame {
         jLabel58.setText("Devolvido:");
 
         jLabel59.setText("Valor da diaria:");
+
+        jPanel3.setBackground(new java.awt.Color(218, 230, 242));
 
         jLabel62.setText("Valor total:");
 
@@ -1711,10 +1730,16 @@ public class MainView extends javax.swing.JFrame {
             jPanelDevolutionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelDevolutionLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPaneRent1, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE))
+                .addComponent(jScrollPaneRent1, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE))
         );
 
+        jPanelSale.setBackground(new java.awt.Color(218, 230, 242));
+
+        jScrollPaneRent2.setBackground(new java.awt.Color(218, 230, 242));
+        jScrollPaneRent2.setBorder(null);
         jScrollPaneRent2.setPreferredSize(new java.awt.Dimension(339, 521));
+
+        jPanel4.setBackground(new java.awt.Color(218, 230, 242));
 
         jLabel60.setText("CPF do Cliente:");
 
@@ -1912,7 +1937,7 @@ public class MainView extends javax.swing.JFrame {
             jPanelSaleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelSaleLayout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(jScrollPaneRent2, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+                .addComponent(jScrollPaneRent2, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
@@ -2119,49 +2144,23 @@ public class MainView extends javax.swing.JFrame {
     }//GEN-LAST:event_registerTextFieldPlatesFocusGained
 
     private void bttFinancialReportPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttFinancialReportPanelMouseClicked
-        jPanelPDV.setVisible(false);
-        jPanelRegister.setVisible(false);
-        jPanelSalesReport.setVisible(false);
-        jPanelRentReport.setVisible(false);
-        jPanelFinancialReport.setVisible(true);
-        selectedVehicle = null;
+        setSelectionTab(5);
     }//GEN-LAST:event_bttFinancialReportPanelMouseClicked
 
     private void bttSalesReportPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttSalesReportPanelMouseClicked
-        jPanelPDV.setVisible(false);
-        jPanelRegister.setVisible(false);
-        jPanelSalesReport.setVisible(true);
-        jPanelRentReport.setVisible(false);
-        jPanelFinancialReport.setVisible(false);
-        selectedVehicle = null;
+        setSelectionTab(3);
     }//GEN-LAST:event_bttSalesReportPanelMouseClicked
 
     private void bttRentReportPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttRentReportPanelMouseClicked
-        jPanelPDV.setVisible(false);
-        jPanelRegister.setVisible(false);
-        jPanelSalesReport.setVisible(false);
-        jPanelRentReport.setVisible(true);
-        jPanelFinancialReport.setVisible(false);
-        selectedVehicle = null;
+        setSelectionTab(4);
     }//GEN-LAST:event_bttRentReportPanelMouseClicked
 
     private void bttVehicleRegistrationPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVehicleRegistrationPanelMouseClicked
-        jPanelPDV.setVisible(false);
-        jPanelRegister.setVisible(true);
-        jPanelSalesReport.setVisible(false);
-        jPanelRentReport.setVisible(false);
-        jPanelFinancialReport.setVisible(false);
-        selectedVehicle = null;
-        selectedVehicle = null;
+        setSelectionTab(2);
     }//GEN-LAST:event_bttVehicleRegistrationPanelMouseClicked
 
     private void bttPDVPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttPDVPanelMouseClicked
-        jPanelPDV.setVisible(true);
-        jPanelRegister.setVisible(false);
-        jPanelSalesReport.setVisible(false);
-        jPanelRentReport.setVisible(false);
-        jPanelFinancialReport.setVisible(false);
-        selectedVehicle = null;
+        setSelectionTab(1);
     }//GEN-LAST:event_bttPDVPanelMouseClicked
 
     private void buttonRentShowVehiclesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRentShowVehiclesActionPerformed
@@ -2609,7 +2608,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> registerComboBoxTank;
     private javax.swing.JTextField registerTextFieldKm;
     private javax.swing.JTextField registerTextFieldPlates;
-    private javax.swing.JPanel selected01;
+    private javax.swing.JPanel selected1;
     private javax.swing.JPanel selected2;
     private javax.swing.JPanel selected3;
     private javax.swing.JPanel selected4;
@@ -2677,6 +2676,7 @@ public class MainView extends javax.swing.JFrame {
     
     /*                Setups/Init                 */
     private void setupComponents() {
+        setSelectionTab(1);
         setupComponentsRent();
         setupComponentsRegister();
         setupComponentsRentReport();
@@ -2936,5 +2936,53 @@ public class MainView extends javax.swing.JFrame {
         long daysBetween = ChronoUnit.DAYS.between(start, end);
         double value = daysBetween * vehicleService.rentValuePerDay();
         return value == 0 ? vehicleService.rentValuePerDay() : value;
+    }
+    
+    private void setSelectionTab(int value){
+        Color defaultColor = new Color(51,153,255);
+        Color selectedColor = new Color(218,230,242);
+        bttPDVPanel.setBackground(defaultColor);
+        bttVehicleRegistrationPanel.setBackground(defaultColor);
+        bttSalesReportPanel.setBackground(defaultColor);
+        bttRentReportPanel.setBackground(defaultColor);
+        bttFinancialReportPanel.setBackground(defaultColor);
+        selected1.setBackground(defaultColor);
+        selected2.setBackground(defaultColor);
+        selected3.setBackground(defaultColor);
+        selected4.setBackground(defaultColor);
+        selected5.setBackground(defaultColor);
+        jPanelPDV.setVisible(false);
+        jPanelRegister.setVisible(false);
+        jPanelSalesReport.setVisible(false);
+        jPanelRentReport.setVisible(false);
+        jPanelFinancialReport.setVisible(false);
+        selectedVehicle = null;
+        switch(value){
+            case 1:
+                jPanelPDV.setVisible(true);
+                bttPDVPanel.setBackground(selectedColor);
+                selected1.setBackground(Color.black);
+                break;
+            case 2:
+                jPanelRegister.setVisible(true);
+                bttVehicleRegistrationPanel.setBackground(selectedColor);
+                selected2.setBackground(Color.black);
+                break;
+            case 3:
+                jPanelSalesReport.setVisible(true);
+                bttSalesReportPanel.setBackground(selectedColor);
+                selected4.setBackground(Color.black);
+                break;
+            case 4:
+                jPanelRentReport.setVisible(true);
+                bttRentReportPanel.setBackground(selectedColor);
+                selected3.setBackground(Color.black);
+                break;
+            case 5:
+                jPanelFinancialReport.setVisible(true);
+                bttFinancialReportPanel.setBackground(selectedColor);
+                selected5.setBackground(Color.black);
+                break;
+        }
     }
 }
