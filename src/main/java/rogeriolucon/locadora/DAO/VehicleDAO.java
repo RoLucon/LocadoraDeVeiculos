@@ -44,9 +44,10 @@ public class VehicleDAO implements DAOInterface<Vehicle>{
                 vehicle.setPlate(rs.getString("v_plate"));
                 vehicle.setPrice(rs.getDouble("v_price"));
                 vehicle.setKm(rs.getDouble("v_km"));
-                vehicle.setAvailability(rs.getBoolean("v_km"));
+                vehicle.setAvailability(rs.getBoolean("v_availability"));
                 
                 map.put(vehicle.getId(), vehicle);
+                
             }
             ConnectionFactory.closeConnection(conn, stmt, rs);
         } catch (SQLException ex) {
@@ -96,17 +97,7 @@ public class VehicleDAO implements DAOInterface<Vehicle>{
         }
         return -1;
     }
-//    v_id INT AUTO_INCREMENT,
-//    v_brand VARCHAR(25),
-//    v_category VARCHAR(10),
-//    v_tank VARCHAR(15),
-//    v_model VARCHAR(50),
-//    v_year VARCHAR(4),
-//    v_plate VARCHAR(10),
-//    v_price DECIMAL(10,2),
-//    v_km DECIMAL(10,2),
-//    v_availability BOOL DEFAULT TRUE,
-//    v_sold BOOL DEFAULT FALSE
+
     @Override
     public Vehicle selectById(int id) throws DaoException {
          return null;
