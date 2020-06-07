@@ -11,7 +11,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
+import rogeriolucon.locadora.DAO.DaoException;
+import rogeriolucon.locadora.DAO.VehicleDAO;
 import rogeriolucon.locadora.interfaces.FinancialServiceInterface;
 import rogeriolucon.locadora.interfaces.RentServiceInterface;
 import rogeriolucon.locadora.interfaces.TradeServiceInterface;
@@ -32,6 +36,12 @@ public class VehicleService implements RentServiceInterface, TradeServiceInterfa
     
     public VehicleService() {
 //        generateList();
+        VehicleDAO dao = new VehicleDAO();
+        try {
+            vehicleMap = dao.selectAll();
+        } catch (DaoException ex) {
+            Logger.getLogger(VehicleService.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     //Propios
     public ArrayList<Vehicle> getOwnVehicles(){

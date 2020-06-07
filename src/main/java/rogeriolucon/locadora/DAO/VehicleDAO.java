@@ -11,6 +11,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import rogeriolucon.locadora.ConnectionFactory;
@@ -24,8 +26,35 @@ import rogeriolucon.locadora.model.Vehicle;
 public class VehicleDAO implements DAOInterface<Vehicle>{
     
     @Override
-    public ArrayList<Vehicle> selectAll() throws DaoException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Map<Integer, Vehicle> selectAll() throws DaoException {
+        Map<Integer, Vehicle> map = new HashMap();
+        String sql = "SELECT * FROM vehicle WHERE v_sold = FALSE";
+        try(Connection conn = ConnectionFactory.getConnection(); 
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                ResultSet rs = stmt.executeQuery()) {
+            
+            while(rs.next()){
+                Vehicle vehicle = new Vehicle();
+                vehicle.setId(rs.getInt("v_id"));
+                vehicle.setTank((Vehicle.Tank.valueOf(rs.getString("v_tank"))));
+                vehicle.setBrand((Vehicle.Brand.valueOf(rs.getString("v_brand"))));
+                vehicle.setCategory((Vehicle.Category.valueOf(rs.getString("v_category"))));
+                vehicle.setModel(rs.getString("v_model"));
+                vehicle.setYear(rs.getString("v_year"));
+                vehicle.setPlate(rs.getString("v_plate"));
+                vehicle.setPrice(rs.getDouble("v_price"));
+                vehicle.setKm(rs.getDouble("v_km"));
+                vehicle.setAvailability(rs.getBoolean("v_km"));
+                
+                map.put(vehicle.getId(), vehicle);
+            }
+            ConnectionFactory.closeConnection(conn, stmt, rs);
+        } catch (SQLException ex) {
+            Logger.getLogger(VehicleDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+        
+        return map;
     }
 
     @Override

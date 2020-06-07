@@ -7,6 +7,7 @@ package rogeriolucon.locadora.interfaces;
 
 import rogeriolucon.locadora.DAO.DaoException;
 import java.util.ArrayList;
+import java.util.Map;
 
 /**
  *
@@ -14,7 +15,7 @@ import java.util.ArrayList;
  * @param <T> classe model a ser utilizada
  */
 public interface DAOInterface<T> {
-    public ArrayList<T> selectAll() throws DaoException;
+    public Map<Integer, T> selectAll() throws DaoException;
     public int insert(T t) throws DaoException;
     public T selectById(int id) throws DaoException;
     public boolean update(T t) throws DaoException ;
