@@ -5,6 +5,7 @@
  */
 package rogeriolucon.locadora.service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import rogeriolucon.locadora.interfaces.TradeServiceInterface;
 import rogeriolucon.locadora.model.RentOperation;
@@ -31,6 +32,7 @@ public class TradeService implements TradeServiceInterface {
         TradeOperation trade = new TradeOperation();
         trade.setType(TradeOperation.Type.COMPRA);
         trade.setVehicle(vehicle);
+        trade.setDate(LocalDate.now());
         purchasedVehicles.add(trade);
         //Passar para o banco
         return true;

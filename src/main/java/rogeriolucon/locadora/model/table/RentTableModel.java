@@ -17,7 +17,7 @@ public class RentTableModel extends AbstractTableModel {
     ArrayList<RentOperation> list = new ArrayList<>();
     
     String[] column = {"ID", "Categoria", "Marca", "Modelo", "Km", "Preço",
-        "Inicio","Validade","Devolvido"};
+        "Inicio","Validade","Devolvido", "Placa"};
     
     @Override
     public String getColumnName(int column) {
@@ -55,6 +55,8 @@ public class RentTableModel extends AbstractTableModel {
                 return list.get(rowIndex).getExpirationDate();
             case 8:
                 return list.get(rowIndex).getWaxedDate();
+            case 9:
+                return list.get(rowIndex).getVehicle().getPlate();
         }
         return null;
     }

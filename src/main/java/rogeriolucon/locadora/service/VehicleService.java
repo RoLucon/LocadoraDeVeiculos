@@ -31,7 +31,7 @@ public class VehicleService implements RentServiceInterface, TradeServiceInterfa
     private Map<Integer,Vehicle> vehicleMap = new HashMap<>();
     
     public VehicleService() {
-//        generateList();
+        generateList();
     }
     //Propios
     public ArrayList<Vehicle> getOwnVehicles(){
@@ -175,6 +175,7 @@ public class VehicleService implements RentServiceInterface, TradeServiceInterfa
         rent.setTank((Vehicle.Tank.FULL));
         rent.setDate(LocalDate.parse("2020-06-03"));
         rent.setExpirationDate(LocalDate.parse("2020-06-04"));
+        rent.setValue(45);
         rentVehicle(rent);
     }
 }

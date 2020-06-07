@@ -17,7 +17,7 @@ public class TradeTableModel extends AbstractTableModel{
     ArrayList<TradeOperation> list = new ArrayList<>();
     
     String[] column = {"ID", "Categoria", "Marca", "Modelo", "Km", "Preço",
-        "Inicio","Validade","Devolvido"};
+        "Inicio", "Tipo"};
     
     @Override
     public String getColumnName(int column) {
@@ -51,6 +51,8 @@ public class TradeTableModel extends AbstractTableModel{
                 return list.get(rowIndex).getValue();
             case 6:
                 return list.get(rowIndex).getDate();
+            case 7:
+                return list.get(rowIndex).getType();
         }
         return null;
     }

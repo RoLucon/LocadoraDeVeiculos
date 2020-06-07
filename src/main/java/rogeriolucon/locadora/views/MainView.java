@@ -219,6 +219,7 @@ public class MainView extends javax.swing.JFrame {
         buttonDevConfirm = new javax.swing.JButton();
         buttonDevCancel = new javax.swing.JButton();
         comboBoxDevTank = new javax.swing.JComboBox<>();
+        jLabel76 = new javax.swing.JLabel();
         jPanelSale = new javax.swing.JPanel();
         jScrollPaneRent2 = new javax.swing.JScrollPane();
         jPanel4 = new javax.swing.JPanel();
@@ -1154,6 +1155,11 @@ public class MainView extends javax.swing.JFrame {
                 formattedTextFieldRentEndDateActionPerformed(evt);
             }
         });
+        formattedTextFieldRentEndDate.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                formattedTextFieldRentEndDateKeyTyped(evt);
+            }
+        });
 
         jLabel43.setText("Data de Entrega:");
 
@@ -1490,14 +1496,14 @@ public class MainView extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(textFieldDevTotalValue, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                                .addComponent(textFieldDevTotalValue, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
                                 .addGap(6, 6, 6))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel62)
                                 .addGap(21, 21, 21)))
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(textFieldDevPaidoutValue, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                                .addComponent(textFieldDevPaidoutValue, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
                                 .addGap(6, 6, 6))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel63)
@@ -1506,7 +1512,7 @@ public class MainView extends javax.swing.JFrame {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel64)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(textFieldDevDueValue, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE))))
+                            .addComponent(textFieldDevDueValue, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE))))
                 .addGap(32, 32, 32))
         );
         jPanel3Layout.setVerticalGroup(
@@ -1530,6 +1536,8 @@ public class MainView extends javax.swing.JFrame {
 
         comboBoxDevTank.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        jLabel76.setText("final:");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -1541,78 +1549,83 @@ public class MainView extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textFieldDevClient)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(textFieldDevPlate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(23, 23, 23)
-                        .addComponent(buttonDevSearchRent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(textFieldDevModel)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textFieldDevClient)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(textFieldDevBrand)
-                                .addGap(23, 23, 23))
+                                .addComponent(textFieldDevPlate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(23, 23, 23)
+                                .addComponent(buttonDevSearchRent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(textFieldDevModel)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel49)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(textFieldDevBrand)
+                                        .addGap(23, 23, 23))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel49)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel50)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(textFieldDevCategory)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel50)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(textFieldDevCategory)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(textFieldDevInitKm)
-                        .addGap(23, 23, 23)
-                        .addComponent(textFieldDevEndKm))
+                                .addComponent(textFieldDevInitKm)
+                                .addGap(23, 23, 23)
+                                .addComponent(textFieldDevEndKm))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(textFieldDevInitTank)
+                                        .addGap(23, 23, 23))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel52)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel53)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(comboBoxDevTank, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(formattedTextFieldDevRentDay)
+                                .addGap(6, 6, 6)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(formattedTextFieldDevExpetedDay)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel57)
+                                        .addGap(24, 24, 24)))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel58)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(formattedTextFieldDevDevolutionDay)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(textFieldDevExceedDays)
+                                        .addGap(23, 23, 23))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel47)
+                                            .addComponent(jLabel55)
+                                            .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel59)
+                                    .addComponent(textFieldDevValueDay))))
+                        .addGap(32, 32, 32))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel46)
                             .addComponent(jLabel48)
-                            .addComponent(jLabel51))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(textFieldDevInitTank)
-                                .addGap(23, 23, 23))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel52)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel53)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(comboBoxDevTank, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(formattedTextFieldDevRentDay)
-                        .addGap(6, 6, 6)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(formattedTextFieldDevExpetedDay)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel57)
-                                .addGap(24, 24, 24)))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel58)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(formattedTextFieldDevDevolutionDay)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(textFieldDevExceedDays)
-                                .addGap(23, 23, 23))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel47)
-                                    .addComponent(jLabel55)
-                                    .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel59)
-                            .addComponent(textFieldDevValueDay))))
-                .addGap(32, 32, 32))
+                                .addComponent(jLabel51)
+                                .addGap(92, 92, 92)
+                                .addComponent(jLabel76)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
@@ -1643,7 +1656,9 @@ public class MainView extends javax.swing.JFrame {
                     .addComponent(textFieldDevBrand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textFieldDevCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
-                .addComponent(jLabel51)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel51)
+                    .addComponent(jLabel76))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textFieldDevInitKm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2037,13 +2052,13 @@ public class MainView extends javax.swing.JFrame {
             error += "- Marca deve ser selecionada\n";
         }
         if(String.valueOf(registerComboBoxTank.getSelectedItem()).contains("<")){
-            error += "- Marca deve ser selecionada\n";
+            error += "- Tank deve ser selecionada\n";
         }
         if(registerTextFieldKm.getText().trim().isEmpty() ){
             error += "- Valor de Kilometragem invalido\n";
         }
         if(textFieldRegisterValue.getText().trim().isEmpty() ){
-            error += "- Valor de Kilometragem invalido\n";
+            error += "- Valor do Veiculo invalido\n";
         }
 //
         if(!error.trim().isEmpty()) {
@@ -2152,18 +2167,31 @@ public class MainView extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonRentShowVehiclesActionPerformed
 
     private void buttonRentConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRentConfirmActionPerformed
-            RentOperation rent = new RentOperation();
-            rent.setVehicle(selectedVehicle);
-            rent.setKm(Double.parseDouble(textFieldRentKm.getText()));
-            rent.setTank((Vehicle.Tank)comboBoxRentTank.getSelectedItem());
-            rent.setDate(stringDateToLocalDate(formattedTextFieldRentInitDate.getText()));
-            rent.setExpirationDate(stringDateToLocalDate(formattedTextFieldRentEndDate.getText()));
-            rent.setValue(Double.parseDouble(textFieldRentValueTotal.getText()));
-            //Passar as datas e os valores
-            if(vehicleService.rentVehicle(rent)){
-                rentClear();
-            }
-            update();
+        String error = "";
+        if(selectedVehicle == null) {
+            error = "- Selecione um veiculo";
+        }
+        if(textFieldRentKm.getText().trim().isEmpty()){
+            error += "- Entre um valor valido para kilometragem";
+        }
+        if(String.valueOf(comboBoxRentTank.getSelectedItem()).contains("<")){
+            error += "- Entre um valor para o tanque";
+        }
+        if(!error.trim().isEmpty()){
+            JOptionPane.showConfirmDialog(this, error);
+        }
+        RentOperation rent = new RentOperation();
+        rent.setVehicle(selectedVehicle);
+        rent.setKm(Double.parseDouble(textFieldRentKm.getText()));
+        rent.setTank((Vehicle.Tank)comboBoxRentTank.getSelectedItem());
+        rent.setDate(stringDateToLocalDate(formattedTextFieldRentInitDate.getText()));
+        rent.setExpirationDate(stringDateToLocalDate(formattedTextFieldRentEndDate.getText()));
+        rent.setValue(Double.parseDouble(textFieldRentValueTotal.getText()));
+        //Passar as datas e os valores
+        if(vehicleService.rentVehicle(rent)){
+            rentClear();
+        }
+        update();
     }//GEN-LAST:event_buttonRentConfirmActionPerformed
 
     private void textFieldRentValueTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldRentValueTotalActionPerformed
@@ -2259,7 +2287,7 @@ public class MainView extends javax.swing.JFrame {
         for (RentOperation rentOperation : list) {
             if(rentOperation.getVehicle().getPlate().equalsIgnoreCase(
                     textFieldDevPlate.getText().trim())){
-                setDevComponents(rentOperation);
+                setDevFields(rentOperation);
                 selectedRent = rentOperation;
                 return;
             }
@@ -2269,7 +2297,7 @@ public class MainView extends javax.swing.JFrame {
 
     private void buttonDevConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDevConfirmActionPerformed
         RentOperation rent = selectedRent;
-//        rent.setVehicle(selectedVehicle);
+        rent.setValue(Double.parseDouble(textFieldDevTotalValue.getText()));
         rent.setWaxedDate(stringDateToLocalDate(formattedTextFieldDevDevolutionDay.getText()));
         vehicleService.devolutionVehicle(rent);
         devolutionClear();
@@ -2330,13 +2358,17 @@ public class MainView extends javax.swing.JFrame {
     }//GEN-LAST:event_textFieldRentKmFocusGained
 
     private void formattedTextFieldRentEndDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_formattedTextFieldRentEndDateActionPerformed
+        
+    }//GEN-LAST:event_formattedTextFieldRentEndDateActionPerformed
+
+    private void formattedTextFieldRentEndDateKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formattedTextFieldRentEndDateKeyTyped
         try{
             textFieldRentValueTotal.setText((Double.toString(rentPrice(formattedTextFieldRentInitDate.getText(),
                 formattedTextFieldRentEndDate.getText()))));
         } catch (Exception e){
         
         } 
-    }//GEN-LAST:event_formattedTextFieldRentEndDateActionPerformed
+    }//GEN-LAST:event_formattedTextFieldRentEndDateKeyTyped
     
     /**
      * @param args the command line arguments
@@ -2479,6 +2511,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel75;
+    private javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
@@ -2576,6 +2609,7 @@ public class MainView extends javax.swing.JFrame {
             this.textFieldRentCategory.setText(selectedVehicle.getCategory().toString());
             this.textFieldRentModel.setText(selectedVehicle.getModel());
             this.textFieldRentPlate.setText(selectedVehicle.getPlate());
+            this.textFieldRentKm.setText(Double.toString(selectedVehicle.getKm()));
         } else if(selected == 2) {
             this.textFieldSaleModel.setText(selectedVehicle.getModel());
             this.textFieldSaleBrand.setText(selectedVehicle.getBrand().toString());
@@ -2653,6 +2687,7 @@ public class MainView extends javax.swing.JFrame {
         registerComboBoxTank.setModel(new DefaultComboBoxModel(Vehicle.Tank.values()));
         registerComboBoxTank.addItem("<Tank>");
         registerComboBoxTank.setSelectedItem("<Tank>");
+        textFieldRegisterValue.setText("");
     }
     
     /*                Clear                 */
@@ -2663,12 +2698,13 @@ public class MainView extends javax.swing.JFrame {
         textFieldRentModel.setText("");
         textFieldRentKm.setText("");
         textFieldRentPlate.setText("");
+        formattedTextFieldRentInitDate.setText(dateStringNow());
+        formattedTextFieldRentEndDate.setText(dateStringNow());
         textFieldRentValueDay.setText(Double.toString(vehicleService.rentValuePerDay()));
         textFieldRentValueTotal.setText((Double.toString(rentPrice(formattedTextFieldRentInitDate.getText(),
                 formattedTextFieldRentEndDate.getText()))));
         comboBoxRentTank.setSelectedItem("<Tank>");
-        formattedTextFieldRentInitDate.setText(dateStringNow());
-        formattedTextFieldRentEndDate.setText(dateStringNow());
+        
         selectedVehicle = null;
     }
     
@@ -2707,27 +2743,30 @@ public class MainView extends javax.swing.JFrame {
         registerComboBoxBrand.setSelectedItem("<Marca>");
         registerComboBoxCategory.setSelectedItem("<Categoria>");
         registerComboBoxTank.setSelectedItem("<Tank>");
-        registerTextFieldKm.setText("0Km");
+        registerTextFieldKm.setText("");
         registerTextFieldPlates.setText("xxx-####");
+        textFieldRegisterValue.setText("");
     }
     
     /*           Puxa informacoes para a tela                 */
-    private void setDevComponents(RentOperation rent){
+    private void setDevFields(RentOperation rent){
         textFieldDevModel.setText(rent.getVehicle().getModel());
         textFieldDevBrand.setText(rent.getVehicle().getBrand().toString());
         textFieldDevCategory.setText(rent.getVehicle().getCategory().toString());
         textFieldDevInitTank.setText(rent.getTank().toString());
         textFieldDevInitKm.setText(Double.toString(rent.getKm()));
-        textFieldDevPaidoutValue.setText("");
+        textFieldDevPaidoutValue.setText(Double.toString(rent.getValue()));
+        formattedTextFieldDevRentDay.setText(dateToString(rent.getDate()));
+        formattedTextFieldDevDevolutionDay.setText(dateStringNow());
         textFieldDevValueDay.setText(Double.toString(vehicleService.rentValuePerDay()));
-        textFieldDevExceedDays.setText(Integer.toString(difBetweenDates(rent.getDate(),rent.getExpirationDate())));
+        textFieldDevExceedDays.setText(Integer.toString(difBetweenDates(rent.getExpirationDate(),
+                stringDateToLocalDate(formattedTextFieldDevDevolutionDay.getText()))));
+        formattedTextFieldDevExpetedDay.setText(dateToString(rent.getExpirationDate()));
         double total = rentPrice(rent.getDate(),
                 stringDateToLocalDate(formattedTextFieldDevDevolutionDay.getText()));
-        textFieldDevDueValue.setText(Double.toString(total - rent.getValue()));
         textFieldDevTotalValue.setText(Double.toString(total));
-        formattedTextFieldDevRentDay.setText(dateToString(rent.getDate()));
-        formattedTextFieldDevExpetedDay.setText(dateToString(rent.getExpirationDate()));
-        formattedTextFieldDevDevolutionDay.setText(dateStringNow());
+        textFieldDevDueValue.setText(Double.toString(total - rent.getValue()));
+        
         selectedVehicle = rent.getVehicle();
     }
     
