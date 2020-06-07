@@ -9,6 +9,6 @@ package rogeriolucon.locadora.DAO;
  *
  * @author rolucon
  */
-public class OperationDAO {
+public class RentOperationDAO {
     
 }
