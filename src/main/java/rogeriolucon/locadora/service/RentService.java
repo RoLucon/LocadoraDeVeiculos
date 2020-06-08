@@ -6,11 +6,13 @@
 package rogeriolucon.locadora.service;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 import rogeriolucon.locadora.DAO.DaoException;
 import rogeriolucon.locadora.DAO.RentOperationDAO;
 import rogeriolucon.locadora.DAO.VehicleDAO;
@@ -27,21 +29,37 @@ public class RentService implements RentServiceInterface {
     private static int id = 0;
     public Map<Integer, RentOperation> rentedVehicles = new HashMap();
     public Map<Integer, RentOperation> returnedVehicles = new HashMap();
+
+    public RentService() {
+        try {
+            RentOperationDAO rentDao = new RentOperationDAO();
+            Map<Integer, RentOperation> aux = rentDao.selectAll();
+            rentedVehicles = aux.entrySet().stream()
+                    .filter(map -> map.getValue().isContractOpen()== true)
+                .collect(Collectors.toMap(p -> p.getKey(), p -> p.getValue()));
+            returnedVehicles = aux.entrySet().stream()
+                    .filter(map -> map.getValue().isContractOpen()== false)
+                .collect(Collectors.toMap(p -> p.getKey(), p -> p.getValue()));
+            
+        } catch (DaoException ex) {
+            Logger.getLogger(RentService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
     @Override
     public boolean rentVehicle(RentOperation rent){
         rent.setType(RentOperation.Type.RETIRADA);
-        rent.setId(id);
         rent.setContractOpen(true);
         rent.setFinalKm(-1);
         rent.setFinalValue(-1);
         rent.setFinalTank(Vehicle.Tank.LOW);
-        rentedVehicles.put(rent.getId(), rent);
         VehicleDAO vehicleDao = new VehicleDAO();
         RentOperationDAO rentDao = new RentOperationDAO();
         try {
-            rentDao.insert(rent);
+            int id = rentDao.insert(rent);
+            rent.setId(id);
             vehicleDao.update(rent.getVehicle());
+            rentedVehicles.put(rent.getId(), rent);
         } catch (DaoException ex) {
             Logger.getLogger(RentService.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -55,6 +73,14 @@ public class RentService implements RentServiceInterface {
         rentedVehicles.remove(rent.getId());
         returnedVehicles.put(rent.getId(), rent);
         rent.setContractOpen(false);
+        VehicleDAO vehicleDao = new VehicleDAO();
+        RentOperationDAO rentDao = new RentOperationDAO();
+        try {
+//            rentDao.insert(rent);
+            vehicleDao.update(rent.getVehicle());
+        } catch (DaoException ex) {
+            Logger.getLogger(RentService.class.getName()).log(Level.SEVERE, null, ex);
+        }
         //Passar para o banco
         return true;
     }

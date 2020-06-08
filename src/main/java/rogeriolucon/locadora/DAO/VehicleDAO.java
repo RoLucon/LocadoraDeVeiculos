@@ -100,7 +100,32 @@ public class VehicleDAO implements DAOInterface<Vehicle>{
 
     @Override
     public Vehicle selectById(int id) throws DaoException {
-         return null;
+        Vehicle vehicle = null;
+        String sql = "SELECT * FROM vehicle WHERE v_id = ?";
+        try(Connection conn = ConnectionFactory.getConnection(); 
+                PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+                    
+            if(rs.next()){
+                vehicle = new Vehicle();
+                vehicle.setId(rs.getInt("v_id"));
+                vehicle.setTank((Vehicle.Tank.valueOf(rs.getString("v_tank"))));
+                vehicle.setBrand((Vehicle.Brand.valueOf(rs.getString("v_brand"))));
+                vehicle.setCategory((Vehicle.Category.valueOf(rs.getString("v_category"))));
+                vehicle.setModel(rs.getString("v_model"));
+                vehicle.setYear(rs.getString("v_year"));
+                vehicle.setPlate(rs.getString("v_plate"));
+                vehicle.setPrice(rs.getDouble("v_price"));
+                vehicle.setKm(rs.getDouble("v_km"));
+                vehicle.setAvailability(rs.getBoolean("v_availability"));   
+            }
+            ConnectionFactory.closeConnection(conn, stmt, rs);
+        } catch (SQLException ex) {
+            Logger.getLogger(VehicleDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return vehicle;
+        }
+        return vehicle;
     }
 
     @Override

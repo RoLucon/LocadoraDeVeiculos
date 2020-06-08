@@ -12,12 +12,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import rogeriolucon.locadora.ConnectionFactory;
 import rogeriolucon.locadora.interfaces.DAOInterface;
 import rogeriolucon.locadora.model.RentOperation;
+import rogeriolucon.locadora.model.Vehicle;
 
 /**
  *
@@ -27,7 +29,41 @@ public class RentOperationDAO implements DAOInterface<RentOperation>{
 
     @Override
     public Map<Integer, RentOperation> selectAll() throws DaoException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Map<Integer, RentOperation> map = new HashMap();
+        String sql = "SELECT * FROM rentOperation";
+        try(Connection conn = ConnectionFactory.getConnection(); 
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                ResultSet rs = stmt.executeQuery()) {
+            
+            while(rs.next()){
+                RentOperation rent = new RentOperation();
+        
+                rent.setId(rs.getInt("rent_id"));
+                rent.setTank(Vehicle.Tank.valueOf(rs.getString("rent_vehicle_init_tank")));
+                rent.setFinalTank(Vehicle.Tank.valueOf(rs.getString("rent_vehicle_end_tank")));
+                rent.setKm(rs.getDouble("rent_vehicle_init_km"));
+                rent.setFinalKm(rs.getDouble("rent_vehicle_end_km"));
+                rent.setDate(rs.getDate("rent_date").toLocalDate());
+                rent.setValue(rs.getDouble("rent_value"));
+                rent.setFinalValue(rs.getDouble("rent_final_Value"));
+                rent.setType(RentOperation.Type.valueOf(rs.getString("rent_type")));
+                rent.setContractOpen(rs.getBoolean("rent_contractState"));
+                
+                VehicleDAO vehicleDao = new VehicleDAO();
+                Vehicle v = vehicleDao.selectById(rs.getInt("rent_vehicle_id"));
+                if(v == null){
+                    return null;
+                }
+                rent.setVehicle(v);
+                map.put(rent.getId(), rent);
+            }
+            ConnectionFactory.closeConnection(conn, stmt, rs);
+        } catch (SQLException ex) {
+            Logger.getLogger(VehicleDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+        
+        return map;
     }
 
     @Override
