@@ -76,7 +76,7 @@ public class RentService implements RentServiceInterface {
         VehicleDAO vehicleDao = new VehicleDAO();
         RentOperationDAO rentDao = new RentOperationDAO();
         try {
-//            rentDao.insert(rent);
+            rentDao.update(rent);
             vehicleDao.update(rent.getVehicle());
         } catch (DaoException ex) {
             Logger.getLogger(RentService.class.getName()).log(Level.SEVERE, null, ex);

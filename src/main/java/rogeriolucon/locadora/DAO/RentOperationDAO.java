@@ -44,6 +44,11 @@ public class RentOperationDAO implements DAOInterface<RentOperation>{
                 rent.setKm(rs.getDouble("rent_vehicle_init_km"));
                 rent.setFinalKm(rs.getDouble("rent_vehicle_end_km"));
                 rent.setDate(rs.getDate("rent_date").toLocalDate());
+                rent.setExpirationDate(rs.getDate("rent_date_exp").toLocalDate());
+                LocalDate aux = rs.getDate("rent_date_exp").toLocalDate();
+                if(aux != null){
+                     rent.setWaxedDate(aux);
+                }
                 rent.setValue(rs.getDouble("rent_value"));
                 rent.setFinalValue(rs.getDouble("rent_final_Value"));
                 rent.setType(RentOperation.Type.valueOf(rs.getString("rent_type")));
@@ -70,23 +75,24 @@ public class RentOperationDAO implements DAOInterface<RentOperation>{
     public int insert(RentOperation rent) throws DaoException {
         String sql = "INSERT INTO rentOperation(rent_vehicle_id, rent_vehicle_init_km,"
                 + " rent_vehicle_end_km, rent_vehicle_init_tank,"
-                + " rent_vehicle_end_tank, rent_date, rent_final_Value,"
+                + " rent_vehicle_end_tank, rent_date, rent_date_exp, rent_final_Value,"
                 + " rent_value, rent_type, rent_contractState)"
-                + "VALUES(?,?,?,?,?,?,?,?,?,?)";
+                + "VALUES(?,?,?,?,?,?,?,?,?,?,?)";
         try(Connection conn = ConnectionFactory.getConnection(); 
                 PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)){
             conn.setAutoCommit(false);
             
             stmt.setInt(1, rent.getVehicle().getId());
             stmt.setDouble(2, rent.getKm());
-            stmt.setDouble(3, rent.getFinalKm()); // Ajustar
+            stmt.setDouble(3, rent.getFinalKm());
             stmt.setString(4, rent.getTank().toString());
-            stmt.setString(5, rent.getFinalTank().toString()); // Ajustar
+            stmt.setString(5, rent.getFinalTank().toString());
             stmt.setDate(6, Date.valueOf(rent.getDate()));
-            stmt.setDouble(7, rent.getFinalValue());
-            stmt.setDouble(8, rent.getValue());
-            stmt.setString(9, rent.getType().toString());
-            stmt.setBoolean(10, rent.isContractOpen());
+            stmt.setDate(7, Date.valueOf(rent.getExpirationDate()));
+            stmt.setDouble(8, rent.getFinalValue());
+            stmt.setDouble(9, rent.getValue());
+            stmt.setString(10, rent.getType().toString());
+            stmt.setBoolean(11, rent.isContractOpen());
         
             stmt.executeUpdate();
             
@@ -114,8 +120,28 @@ public class RentOperationDAO implements DAOInterface<RentOperation>{
     }
 
     @Override
-    public boolean update(RentOperation t) throws DaoException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean update(RentOperation rent) throws DaoException {
+        String sql = "UPDATE rentOperation SET rent_vehicle_end_km = ?,"
+                + " rent_vehicle_end_tank = ?, rent_final_Value = ?,"
+                + " rent_type = ?, rent_contractState = ?, rent_date_end = ? WHERE rent_id = ?";
+        try(Connection conn = ConnectionFactory.getConnection(); 
+                PreparedStatement stmt = conn.prepareStatement(sql)){
+            conn.setAutoCommit(true);
+            
+            stmt.setDouble(1, rent.getFinalKm());
+            stmt.setString(2, rent.getFinalTank().toString());
+            stmt.setDouble(3, rent.getFinalValue());
+            stmt.setString(4, rent.getType().toString());
+            stmt.setBoolean(5, rent.isContractOpen());
+            stmt.setDate(6, Date.valueOf(rent.getWaxedDate()));
+            stmt.setInt(7, rent.getId());
+            
+            stmt.executeUpdate();
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(RentOperationDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
     }
 
     @Override

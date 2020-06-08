@@ -109,8 +109,8 @@ public class VehicleService implements RentServiceInterface, TradeServiceInterfa
     @Override
     public boolean devolutionVehicle(RentOperation rent) {
         rent.getVehicle().setAvailability(true);
-        rent.getVehicle().setKm(rent.getKm());
-        rent.getVehicle().setTank(rent.getTank());
+        rent.getVehicle().setKm(rent.getFinalKm());
+        rent.getVehicle().setTank(rent.getFinalTank());
         if(rentService.devolutionVehicle(rent)){
             rent.getVehicle().setAvailability(true);
             financialService.addRentBalance(rent.devolutionDif());
