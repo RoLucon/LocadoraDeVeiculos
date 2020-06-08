@@ -101,17 +101,22 @@ public class VehicleService implements RentServiceInterface, TradeServiceInterfa
             //Setar veiculo para indisponivel
             return true;
         }else{
-        rent.getVehicle().setAvailability(true);
+            rent.getVehicle().setAvailability(true);
         }
         return false;
     }
 
     @Override
     public boolean devolutionVehicle(RentOperation rent) {
+        rent.getVehicle().setAvailability(true);
+        rent.getVehicle().setKm(rent.getKm());
+        rent.getVehicle().setTank(rent.getTank());
         if(rentService.devolutionVehicle(rent)){
             rent.getVehicle().setAvailability(true);
             financialService.addRentBalance(rent.devolutionDif());
             return true;
+        }else {
+            rent.getVehicle().setAvailability(false);
         }
         return false;
     }

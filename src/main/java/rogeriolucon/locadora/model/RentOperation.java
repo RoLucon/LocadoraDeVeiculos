@@ -66,5 +66,22 @@ public class RentOperation extends Operation {
     public double devolutionDif() {
         return finalValue - getValue();
     }    
-        
+
+    public Tank getFinalTank() {
+        return finalTank;
+    }
+
+    public void setFinalTank(Tank finalTank) {
+        this.finalTank = finalTank;
+    }
+
+    public double getFinalKm() {
+        return finalKm;
+    }
+
+    public void setFinalKm(double finalKm) {
+        this.finalKm = finalKm;
+    }
+    
+    
 }
