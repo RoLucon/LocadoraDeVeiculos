@@ -9,6 +9,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import rogeriolucon.locadora.DAO.DaoException;
+import rogeriolucon.locadora.DAO.VehicleDAO;
 import rogeriolucon.locadora.interfaces.RentServiceInterface;
 import rogeriolucon.locadora.model.RentOperation;
 
@@ -28,6 +32,13 @@ public class RentService implements RentServiceInterface {
         rent.setId(id);
         rent.setContractOpen(true);
         rentedVehicles.put(rent.getId(), rent);
+        VehicleDAO dao = new VehicleDAO();
+        try {
+            dao.update(rent.getVehicle());
+            System.out.println("UPDATE FOI");
+        } catch (DaoException ex) {
+            Logger.getLogger(RentService.class.getName()).log(Level.SEVERE, null, ex);
+        }
         //Passar para o banco
         return true;
     }

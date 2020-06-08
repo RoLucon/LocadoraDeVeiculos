@@ -23,7 +23,7 @@ import java.util.logging.Logger;
 public class ConnectionFactory {
     private static final String DB_NAME = "locadora";
     private static final String URL = "jdbc:mysql://localhost:3306/" + DB_NAME
-            +"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+            +"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
     private static final String USER = "root";
     private static final String PW = "";
 

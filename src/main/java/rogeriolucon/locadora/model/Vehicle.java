@@ -33,6 +33,7 @@ public class Vehicle {
     private double price;
     private double km;
     private boolean availability;
+    private boolean sold = false;
 
     public int getId() {
         return id;
@@ -113,5 +114,14 @@ public class Vehicle {
     public void setAvailability(boolean availability) {
         this.availability = availability;
     }
- 
+
+    public boolean isSold() {
+        return sold;
+    }
+
+    public void setSold(boolean sold) {
+        this.sold = sold;
+    }
+    
+    
 }

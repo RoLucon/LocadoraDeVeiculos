@@ -93,12 +93,15 @@ public class VehicleService implements RentServiceInterface, TradeServiceInterfa
     //Rent
     @Override
     public boolean rentVehicle(RentOperation rent) {
+        rent.getVehicle().setAvailability(false);
+        rent.getVehicle().setKm(rent.getKm());
+        rent.getVehicle().setTank(rent.getTank());
         if(rentService.rentVehicle(rent)){
-            Vehicle vehicle = vehicleMap.get(rent.getVehicle().getId());
-            vehicle.setAvailability(false);
             financialService.addRentBalance(rent.getValue());
             //Setar veiculo para indisponivel
             return true;
+        }else{
+        rent.getVehicle().setAvailability(true);
         }
         return false;
     }

@@ -104,10 +104,29 @@ public class VehicleDAO implements DAOInterface<Vehicle>{
     }
 
     @Override
-    public boolean update(Vehicle t) throws DaoException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean update(Vehicle vehicle) throws DaoException {
+        String sql = "UPDATE vehicle SET v_tank = ?, v_km = ?, v_availability = ? WHERE v_id = ?";
+        try(Connection conn = ConnectionFactory.getConnection(); 
+                PreparedStatement stmt = conn.prepareStatement(sql)){
+            conn.setAutoCommit(true);
+            System.out.println("ID VEHICLE:" + vehicle.getId());
+            System.out.println(vehicle.getKm());
+            System.out.println(vehicle.isAvailability());
+            stmt.setString(1, vehicle.getTank().toString());
+            stmt.setDouble(2, vehicle.getKm());
+            stmt.setBoolean(3, vehicle.isAvailability());
+            stmt.setInt(4, vehicle.getId());
+        
+            stmt.executeUpdate();
+            ConnectionFactory.closeConnection(conn, stmt);
+            
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(VehicleDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
     }
-
+    
     @Override
     public boolean delete(Vehicle t) throws DaoException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
