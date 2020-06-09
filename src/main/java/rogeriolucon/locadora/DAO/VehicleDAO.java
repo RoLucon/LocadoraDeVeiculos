@@ -130,7 +130,7 @@ public class VehicleDAO implements DAOInterface<Vehicle>{
 
     @Override
     public boolean update(Vehicle vehicle) throws DaoException {
-        String sql = "UPDATE vehicle SET v_tank = ?, v_km = ?, v_availability = ? WHERE v_id = ?";
+        String sql = "UPDATE vehicle SET v_tank = ?, v_km = ?, v_availability = ?, v_sold = ? WHERE v_id = ?";
         try(Connection conn = ConnectionFactory.getConnection(); 
                 PreparedStatement stmt = conn.prepareStatement(sql)){
             conn.setAutoCommit(true);
@@ -140,7 +140,8 @@ public class VehicleDAO implements DAOInterface<Vehicle>{
             stmt.setString(1, vehicle.getTank().toString());
             stmt.setDouble(2, vehicle.getKm());
             stmt.setBoolean(3, vehicle.isAvailability());
-            stmt.setInt(4, vehicle.getId());
+            stmt.setBoolean(4, vehicle.isSold());
+            stmt.setInt(5, vehicle.getId());
         
             stmt.executeUpdate();
             ConnectionFactory.closeConnection(conn, stmt);

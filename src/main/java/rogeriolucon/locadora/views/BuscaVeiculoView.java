@@ -238,7 +238,6 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
             AbstractTableModel model = (AbstractTableModel) jTable1.getModel();
             int index = jTable1.getSelectedRow();
             Vehicle vehicle = tableModel.getAtIndex(index);
-            System.out.println(vehicle.getPlate());
             parent.setSelectedVehicle(vehicle);
         }
 
@@ -249,7 +248,6 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
     }
     
     private void filter(){
-        System.out.println(sliderPrice.getValue());
         ArrayList<Vehicle> list = new ArrayList<>();
         for (Vehicle vehicle : mainList) {
             if (vehicle.getBrand() == comboBoxBrand.getSelectedItem() 

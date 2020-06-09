@@ -57,10 +57,11 @@ public class VehicleService implements RentServiceInterface, TradeServiceInterfa
     }
     //Trade
     @Override
-    public boolean sellVehicle(TradeOperation trade){
-        if(tradeService.sellVehicle(trade)){
-            vehicleMap.remove(trade.getVehicle().getId());
-            financialService.addSalesBalance(trade.getValue());
+    public boolean sellVehicle(Vehicle vehicle){
+        vehicle.setSold(true);
+        if(tradeService.sellVehicle(vehicle)){
+            vehicleMap.remove(vehicle.getId());
+            financialService.addSalesBalance(vehicle.getPrice());
             return true;
         }
         return false;

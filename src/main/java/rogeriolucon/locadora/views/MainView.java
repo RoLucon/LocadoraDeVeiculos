@@ -967,7 +967,6 @@ public class MainView extends javax.swing.JFrame {
         );
 
         jPanelRentReport.setBackground(new java.awt.Color(218, 230, 242));
-        jPanelRentReport.setMinimumSize(new java.awt.Dimension(420, 500));
 
         jLabel28.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
         jLabel28.setText("TADS | Locações");
@@ -1410,7 +1409,6 @@ public class MainView extends javax.swing.JFrame {
         buttonDevSearchRent.setText("Buscar locação");
         buttonDevSearchRent.setMinimumSize(new java.awt.Dimension(120, 22));
         buttonDevSearchRent.setPreferredSize(new java.awt.Dimension(120, 22));
-        buttonDevSearchRent.setSize(new java.awt.Dimension(120, 22));
         buttonDevSearchRent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonDevSearchRentActionPerformed(evt);
@@ -1723,7 +1721,7 @@ public class MainView extends javax.swing.JFrame {
             jPanelDevolutionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelDevolutionLayout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(jScrollPaneRent1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPaneRent1)
                 .addGap(0, 0, 0))
         );
         jPanelDevolutionLayout.setVerticalGroup(
@@ -2099,6 +2097,7 @@ public class MainView extends javax.swing.JFrame {
         vehicle.setBrand((Vehicle.Brand)(registerComboBoxBrand.getSelectedItem()));
         vehicle.setPlate(registerTextFieldPlates.getText());
         vehicle.setKm(Integer.parseInt(registerTextFieldKm.getText()));
+        vehicle.setTank((Vehicle.Tank)registerComboBoxTank.getSelectedItem());
         vehicle.setPrice(Double.parseDouble(textFieldRegisterValue.getText()));
         vehicle.setAvailability(true);
         if(vehicleService.purchaseVehicle(vehicle)){
@@ -2320,12 +2319,15 @@ public class MainView extends javax.swing.JFrame {
         if(stringDateToLocalDate(formattedTextFieldDevDevolutionDay.getText()) == null){
             error += "- Entre uma data valida para a devolução\n";
         }
+        
         if(!error.trim().isEmpty()){
             JOptionPane.showMessageDialog(this, error);
             return;
         }
         RentOperation rent = selectedRent;
-        rent.setValue(Double.parseDouble(textFieldDevTotalValue.getText()));
+        rent.setFinalValue(Double.parseDouble(textFieldDevTotalValue.getText()));
+        rent.setFinalKm(Double.parseDouble(textFieldDevEndKm.getText()));
+        rent.setFinalTank((Vehicle.Tank) comboBoxDevTank.getSelectedItem());
         rent.setWaxedDate(stringDateToLocalDate(formattedTextFieldDevDevolutionDay.getText()));
         if(vehicleService.devolutionVehicle(rent)){
             devolutionClear();
@@ -2364,12 +2366,10 @@ public class MainView extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, error);
             return;
         }
-        TradeOperation trade = new TradeOperation();
-        trade.setDate(stringDateToLocalDate(dateStringNow()));
-        trade.setVehicle(selectedVehicle);
-        trade.setValue(selectedVehicle.getPrice());
-        trade.setTank((Vehicle.Tank)comboBoxSaleTank.getSelectedItem());
-        if(vehicleService.sellVehicle(trade)) {
+        selectedVehicle.setPrice(Double.parseDouble(textFieldSaleValue.getText()));
+        selectedVehicle.setKm(Double.parseDouble(textFieldSaleKm.getText()));
+        selectedVehicle.setTank((Vehicle.Tank)comboBoxSaleTank.getSelectedItem());
+        if(vehicleService.sellVehicle(selectedVehicle)) {
             JOptionPane.showMessageDialog(this, "Venda concluida.");
             salesClear();
         } else {
@@ -2933,7 +2933,7 @@ public class MainView extends javax.swing.JFrame {
     }
     
     private double rentPrice(LocalDate start, LocalDate end){
-        long daysBetween = ChronoUnit.DAYS.between(start, end);
+        long daysBetween = ChronoUnit.DAYS.between(end, start);
         double value = daysBetween * vehicleService.rentValuePerDay();
         return value == 0 ? vehicleService.rentValuePerDay() : value;
     }

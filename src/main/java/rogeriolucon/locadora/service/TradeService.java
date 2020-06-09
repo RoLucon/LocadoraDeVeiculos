@@ -7,8 +7,12 @@ package rogeriolucon.locadora.service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
+import javax.crypto.AEADBadTagException;
 import rogeriolucon.locadora.interfaces.TradeServiceInterface;
 import rogeriolucon.locadora.DAO.*;
 import rogeriolucon.locadora.model.TradeOperation;
@@ -19,33 +23,82 @@ import rogeriolucon.locadora.model.Vehicle;
  * @author rolucon
  */
 public class TradeService implements TradeServiceInterface {
-    public ArrayList<TradeOperation> purchasedVehicles = new ArrayList();
-    public ArrayList<TradeOperation> soldVehicles = new ArrayList();
+    public ArrayList<TradeOperation> purchasedVehicles;
+    public ArrayList<TradeOperation> soldVehicles;
+
+    public TradeService() {
+        try {
+            TradeOperationDAO tradeDao = new TradeOperationDAO();
+            Map<Integer, TradeOperation> operations  = tradeDao.selectAll();
+            if(operations == null){
+                purchasedVehicles = new ArrayList<>();
+                soldVehicles = new ArrayList<>();
+                return;
+            }
+            Map aux = operations.entrySet().stream()
+                    .filter(map -> map.getValue().getType() == TradeOperation.Type.COMPRA)
+                    .collect(Collectors.toMap(p -> p.getKey(), p -> p.getValue()));
+            Collection<TradeOperation> valuesS = aux.values();
+            soldVehicles = new ArrayList<>(valuesS);
+            
+            aux = operations.entrySet().stream()
+                    .filter(map -> map.getValue().getType() == TradeOperation.Type.VENDA)
+                    .collect(Collectors.toMap(p -> p.getKey(), p -> p.getValue()));
+            Collection<TradeOperation> valuesP = aux.values();
+            purchasedVehicles = new ArrayList<>(valuesP);
+                    } catch (DaoException ex) {
+            Logger.getLogger(TradeService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
     @Override
-    public boolean sellVehicle(TradeOperation trade){
-        trade.setType(TradeOperation.Type.VENDA);
-        soldVehicles.add(trade);
-        //Passar para o banco
-        return true;
+    public boolean sellVehicle(Vehicle vehicle){
+        try {
+            TradeOperation trade = new TradeOperation();
+            VehicleDAO vehicleDao = new VehicleDAO();
+            trade.setType(TradeOperation.Type.VENDA);
+            trade.setVehicle(vehicle);
+            trade.setValue(vehicle.getPrice());
+            trade.setKm(vehicle.getKm());
+            trade.setTank(vehicle.getTank());
+            trade.setDate(LocalDate.now());
+            TradeOperationDAO tradeDao = new TradeOperationDAO();
+            int tradeId = tradeDao.insert(trade);
+            if(tradeId >= 0){
+                soldVehicles.add(trade);
+                vehicleDao.update(trade.getVehicle());
+            }
+            return true;
+        } catch (DaoException ex) {
+            Logger.getLogger(TradeService.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
     }
     @Override
     public boolean purchaseVehicle(Vehicle vehicle){
-        TradeOperation trade = new TradeOperation();
-        trade.setType(TradeOperation.Type.COMPRA);
-        trade.setVehicle(vehicle);
-        trade.setDate(LocalDate.now());
-        purchasedVehicles.add(trade);
-        VehicleDAO dao = new VehicleDAO();
+        
+        TradeOperationDAO tradeDao = new TradeOperationDAO();
+        VehicleDAO vehicleDao = new VehicleDAO();
         try {
-            int id = dao.insert(vehicle);
+            int id = vehicleDao.insert(vehicle);
+            
             if(id < 0){
-                System.out.println("ERRO DE ID: " + id);
                 return false;
             }
             else{
                 vehicle.setId(id);
                 System.out.println("TUDO CERTO");
+            }
+            TradeOperation trade = new TradeOperation();
+            trade.setType(TradeOperation.Type.COMPRA);
+            trade.setVehicle(vehicle);
+            trade.setDate(LocalDate.now());
+            trade.setTank(vehicle.getTank());
+            trade.setValue(vehicle.getPrice());
+            purchasedVehicles.add(trade);
+            int tradeId = tradeDao.insert(trade);
+            if(tradeId >= 0){
+                soldVehicles.add(trade);
             }
         } catch (DaoException ex) {
             Logger.getLogger(TradeService.class.getName()).log(Level.SEVERE, null, ex);
