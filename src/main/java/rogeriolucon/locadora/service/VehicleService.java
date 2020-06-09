@@ -31,7 +31,7 @@ import static rogeriolucon.locadora.views.MainView.MY_DATA_F;
 public class VehicleService implements RentServiceInterface, TradeServiceInterface, FinancialServiceInterface {
     private TradeService tradeService = new TradeService();
     private RentService rentService = new RentService();
-    private FinancialService financialService = new FinancialService();
+    private FinancialService financialService;
     private Map<Integer,Vehicle> vehicleMap = new HashMap<>();
     
     public VehicleService() {
@@ -42,6 +42,8 @@ public class VehicleService implements RentServiceInterface, TradeServiceInterfa
         } catch (DaoException ex) {
             Logger.getLogger(VehicleService.class.getName()).log(Level.SEVERE, null, ex);
         }
+        financialService = new FinancialService(tradeService.getSales(),
+                tradeService.getPurchases(), rentService.getAllRentOperations());
     }
     //Propios
     public ArrayList<Vehicle> getOwnVehicles(){

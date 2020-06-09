@@ -5,7 +5,10 @@
  */
 package rogeriolucon.locadora.service;
 
+import java.util.ArrayList;
 import rogeriolucon.locadora.interfaces.FinancialServiceInterface;
+import rogeriolucon.locadora.model.RentOperation;
+import rogeriolucon.locadora.model.TradeOperation;
 
 /**
  *
@@ -17,14 +20,35 @@ public class FinancialService implements FinancialServiceInterface{
     private double rentBalance;
     private double salesBalance;
     private double purchaseBalance;
-
-    public FinancialService() {
+    
+    
+    
+    public FinancialService(ArrayList<TradeOperation> sale,
+        ArrayList<TradeOperation> purchase, ArrayList<RentOperation> rent) {
+        
         valueRentPerDay = 45.0;
-        depreciationPerKm = 0.1;
+        depreciationPerKm = 0.5;
         rentBalance = 0;
         salesBalance = 0;
         purchaseBalance = 0;
         
+        for (RentOperation r : rent) {
+            if(r.getFinalValue() > 0){
+                rentBalance += r.getFinalValue();
+            }else{
+                rentBalance += r.getValue();
+            }
+        }
+        
+        for (TradeOperation s : sale) {
+            salesBalance += s.getValue();
+            System.out.println("Valor  " + s.getValue());
+        }
+        
+        for (TradeOperation p : purchase) {
+            purchaseBalance += p.getValue();
+            System.out.println("Valor  " + p.getValue());
+        } 
     }
 
     public void addRentBalance(double rentBalance) {

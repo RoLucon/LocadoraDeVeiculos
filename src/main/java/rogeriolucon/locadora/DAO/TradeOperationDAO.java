@@ -53,7 +53,7 @@ public class TradeOperationDAO implements DAOInterface<TradeOperation>{
                 }
                 trade.setVehicle(v);
                 map.put(trade.getId(), trade);
-                return map;
+                
             }
             ConnectionFactory.closeConnection(conn, stmt, rs);
         } catch (SQLException ex) {
