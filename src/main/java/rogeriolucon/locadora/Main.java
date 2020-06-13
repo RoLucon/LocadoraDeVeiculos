@@ -32,7 +32,11 @@ public class Main {
 //                System.out.println(brand.getClass());
 //            }
 //        }
-          new VehicleService();
+          VehicleService v = new VehicleService();
+          
+          for (String brandName : v.getBrandNames()) {
+              System.out.println(brandName);
+        }
 //        list.forEach(System.out::println);
     }
     

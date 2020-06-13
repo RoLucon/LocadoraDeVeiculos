@@ -6,6 +6,8 @@
 package rogeriolucon.locadora.service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,7 +27,8 @@ public class VehicleService {
     private Map<Integer, List<Model>> models = new HashMap<>();
     
     
-    public VehicleService() throws Exception {
+    public VehicleService() {
+        try{
         List<Brand> b = (List<Brand>) JsonDecoder.fetch("Brands", (TypeReference) new TypeReference<List<Brand>>(){});
         
         this.brands = b.stream()
@@ -37,6 +40,9 @@ public class VehicleService {
 //                System.out.println(elem.getName()); 
 //           }
 //        }
+        } catch(Exception ex){
+            System.out.println("Erro VSERVICE");
+        }
     }
     
     private void addModelsByBrandId(Integer id) throws Exception{
@@ -53,6 +59,15 @@ public class VehicleService {
             System.out.println("Add Nova marca");
         } 
         return models.get(id);
+    }
+    
+    public List<String> getBrandNames(){
+        List<String> aux = brands.entrySet().stream()
+                .map(b -> b.getValue()
+                .getName()).collect(Collectors.toList());
+
+        Collections.sort(aux);
+        return aux;
     }
     
 //    public void teste(){

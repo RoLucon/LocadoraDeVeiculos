@@ -11,9 +11,9 @@ package rogeriolucon.locadora.model;
  */
 public class Vehicle {
     
-    public enum Brand {
-        FORD, CHEVROLET, FIAT, AUDI, BMW, JEEP;
-    }
+//    public enum Brand {
+//        FORD, CHEVROLET, FIAT, AUDI, BMW, JEEP;
+//    }
     
     public enum Category {
         ECO, SEDAN, SUV, PREMIUM;
@@ -24,7 +24,7 @@ public class Vehicle {
     }
     
     private int id;
-    private Brand brand;
+    private String brand;
     private Category type;
     private Tank tank;
     private String model;
@@ -43,11 +43,11 @@ public class Vehicle {
         this.id = id;
     }
 
-    public Brand getBrand() {
+    public String getBrand() {
         return brand;
     }
 
-    public void setBrand(Brand brand) {
+    public void setBrand(String brand) {
         this.brand = brand;
     }
 

@@ -250,7 +250,7 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
     private void filter(){
         ArrayList<Vehicle> list = new ArrayList<>();
         for (Vehicle vehicle : mainList) {
-            if (vehicle.getBrand() == comboBoxBrand.getSelectedItem() 
+            if (vehicle.getBrand().equalsIgnoreCase(comboBoxBrand.getSelectedItem().toString()) 
                     || allBrands == comboBoxBrand.getSelectedItem()) {
                 if(vehicle.getCategory() == comboBoxCategoty.getSelectedItem()
                         || allBrands == comboBoxCategoty.getSelectedItem()){
@@ -316,7 +316,7 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
         this.tableModel = (VehicleTableModel) jTable1.getModel();
         this.tableModel.setList(mainList);
         
-        comboBoxBrand.setModel(new DefaultComboBoxModel(Vehicle.Brand.values()));
+        comboBoxBrand.setModel(new DefaultComboBoxModel(parent.getService().getBrandNames().toArray()));
         comboBoxBrand.addItem(allBrands);
         comboBoxBrand.setSelectedItem(allBrands);
         

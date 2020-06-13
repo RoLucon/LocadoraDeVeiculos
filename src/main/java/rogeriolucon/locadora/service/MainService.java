@@ -10,6 +10,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,6 +20,7 @@ import rogeriolucon.locadora.DAO.VehicleDAO;
 import rogeriolucon.locadora.interfaces.FinancialServiceInterface;
 import rogeriolucon.locadora.interfaces.RentServiceInterface;
 import rogeriolucon.locadora.interfaces.TradeServiceInterface;
+import rogeriolucon.locadora.model.Model;
 import rogeriolucon.locadora.model.RentOperation;
 import rogeriolucon.locadora.model.TradeOperation;
 import rogeriolucon.locadora.model.Vehicle;
@@ -32,6 +34,7 @@ public class MainService implements RentServiceInterface, TradeServiceInterface,
     private TradeService tradeService = new TradeService();
     private RentService rentService = new RentService();
     private FinancialService financialService;
+    private VehicleService vehilceService = new VehicleService();
     private Map<Integer,Vehicle> vehicleMap = new HashMap<>();
     
     public MainService() {
@@ -173,14 +176,22 @@ public class MainService implements RentServiceInterface, TradeServiceInterface,
     public double depreciationPerKm() {
         return financialService.depreciationPerKm();
     }
-
+    
+    public List<String> getBrandNames(){
+        return vehilceService.getBrandNames();
+    }
+    
+    public List<Model> getModelByBrandName(String name) throws Exception{
+        return vehilceService.getModelByBrandName(name);
+    }
+    
     // Gerando lista de testes
     private void generateList(){
         for (int i = 0; i < 5; i++) {
             Vehicle aux = new Vehicle();
             aux.setId(i);
             aux.setCategory(Vehicle.Category.ECO);
-            aux.setBrand(Vehicle.Brand.FORD);
+//            aux.setBrand(Vehicle.Brand.FORD);
             aux.setTank(Vehicle.Tank.HALF);
             aux.setModel("Modelo: " + i);
             aux.setKm(i * 5);

@@ -13,6 +13,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Vector;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import rogeriolucon.locadora.model.RentOperation;
@@ -257,8 +258,6 @@ public class MainView extends javax.swing.JFrame {
         parent.setBackground(new java.awt.Color(218, 230, 242));
 
         sidePanel.setBackground(new java.awt.Color(51, 153, 255));
-        sidePanel.setMaximumSize(new java.awt.Dimension(280, 32767));
-        sidePanel.setMinimumSize(new java.awt.Dimension(280, 300));
 
         jLabel1.setFont(new java.awt.Font(".SF NS Text", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -272,7 +271,6 @@ public class MainView extends javax.swing.JFrame {
         jLabel7.setText("By Rogerio Lucon");
 
         bttPDVPanel.setBackground(new java.awt.Color(51, 153, 255));
-        bttPDVPanel.setMaximumSize(new java.awt.Dimension(32767, 64));
         bttPDVPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bttPDVPanelMouseClicked(evt);
@@ -280,8 +278,6 @@ public class MainView extends javax.swing.JFrame {
         });
 
         selected1.setBackground(new java.awt.Color(0, 0, 0));
-        selected1.setMaximumSize(new java.awt.Dimension(8, 64));
-        selected1.setMinimumSize(new java.awt.Dimension(8, 64));
 
         javax.swing.GroupLayout selected1Layout = new javax.swing.GroupLayout(selected1);
         selected1.setLayout(selected1Layout);
@@ -318,7 +314,6 @@ public class MainView extends javax.swing.JFrame {
         );
 
         bttVehicleRegistrationPanel.setBackground(new java.awt.Color(51, 153, 255));
-        bttVehicleRegistrationPanel.setMaximumSize(new java.awt.Dimension(32767, 64));
         bttVehicleRegistrationPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bttVehicleRegistrationPanelMouseClicked(evt);
@@ -326,8 +321,6 @@ public class MainView extends javax.swing.JFrame {
         });
 
         selected2.setBackground(new java.awt.Color(0, 0, 0));
-        selected2.setMaximumSize(new java.awt.Dimension(8, 64));
-        selected2.setMinimumSize(new java.awt.Dimension(8, 64));
 
         javax.swing.GroupLayout selected2Layout = new javax.swing.GroupLayout(selected2);
         selected2.setLayout(selected2Layout);
@@ -363,7 +356,6 @@ public class MainView extends javax.swing.JFrame {
         );
 
         bttRentReportPanel.setBackground(new java.awt.Color(51, 153, 255));
-        bttRentReportPanel.setMaximumSize(new java.awt.Dimension(32767, 64));
         bttRentReportPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bttRentReportPanelMouseClicked(evt);
@@ -371,8 +363,6 @@ public class MainView extends javax.swing.JFrame {
         });
 
         selected3.setBackground(new java.awt.Color(0, 0, 0));
-        selected3.setMaximumSize(new java.awt.Dimension(8, 64));
-        selected3.setMinimumSize(new java.awt.Dimension(8, 64));
 
         javax.swing.GroupLayout selected3Layout = new javax.swing.GroupLayout(selected3);
         selected3.setLayout(selected3Layout);
@@ -410,7 +400,6 @@ public class MainView extends javax.swing.JFrame {
         );
 
         bttSalesReportPanel.setBackground(new java.awt.Color(51, 153, 255));
-        bttSalesReportPanel.setMaximumSize(new java.awt.Dimension(32767, 64));
         bttSalesReportPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bttSalesReportPanelMouseClicked(evt);
@@ -418,8 +407,6 @@ public class MainView extends javax.swing.JFrame {
         });
 
         selected4.setBackground(new java.awt.Color(0, 0, 0));
-        selected4.setMaximumSize(new java.awt.Dimension(8, 64));
-        selected4.setMinimumSize(new java.awt.Dimension(8, 64));
 
         javax.swing.GroupLayout selected4Layout = new javax.swing.GroupLayout(selected4);
         selected4.setLayout(selected4Layout);
@@ -457,7 +444,6 @@ public class MainView extends javax.swing.JFrame {
         );
 
         bttFinancialReportPanel.setBackground(new java.awt.Color(51, 153, 255));
-        bttFinancialReportPanel.setMaximumSize(new java.awt.Dimension(32767, 64));
         bttFinancialReportPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bttFinancialReportPanelMouseClicked(evt);
@@ -465,8 +451,6 @@ public class MainView extends javax.swing.JFrame {
         });
 
         selected5.setBackground(new java.awt.Color(0, 0, 0));
-        selected5.setMaximumSize(new java.awt.Dimension(8, 64));
-        selected5.setMinimumSize(new java.awt.Dimension(8, 64));
 
         javax.swing.GroupLayout selected5Layout = new javax.swing.GroupLayout(selected5);
         selected5.setLayout(selected5Layout);
@@ -564,7 +548,6 @@ public class MainView extends javax.swing.JFrame {
 
         registerComboBoxCategory.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
         registerComboBoxCategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        registerComboBoxCategory.setMinimumSize(new java.awt.Dimension(100, 23));
         registerComboBoxCategory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registerComboBoxCategoryActionPerformed(evt);
@@ -573,6 +556,11 @@ public class MainView extends javax.swing.JFrame {
 
         registerComboBoxBrand.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
         registerComboBoxBrand.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        registerComboBoxBrand.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registerComboBoxBrandActionPerformed(evt);
+            }
+        });
 
         jLabel11.setText("Modelo:");
 
@@ -752,7 +740,6 @@ public class MainView extends javax.swing.JFrame {
         );
 
         jPanelFinancialReport.setBackground(new java.awt.Color(218, 230, 242));
-        jPanelFinancialReport.setMinimumSize(new java.awt.Dimension(420, 500));
 
         jLabel14.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
         jLabel14.setText("TADS | Financas");
@@ -886,7 +873,6 @@ public class MainView extends javax.swing.JFrame {
         );
 
         jPanelSalesReport.setBackground(new java.awt.Color(218, 230, 242));
-        jPanelSalesReport.setMinimumSize(new java.awt.Dimension(420, 500));
 
         jLabel21.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
         jLabel21.setText("TADS | Vendas");
@@ -903,12 +889,10 @@ public class MainView extends javax.swing.JFrame {
         jLabel24.setText("Periodo:");
 
         formattedTextFieldTradeReportInitDate.setText("jFormattedTextField1");
-        formattedTextFieldTradeReportInitDate.setMinimumSize(new java.awt.Dimension(90, 22));
 
         jLabel25.setText("ate");
 
         formattedTextFieldTradeReportEndDate.setText("jFormattedTextField1");
-        formattedTextFieldTradeReportEndDate.setMinimumSize(new java.awt.Dimension(90, 22));
 
         jTableTradeReport.setModel(new TradeTableModel());
         jScrollPane2.setViewportView(jTableTradeReport);
@@ -967,7 +951,6 @@ public class MainView extends javax.swing.JFrame {
         );
 
         jPanelRentReport.setBackground(new java.awt.Color(218, 230, 242));
-        jPanelRentReport.setMinimumSize(new java.awt.Dimension(420, 500));
 
         jLabel28.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
         jLabel28.setText("TADS | Locações");
@@ -989,7 +972,6 @@ public class MainView extends javax.swing.JFrame {
         jLabel31.setText("Periodo:");
 
         formattedTextFieldRentReportInitDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
-        formattedTextFieldRentReportInitDate.setMinimumSize(new java.awt.Dimension(90, 22));
         formattedTextFieldRentReportInitDate.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 formattedTextFieldRentReportInitDateFocusLost(evt);
@@ -1004,7 +986,6 @@ public class MainView extends javax.swing.JFrame {
         jLabel32.setText("ate");
 
         formattedTextFieldRentReportEndDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
-        formattedTextFieldRentReportEndDate.setMinimumSize(new java.awt.Dimension(90, 22));
         formattedTextFieldRentReportEndDate.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 formattedTextFieldRentReportEndDateFocusLost(evt);
@@ -1073,7 +1054,6 @@ public class MainView extends javax.swing.JFrame {
         );
 
         jPanelPDV.setBackground(new java.awt.Color(218, 230, 242));
-        jPanelPDV.setMinimumSize(new java.awt.Dimension(420, 500));
 
         jLabel33.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
         jLabel33.setText("TADS | Ponto de Venda");
@@ -1099,7 +1079,6 @@ public class MainView extends javax.swing.JFrame {
 
         jScrollPaneRent.setBackground(new java.awt.Color(218, 230, 242));
         jScrollPaneRent.setBorder(null);
-        jScrollPaneRent.setPreferredSize(new java.awt.Dimension(339, 521));
 
         jPanel1.setBackground(new java.awt.Color(218, 230, 242));
 
@@ -1377,7 +1356,6 @@ public class MainView extends javax.swing.JFrame {
 
         jScrollPaneRent1.setBackground(new java.awt.Color(218, 230, 242));
         jScrollPaneRent1.setBorder(null);
-        jScrollPaneRent1.setPreferredSize(new java.awt.Dimension(341, 553));
 
         jPanel2.setBackground(new java.awt.Color(218, 230, 242));
         jPanel2.setPreferredSize(new java.awt.Dimension(339, 700));
@@ -1399,8 +1377,6 @@ public class MainView extends javax.swing.JFrame {
         jLabel47.setText("Placa:");
 
         textFieldDevPlate.setText("jTextField3");
-        textFieldDevPlate.setMinimumSize(new java.awt.Dimension(100, 22));
-        textFieldDevPlate.setPreferredSize(new java.awt.Dimension(100, 22));
         textFieldDevPlate.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 textFieldDevPlateKeyTyped(evt);
@@ -1574,7 +1550,7 @@ public class MainView extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(textFieldDevClient)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(textFieldDevPlate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(textFieldDevPlate)
                                 .addGap(23, 23, 23)
                                 .addComponent(buttonDevSearchRent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(textFieldDevModel)
@@ -1736,7 +1712,6 @@ public class MainView extends javax.swing.JFrame {
 
         jScrollPaneRent2.setBackground(new java.awt.Color(218, 230, 242));
         jScrollPaneRent2.setBorder(null);
-        jScrollPaneRent2.setPreferredSize(new java.awt.Dimension(339, 521));
 
         jPanel4.setBackground(new java.awt.Color(218, 230, 242));
 
@@ -2095,7 +2070,7 @@ public class MainView extends javax.swing.JFrame {
         Vehicle vehicle = new Vehicle();
         vehicle.setModel(String.valueOf(registerComboBoxModel.getSelectedItem()));
         vehicle.setCategory((Vehicle.Category)registerComboBoxCategory.getSelectedItem());
-        vehicle.setBrand((Vehicle.Brand)(registerComboBoxBrand.getSelectedItem()));
+        vehicle.setBrand((registerComboBoxBrand.getSelectedItem().toString()));
         vehicle.setPlate(registerTextFieldPlates.getText());
         vehicle.setKm(Integer.parseInt(registerTextFieldKm.getText()));
         vehicle.setTank((Vehicle.Tank)registerComboBoxTank.getSelectedItem());
@@ -2426,6 +2401,10 @@ public class MainView extends javax.swing.JFrame {
     private void textFieldFinPurchaseBalanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldFinPurchaseBalanceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textFieldFinPurchaseBalanceActionPerformed
+
+    private void registerComboBoxBrandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerComboBoxBrandActionPerformed
+        
+    }//GEN-LAST:event_registerComboBoxBrandActionPerformed
     
     /**
      * @param args the command line arguments
@@ -2738,7 +2717,7 @@ public class MainView extends javax.swing.JFrame {
     }
     
     private void setupComponentsRegister(){
-        registerComboBoxBrand.setModel(new DefaultComboBoxModel(Vehicle.Brand.values()));
+        registerComboBoxBrand.setModel(new DefaultComboBoxModel(mainService.getBrandNames().toArray()));
         registerComboBoxBrand.addItem("<Marca>");
         registerComboBoxBrand.setSelectedItem("<Marca>");
         
@@ -2991,5 +2970,9 @@ public class MainView extends javax.swing.JFrame {
                 selected5.setBackground(Color.black);
                 break;
         }
+    }
+    
+    public MainService getService(){
+        return mainService;
     }
 }

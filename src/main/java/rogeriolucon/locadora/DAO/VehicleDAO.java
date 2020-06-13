@@ -37,7 +37,7 @@ public class VehicleDAO implements DAOInterface<Vehicle>{
                 Vehicle vehicle = new Vehicle();
                 vehicle.setId(rs.getInt("v_id"));
                 vehicle.setTank((Vehicle.Tank.valueOf(rs.getString("v_tank"))));
-                vehicle.setBrand((Vehicle.Brand.valueOf(rs.getString("v_brand"))));
+                vehicle.setBrand((rs.getString("v_brand")));
                 vehicle.setCategory((Vehicle.Category.valueOf(rs.getString("v_category"))));
                 vehicle.setModel(rs.getString("v_model"));
                 vehicle.setYear(rs.getString("v_year"));
@@ -111,7 +111,7 @@ public class VehicleDAO implements DAOInterface<Vehicle>{
                 vehicle = new Vehicle();
                 vehicle.setId(rs.getInt("v_id"));
                 vehicle.setTank((Vehicle.Tank.valueOf(rs.getString("v_tank"))));
-                vehicle.setBrand((Vehicle.Brand.valueOf(rs.getString("v_brand"))));
+                vehicle.setBrand((rs.getString("v_brand")));
                 vehicle.setCategory((Vehicle.Category.valueOf(rs.getString("v_category"))));
                 vehicle.setModel(rs.getString("v_model"));
                 vehicle.setYear(rs.getString("v_year"));
