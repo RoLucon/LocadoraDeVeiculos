@@ -181,7 +181,7 @@ public class MainService implements RentServiceInterface, TradeServiceInterface,
         return vehilceService.getBrandNames();
     }
     
-    public List<Model> getModelByBrandName(String name) throws Exception{
+    public List<String> getModelByBrandName(String name) throws Exception{
         return vehilceService.getModelByBrandName(name);
     }
     

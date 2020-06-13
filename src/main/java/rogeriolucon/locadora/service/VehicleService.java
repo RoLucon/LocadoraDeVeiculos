@@ -6,12 +6,15 @@
 package rogeriolucon.locadora.service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import rogeriolucon.locadora.FipeApi;
 import rogeriolucon.locadora.JsonDecoder;
@@ -51,14 +54,28 @@ public class VehicleService {
         models.put(id, m);
     }
     
-    public List<Model> getModelByBrandName(String name)throws Exception{
+    public List<String> getModelByBrandName(String name){
         Integer id = brands.get(name).getId();
         
         if(!models.containsKey(id)){
-            addModelsByBrandId(id);
-            System.out.println("Add Nova marca");
+            try {
+                addModelsByBrandId(id);
+                System.out.println("Add Nova marca");
+            } catch (Exception ex) {
+                return null;
+            }
         } 
-        return models.get(id);
+        List<Model> aux = models.get(id);
+      
+        List<String> names = new ArrayList<>();
+        
+        for (Model model : aux) {
+            names.add(model.getName());
+        }
+        
+        Collections.sort(names);
+  
+        return names;
     }
     
     public List<String> getBrandNames(){
