@@ -2445,7 +2445,6 @@ public class MainView extends javax.swing.JFrame {
             registerComboBoxModel.setModel( new DefaultComboBoxModel(mainService.getModelByBrandName(brand).toArray()));
         } catch (Exception ex) {
              registerComboBoxModel.setModel( new DefaultComboBoxModel());
-             System.out.println("Dando errado");
         }
     }//GEN-LAST:event_registerComboBoxBrandItemStateChanged
     

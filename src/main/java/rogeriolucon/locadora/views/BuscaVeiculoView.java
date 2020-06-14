@@ -7,8 +7,10 @@ package rogeriolucon.locadora.views;
 
 import java.awt.event.MouseAdapter;
 import java.util.ArrayList;
+import java.util.Comparator;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableRowSorter;
 import rogeriolucon.locadora.SliderPopupListener;
 import rogeriolucon.locadora.model.Vehicle;
 import rogeriolucon.locadora.model.table.VehicleTableModel;
@@ -119,6 +121,11 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
         jLabel5.setText("Modelo:");
 
         comboBoxModel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboBoxModel.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboBoxModelItemStateChanged(evt);
+            }
+        });
 
         buttonClear.setText("Limpar");
         buttonClear.addActionListener(new java.awt.event.ActionListener() {
@@ -210,6 +217,19 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void comboBoxBrandItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBoxBrandItemStateChanged
+        String brand = comboBoxBrand.getSelectedItem().toString();
+        if (!brand.equalsIgnoreCase("Todas")){
+            try {
+                comboBoxModel.setModel( new DefaultComboBoxModel(parent.getService().getModelByBrandName(brand).toArray()));
+                comboBoxModel.addItem("Selecione um modelo");
+                comboBoxModel.setSelectedItem("Selecione um modelo");
+            } catch (Exception ex) {
+                comboBoxModel.setModel( new DefaultComboBoxModel());
+            }
+        } else{
+            comboBoxModel.setModel(new DefaultComboBoxModel(new String[] {"Selecione uma Marca"}));
+            comboBoxModel.setSelectedItem("Selecione uma Marca");
+        }
         filter();
     }//GEN-LAST:event_comboBoxBrandItemStateChanged
 
@@ -242,6 +262,10 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jTable1MouseClicked
+
+    private void comboBoxModelItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBoxModelItemStateChanged
+        filter();
+    }//GEN-LAST:event_comboBoxModelItemStateChanged
     
     private void setList(ArrayList<Vehicle> list){
         tableModel.setList(list);
@@ -255,7 +279,11 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
                 if(vehicle.getCategory() == comboBoxCategoty.getSelectedItem()
                         || allBrands == comboBoxCategoty.getSelectedItem()){
                     if(vehicle.getPrice() <= sliderPrice.getValue() * 1000 || sliderPrice.getValue() == 100) {
-                        list.add(vehicle);
+                        if(vehicle.getModel().equalsIgnoreCase(comboBoxModel.getSelectedItem().toString())
+                                || comboBoxModel.getSelectedItem().toString().startsWith("Selecione")){
+                            System.out.println(comboBoxModel.getSelectedItem().toString());
+                            list.add(vehicle);
+                        }
                     }
                 }
             }
@@ -320,9 +348,14 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
         comboBoxBrand.addItem(allBrands);
         comboBoxBrand.setSelectedItem(allBrands);
         
+        comboBoxModel.setModel(new DefaultComboBoxModel(new String[] {"Selecione uma Marca"}));
+        comboBoxModel.setSelectedItem("Selecione uma Marca");
+        
         comboBoxCategoty.setModel(new DefaultComboBoxModel(Vehicle.Category.values()));
         comboBoxCategoty.addItem(allBrands);
         comboBoxCategoty.setSelectedItem(allBrands);
+ 
+       
         
         MouseAdapter ma = new SliderPopupListener();
         sliderPrice.addMouseMotionListener(ma);
@@ -331,5 +364,19 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
         sliderPrice.setMinorTickSpacing(5);
         sliderPrice.setPaintTicks(true);
         sliderPrice.setValue(sliderPrice.getMaximum());
+        
+        jTable1.setAutoCreateRowSorter(true);
+
+        Comparator c1 = new java.util.Comparator<Double>() {
+
+            public int compare(Double p, Double s) {
+                return p-s < 0 ? -1 : 1;
+            }
+        }; 
+        TableRowSorter rowSorter = new TableRowSorter();
+        jTable1.setRowSorter(rowSorter);
+        rowSorter.setModel(jTable1.getModel());
+        rowSorter.setComparator(6, c1);
+        rowSorter.setComparator(5, c1);
     }
 }
