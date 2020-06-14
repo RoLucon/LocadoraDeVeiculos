@@ -1256,12 +1256,15 @@
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
                         <StringItem index="0" value="Ambos"/>
-                        <StringItem index="1" value="Aberto"/>
-                        <StringItem index="2" value="Encerrado"/>
+                        <StringItem index="1" value="Compra"/>
+                        <StringItem index="2" value="Venda"/>
                         <StringItem index="3" value=" "/>
                       </StringArray>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="comboBoxTradeReportTypeItemStateChanged"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -1278,6 +1281,10 @@
                       <Dimension value="[90, 22]"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="formattedTextFieldTradeReportInitDateFocusLost"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="formattedTextFieldTradeReportInitDateKeyTyped"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel25">
                   <Properties>
@@ -1291,6 +1298,10 @@
                       <Dimension value="[90, 22]"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="formattedTextFieldTradeReportEndDateFocusLost"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="formattedTextFieldTradeReportEndDateKeyTyped"/>
+                  </Events>
                 </Component>
                 <Container class="javax.swing.JScrollPane" name="jScrollPane2">
                   <AuxValues>
@@ -2495,7 +2506,7 @@
                                                               <Component id="jLabel64" min="-2" max="-2" attributes="0"/>
                                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                                           </Group>
-                                                          <Component id="textFieldDevDueValue" pref="95" max="32767" attributes="0"/>
+                                                          <Component id="textFieldDevDueValue" pref="105" max="32767" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                               </Group>

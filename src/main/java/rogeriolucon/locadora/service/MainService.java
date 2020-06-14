@@ -60,6 +60,15 @@ public class MainService implements RentServiceInterface, TradeServiceInterface,
         Collection<Vehicle> values = filtered.values();
         return new ArrayList<>(values);
     }
+    
+    public ArrayList<Vehicle> getUnavailable() {
+        Map<Integer, Vehicle> filtered = vehicleMap.entrySet().stream()
+                .filter(map -> map.getValue().isAvailability() == false)
+                .collect(Collectors.toMap(p -> p.getKey(), p -> p.getValue()));
+        Collection<Vehicle> values = filtered.values();
+        return new ArrayList<>(values);
+    }
+    
     //Trade
     @Override
     public boolean sellVehicle(Vehicle vehicle){
@@ -84,12 +93,12 @@ public class MainService implements RentServiceInterface, TradeServiceInterface,
     
     @Override
     public ArrayList<TradeOperation> getSales() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         return tradeService.getSales();
     }
 
     @Override
     public ArrayList<TradeOperation> getPurchases() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return tradeService.getPurchases();
     }
 
     @Override

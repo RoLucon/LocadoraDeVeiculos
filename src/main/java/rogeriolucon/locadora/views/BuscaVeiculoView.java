@@ -6,9 +6,12 @@
 package rogeriolucon.locadora.views;
 
 import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Comparator;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableRowSorter;
 import rogeriolucon.locadora.SliderPopupListener;
@@ -24,23 +27,19 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
     private VehicleTableModel tableModel;
     private static final String allBrands = "TODAS";
     private MainView parent;
+    private boolean selectable = false;
     /**
      * Creates new form BuscaVeiculoView
      */
-    public BuscaVeiculoView(ArrayList<Vehicle> vehicleList, MainView parent) {
+    public BuscaVeiculoView(ArrayList<Vehicle> vehicleList, MainView parent, boolean selectable) {
         this.parent = parent;
         this.mainList = vehicleList;
+        this.selectable = selectable;
         initComponents();
         init();
 //        sliderPrice.setMaximum(100); set max value
     }
-
-    public BuscaVeiculoView(ArrayList<Vehicle> vehicleList) {
-        this.mainList = vehicleList;
-        initComponents();
-        init();
-    }
-    
+ 
     
     
     /**
@@ -254,13 +253,6 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
 
-        if(parent != null){
-            AbstractTableModel model = (AbstractTableModel) jTable1.getModel();
-            int index = jTable1.getSelectedRow();
-            Vehicle vehicle = tableModel.getAtIndex(index);
-            parent.setSelectedVehicle(vehicle);
-        }
-
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void comboBoxModelItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBoxModelItemStateChanged
@@ -281,7 +273,6 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
                     if(vehicle.getPrice() <= sliderPrice.getValue() * 1000 || sliderPrice.getValue() == 100) {
                         if(vehicle.getModel().equalsIgnoreCase(comboBoxModel.getSelectedItem().toString())
                                 || comboBoxModel.getSelectedItem().toString().startsWith("Selecione")){
-                            System.out.println(comboBoxModel.getSelectedItem().toString());
                             list.add(vehicle);
                         }
                     }
@@ -320,7 +311,7 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BuscaVeiculoView(null, null).setVisible(true);
+                new BuscaVeiculoView(null, null, false).setVisible(true);
             }
         });
     }
@@ -343,7 +334,8 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
     private void init(){
         this.tableModel = (VehicleTableModel) jTable1.getModel();
         this.tableModel.setList(mainList);
-        
+        //Erro quando abre pela consulta;
+
         comboBoxBrand.setModel(new DefaultComboBoxModel(parent.getService().getBrandNames().toArray()));
         comboBoxBrand.addItem(allBrands);
         comboBoxBrand.setSelectedItem(allBrands);
@@ -378,5 +370,20 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
         rowSorter.setModel(jTable1.getModel());
         rowSorter.setComparator(6, c1);
         rowSorter.setComparator(5, c1);
+        
+        jTable1.addMouseListener(new MouseAdapter() {
+         public void mouseClicked(MouseEvent me) {
+            if (me.getClickCount() == 2) {
+                if(selectable){
+                    AbstractTableModel model = (AbstractTableModel) jTable1.getModel();
+                    int index = jTable1.getSelectedRow();
+                    Vehicle vehicle = tableModel.getAtIndex(index);
+                    parent.setSelectedVehicle(vehicle);
+                    
+                }
+                dispose();
+            }
+         }
+      });
     }
 }

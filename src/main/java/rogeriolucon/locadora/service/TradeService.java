@@ -39,13 +39,13 @@ public class TradeService implements TradeServiceInterface {
                     .filter(map -> map.getValue().getType() == TradeOperation.Type.COMPRA)
                     .collect(Collectors.toMap(p -> p.getKey(), p -> p.getValue()));
             Collection<TradeOperation> valuesS = aux.values();
-            soldVehicles = new ArrayList<>(valuesS);
+            purchasedVehicles = new ArrayList<>(valuesS);
             
             aux = operations.entrySet().stream()
                     .filter(map -> map.getValue().getType() == TradeOperation.Type.VENDA)
                     .collect(Collectors.toMap(p -> p.getKey(), p -> p.getValue()));
             Collection<TradeOperation> valuesP = aux.values();
-            purchasedVehicles = new ArrayList<>(valuesP);
+            soldVehicles = new ArrayList<>(valuesP);
                     } catch (DaoException ex) {
             Logger.getLogger(TradeService.class.getName()).log(Level.SEVERE, null, ex);
         }

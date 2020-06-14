@@ -42,12 +42,10 @@ public class FinancialService implements FinancialServiceInterface{
         
         for (TradeOperation s : sale) {
             salesBalance += s.getValue();
-            System.out.println("Valor  " + s.getValue());
         }
         
         for (TradeOperation p : purchase) {
             purchaseBalance += p.getValue();
-            System.out.println("Valor  " + p.getValue());
         } 
     }
 

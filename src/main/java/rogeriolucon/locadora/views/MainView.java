@@ -906,17 +906,42 @@ public class MainView extends javax.swing.JFrame {
         jLabel23.setText("Tipo:");
 
         comboBoxTradeReportType.setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
-        comboBoxTradeReportType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ambos", "Aberto", "Encerrado", " " }));
+        comboBoxTradeReportType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ambos", "Compra", "Venda", " " }));
+        comboBoxTradeReportType.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboBoxTradeReportTypeItemStateChanged(evt);
+            }
+        });
 
         jLabel24.setText("Periodo:");
 
         formattedTextFieldTradeReportInitDate.setText("jFormattedTextField1");
         formattedTextFieldTradeReportInitDate.setMinimumSize(new java.awt.Dimension(90, 22));
+        formattedTextFieldTradeReportInitDate.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                formattedTextFieldTradeReportInitDateFocusLost(evt);
+            }
+        });
+        formattedTextFieldTradeReportInitDate.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                formattedTextFieldTradeReportInitDateKeyTyped(evt);
+            }
+        });
 
         jLabel25.setText("ate");
 
         formattedTextFieldTradeReportEndDate.setText("jFormattedTextField1");
         formattedTextFieldTradeReportEndDate.setMinimumSize(new java.awt.Dimension(90, 22));
+        formattedTextFieldTradeReportEndDate.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                formattedTextFieldTradeReportEndDateFocusLost(evt);
+            }
+        });
+        formattedTextFieldTradeReportEndDate.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                formattedTextFieldTradeReportEndDateKeyTyped(evt);
+            }
+        });
 
         jTableTradeReport.setModel(new TradeTableModel());
         jScrollPane2.setViewportView(jTableTradeReport);
@@ -2124,7 +2149,7 @@ public class MainView extends javax.swing.JFrame {
 
     private void buttonConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonConsultarActionPerformed
         //Abre a view com a tabela de veiculos
-        BuscaVeiculoView view = new BuscaVeiculoView(mainService.getOwnVehicles());
+        BuscaVeiculoView view = new BuscaVeiculoView(mainService.getOwnVehicles(), this, false);
         view.setVisible(true);
     }//GEN-LAST:event_buttonConsultarActionPerformed
 
@@ -2172,7 +2197,7 @@ public class MainView extends javax.swing.JFrame {
     }//GEN-LAST:event_bttPDVPanelMouseClicked
 
     private void buttonRentShowVehiclesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRentShowVehiclesActionPerformed
-        BuscaVeiculoView view = new BuscaVeiculoView(mainService.getAvailable(), this);
+        BuscaVeiculoView view = new BuscaVeiculoView(mainService.getAvailable(), this, true);
         view.setVisible(true);
     }//GEN-LAST:event_buttonRentShowVehiclesActionPerformed
 
@@ -2292,7 +2317,8 @@ public class MainView extends javax.swing.JFrame {
     }//GEN-LAST:event_textFieldDevClientFocusGained
 
     private void buttonDevSearchRentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDevSearchRentActionPerformed
-        //Abre popup com 
+        BuscaVeiculoView view = new BuscaVeiculoView(mainService.getUnavailable(), this, true);
+        view.setVisible(true);
     }//GEN-LAST:event_buttonDevSearchRentActionPerformed
 
     private void buttonDevCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDevCancelActionPerformed
@@ -2355,7 +2381,7 @@ public class MainView extends javax.swing.JFrame {
     }//GEN-LAST:event_textFieldSaleClientKeyTyped
 
     private void buttonSaleShowVehiclesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSaleShowVehiclesActionPerformed
-        BuscaVeiculoView view = new BuscaVeiculoView(mainService.getAvailable(), this);
+        BuscaVeiculoView view = new BuscaVeiculoView(mainService.getAvailable(), this, true);
         view.setVisible(true);
     }//GEN-LAST:event_buttonSaleShowVehiclesActionPerformed
 
@@ -2447,6 +2473,26 @@ public class MainView extends javax.swing.JFrame {
              registerComboBoxModel.setModel( new DefaultComboBoxModel());
         }
     }//GEN-LAST:event_registerComboBoxBrandItemStateChanged
+
+    private void comboBoxTradeReportTypeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBoxTradeReportTypeItemStateChanged
+        filterTradeReport();
+    }//GEN-LAST:event_comboBoxTradeReportTypeItemStateChanged
+
+    private void formattedTextFieldTradeReportInitDateKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formattedTextFieldTradeReportInitDateKeyTyped
+        filterTradeReport();
+    }//GEN-LAST:event_formattedTextFieldTradeReportInitDateKeyTyped
+
+    private void formattedTextFieldTradeReportEndDateKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formattedTextFieldTradeReportEndDateKeyTyped
+       filterTradeReport();
+    }//GEN-LAST:event_formattedTextFieldTradeReportEndDateKeyTyped
+
+    private void formattedTextFieldTradeReportInitDateFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formattedTextFieldTradeReportInitDateFocusLost
+        filterTradeReport();
+    }//GEN-LAST:event_formattedTextFieldTradeReportInitDateFocusLost
+
+    private void formattedTextFieldTradeReportEndDateFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formattedTextFieldTradeReportEndDateFocusLost
+        filterTradeReport();
+    }//GEN-LAST:event_formattedTextFieldTradeReportEndDateFocusLost
     
     /**
      * @param args the command line arguments
@@ -2689,7 +2735,14 @@ public class MainView extends javax.swing.JFrame {
             this.textFieldRentPlate.setText(selectedVehicle.getPlate());
             this.textFieldRentKm.setText(Double.toString(selectedVehicle.getKm()));
         } else if(selected == 1) {
-            setDevFields(selectedRent);
+            ArrayList<RentOperation> list = mainService.getRenteds();
+            for (RentOperation rentOperation : list) {
+                if(rentOperation.getVehicle().getId() == selectedVehicle.getId()){
+                    setDevFields(rentOperation);
+                    selectedRent = rentOperation;
+                    return;
+                }
+            }
         } else if(selected == 2) {
             this.textFieldSaleModel.setText(selectedVehicle.getModel());
             this.textFieldSaleBrand.setText(selectedVehicle.getBrand().toString());
@@ -2838,6 +2891,7 @@ public class MainView extends javax.swing.JFrame {
     
     /*           Puxa informacoes para a tela                 */
     private void setDevFields(RentOperation rent){
+        textFieldDevPlate.setText(rent.getVehicle().getPlate());
         textFieldDevModel.setText(rent.getVehicle().getModel());
         textFieldDevBrand.setText(rent.getVehicle().getBrand().toString());
         textFieldDevCategory.setText(rent.getVehicle().getCategory().toString());
@@ -2850,8 +2904,8 @@ public class MainView extends javax.swing.JFrame {
         textFieldDevExceedDays.setText(Integer.toString(difBetweenDates(rent.getExpirationDate(),
                 stringDateToLocalDate(formattedTextFieldDevDevolutionDay.getText()))));
         formattedTextFieldDevExpetedDay.setText(dateToString(rent.getExpirationDate()));
-        double total = rentPrice(rent.getDate(),
-                stringDateToLocalDate(formattedTextFieldDevDevolutionDay.getText()));
+        double total = rentPrice(
+                stringDateToLocalDate(formattedTextFieldDevDevolutionDay.getText()),rent.getDate());
         textFieldDevTotalValue.setText(Double.toString(total));
         textFieldDevDueValue.setText(Double.toString(total - rent.getValue()));
         
@@ -2899,7 +2953,7 @@ public class MainView extends javax.swing.JFrame {
         } else {
             list = mainService.getReturneds();
         }
-        System.out.println(list.size());
+
         if(!formattedTextFieldRentReportInitDate.getText().trim().isEmpty()){
             init = stringDateToLocalDate(formattedTextFieldRentReportInitDate.getText());
             if(init != null){
@@ -2931,6 +2985,50 @@ public class MainView extends javax.swing.JFrame {
         model.setList(list);
     }
     
+    private void filterTradeReport(){
+        LocalDate init = null;
+        LocalDate end = null;
+        ArrayList<TradeOperation> list = null;
+        int selected = comboBoxTradeReportType.getSelectedIndex();
+        
+        if(selected == 0){
+            list = mainService.getAllTradeOperations();
+        } else if(selected == 1){
+            list = mainService.getPurchases();
+        } else {
+            list = mainService.getSales();
+        }
+        
+        if(!formattedTextFieldTradeReportInitDate.getText().trim().isEmpty()){
+            init = stringDateToLocalDate(formattedTextFieldTradeReportInitDate.getText());
+            if(init != null){
+                ArrayList<TradeOperation> aux = new ArrayList<>();
+                for (TradeOperation rentOperation : list) {
+                    if(rentOperation.getDate().isAfter(init) 
+                            || rentOperation.getDate().isEqual(init)){
+                        aux.add(rentOperation);
+                    }
+                }
+                list = aux;
+            }
+        }
+        
+        if(!formattedTextFieldTradeReportEndDate.getText().trim().isEmpty()){
+            end = stringDateToLocalDate(formattedTextFieldTradeReportEndDate.getText());
+            if(end != null){
+                ArrayList<TradeOperation> aux = new ArrayList<>();
+                for (TradeOperation rentOperation : list) {
+                    if(rentOperation.getDate().isBefore(end)
+                            ||rentOperation.getDate().isEqual(end)){
+                        aux.add(rentOperation);
+                    }
+                }
+                list = aux;
+            }
+        }
+        TradeTableModel model = (TradeTableModel) jTableTradeReport.getModel();
+        model.setList(list);
+    }
     /*                Outros                 */
     private LocalDate stringDateToLocalDate(String date) {
         try{
