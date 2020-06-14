@@ -95,7 +95,6 @@ public class TradeService implements TradeServiceInterface {
             trade.setDate(LocalDate.now());
             trade.setTank(vehicle.getTank());
             trade.setValue(vehicle.getPrice());
-            purchasedVehicles.add(trade);
             int tradeId = tradeDao.insert(trade);
             if(tradeId >= 0){
                 soldVehicles.add(trade);

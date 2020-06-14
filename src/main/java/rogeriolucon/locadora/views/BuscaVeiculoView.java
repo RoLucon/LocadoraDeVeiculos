@@ -385,5 +385,6 @@ public class BuscaVeiculoView extends javax.swing.JFrame {
             }
          }
       });
+        filter();
     }
 }

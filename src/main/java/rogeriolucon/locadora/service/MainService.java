@@ -38,7 +38,6 @@ public class MainService implements RentServiceInterface, TradeServiceInterface,
     private Map<Integer,Vehicle> vehicleMap = new HashMap<>();
     
     public MainService() {
-//        generateList();
         VehicleDAO dao = new VehicleDAO();
         try {
             vehicleMap = dao.selectAll();
@@ -194,30 +193,4 @@ public class MainService implements RentServiceInterface, TradeServiceInterface,
         return vehilceService.getModelByBrandName(name);
     }
     
-    // Gerando lista de testes
-    private void generateList(){
-        for (int i = 0; i < 5; i++) {
-            Vehicle aux = new Vehicle();
-            aux.setId(i);
-            aux.setCategory(Vehicle.Category.ECO);
-//            aux.setBrand(Vehicle.Brand.FORD);
-            aux.setTank(Vehicle.Tank.HALF);
-            aux.setModel("Modelo: " + i);
-            aux.setKm(i * 5);
-            aux.setPrice(1000.0 * i);
-            aux.setPlate("ABC-123"+i);
-            aux.setAvailability(true);
-            purchaseVehicle(aux);
-        }
-//        DateTimeFormatter dtf = DateTimeFormatter.ofPattern(MY_DATA_F);
-//
-//        RentOperation rent = new RentOperation();
-//        rent.setVehicle(vehicleMap.get(0));
-//        rent.setKm(100);
-//        rent.setTank((Vehicle.Tank.FULL));
-//        rent.setDate(LocalDate.parse("2020-06-03"));
-//        rent.setExpirationDate(LocalDate.parse("2020-06-04"));
-//        rent.setValue(45);
-//        rentVehicle(rent);
-    }
 }

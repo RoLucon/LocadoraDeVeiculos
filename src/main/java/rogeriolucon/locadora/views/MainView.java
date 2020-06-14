@@ -694,18 +694,14 @@ public class MainView extends javax.swing.JFrame {
                             .addComponent(registerComboBoxTank, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelRegisterLayout.createSequentialGroup()
                         .addGroup(jPanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelRegisterLayout.createSequentialGroup()
-                                .addGroup(jPanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel20)
-                                    .addComponent(jLabel11))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel11)
                             .addGroup(jPanelRegisterLayout.createSequentialGroup()
                                 .addComponent(textFieldRegisterValue)
                                 .addGap(24, 24, 24)))
                         .addGroup(jPanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelRegisterLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel13)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanelRegisterLayout.createSequentialGroup()
@@ -1112,7 +1108,7 @@ public class MainView extends javax.swing.JFrame {
         jLabel33.setText("TADS | Ponto de Venda");
 
         jLabel34.setFont(new java.awt.Font(".SF NS Text", 0, 22)); // NOI18N
-        jLabel34.setText("Relatorio");
+        jLabel34.setText("Locações e Venda");
 
         jLabel38.setText("Tipo de operação");
 
@@ -1195,6 +1191,11 @@ public class MainView extends javax.swing.JFrame {
 
         formattedTextFieldRentEndDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
         formattedTextFieldRentEndDate.setText("12/06/2021");
+        formattedTextFieldRentEndDate.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                formattedTextFieldRentEndDateFocusLost(evt);
+            }
+        });
         formattedTextFieldRentEndDate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 formattedTextFieldRentEndDateActionPerformed(evt);
@@ -1489,6 +1490,7 @@ public class MainView extends javax.swing.JFrame {
         formattedTextFieldDevExpetedDay.setEditable(false);
         formattedTextFieldDevExpetedDay.setText("12/12/12");
 
+        formattedTextFieldDevDevolutionDay.setEditable(false);
         formattedTextFieldDevDevolutionDay.setText("12/12/12");
 
         jLabel55.setText("Dias excedidos:");
@@ -2011,13 +2013,13 @@ public class MainView extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelPDVLayout.createSequentialGroup()
                                 .addGroup(jPanelPDVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel33, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel34, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel34, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(41, 41, 41))
                     .addGroup(jPanelPDVLayout.createSequentialGroup()
                         .addGroup(jPanelPDVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel38)
-                            .addComponent(comboBoxPDDOperation, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(comboBoxPDDOperation, 0, 157, Short.MAX_VALUE))
                         .addGap(231, 231, 231))))
         );
         jPanelPDVLayout.setVerticalGroup(
@@ -2052,10 +2054,10 @@ public class MainView extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanelPDV, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jPanelRentReport, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jPanelFinancialReport, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jPanelSalesReport, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jPanelPDV, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 396, Short.MAX_VALUE)
+                    .addComponent(jPanelRentReport, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 396, Short.MAX_VALUE)
+                    .addComponent(jPanelFinancialReport, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 396, Short.MAX_VALUE)
+                    .addComponent(jPanelSalesReport, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 396, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jLayeredPane1Layout.setVerticalGroup(
@@ -2079,7 +2081,7 @@ public class MainView extends javax.swing.JFrame {
             .addGroup(parentLayout.createSequentialGroup()
                 .addComponent(sidePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 406, Short.MAX_VALUE))
+                .addComponent(jLayeredPane1))
         );
         parentLayout.setVerticalGroup(
             parentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2136,9 +2138,9 @@ public class MainView extends javax.swing.JFrame {
         vehicle.setCategory((Vehicle.Category)registerComboBoxCategory.getSelectedItem());
         vehicle.setBrand((registerComboBoxBrand.getSelectedItem().toString()));
         vehicle.setPlate(registerTextFieldPlates.getText());
-        vehicle.setKm(Integer.parseInt(registerTextFieldKm.getText()));
+        vehicle.setKm(Integer.parseInt(registerTextFieldKm.getText().replace(",", ".")));
         vehicle.setTank((Vehicle.Tank)registerComboBoxTank.getSelectedItem());
-        vehicle.setPrice(Double.parseDouble(textFieldRegisterValue.getText()));
+        vehicle.setPrice(Double.parseDouble(textFieldRegisterValue.getText().replace(",", ".")));
         vehicle.setAvailability(true);
         if(mainService.purchaseVehicle(vehicle)){
             JOptionPane.showMessageDialog(this, "Adicionado com sucesso");
@@ -2230,11 +2232,11 @@ public class MainView extends javax.swing.JFrame {
         }
         RentOperation rent = new RentOperation();
         rent.setVehicle(selectedVehicle);
-        rent.setKm(Double.parseDouble(textFieldRentKm.getText()));
+        rent.setKm(Double.parseDouble(textFieldRentKm.getText().replace(",", ".")));
         rent.setTank((Vehicle.Tank)comboBoxRentTank.getSelectedItem());
         rent.setDate(stringDateToLocalDate(formattedTextFieldRentInitDate.getText()));
         rent.setExpirationDate(stringDateToLocalDate(formattedTextFieldRentEndDate.getText()));
-        rent.setValue(Double.parseDouble(textFieldRentValueTotal.getText()));
+        rent.setValue(Double.parseDouble(textFieldRentValueTotal.getText().replace(",", ".")));
         //Passar as datas e os valores
         if(mainService.rentVehicle(rent)){
             rentClear();
@@ -2366,8 +2368,8 @@ public class MainView extends javax.swing.JFrame {
             return;
         }
         RentOperation rent = selectedRent;
-        rent.setFinalValue(Double.parseDouble(textFieldDevTotalValue.getText()));
-        rent.setFinalKm(Double.parseDouble(textFieldDevEndKm.getText()));
+        rent.setFinalValue(Double.parseDouble(textFieldDevTotalValue.getText().replace(",", ".")));
+        rent.setFinalKm(Double.parseDouble(textFieldDevEndKm.getText().replace(",", ".")));
         rent.setFinalTank((Vehicle.Tank) comboBoxDevTank.getSelectedItem());
         rent.setWaxedDate(stringDateToLocalDate(formattedTextFieldDevDevolutionDay.getText()));
         if(mainService.devolutionVehicle(rent)){
@@ -2407,8 +2409,8 @@ public class MainView extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, error);
             return;
         }
-        selectedVehicle.setPrice(Double.parseDouble(textFieldSaleValue.getText()));
-        selectedVehicle.setKm(Double.parseDouble(textFieldSaleKm.getText()));
+        selectedVehicle.setPrice(Double.parseDouble(textFieldSaleValue.getText().replace(",", ".")));
+        selectedVehicle.setKm(Double.parseDouble(textFieldSaleKm.getText().replace(",", ".")));
         selectedVehicle.setTank((Vehicle.Tank)comboBoxSaleTank.getSelectedItem());
         if(mainService.sellVehicle(selectedVehicle)) {
             JOptionPane.showMessageDialog(this, "Venda concluida.");
@@ -2499,6 +2501,15 @@ public class MainView extends javax.swing.JFrame {
     private void formattedTextFieldTradeReportEndDateFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formattedTextFieldTradeReportEndDateFocusLost
         filterTradeReport();
     }//GEN-LAST:event_formattedTextFieldTradeReportEndDateFocusLost
+
+    private void formattedTextFieldRentEndDateFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formattedTextFieldRentEndDateFocusLost
+        try{
+            textFieldRentValueTotal.setText((Double.toString(rentPrice(formattedTextFieldRentInitDate.getText(),
+                formattedTextFieldRentEndDate.getText()))));
+        } catch (Exception e){
+        
+        } 
+    }//GEN-LAST:event_formattedTextFieldRentEndDateFocusLost
     
     /**
      * @param args the command line arguments
